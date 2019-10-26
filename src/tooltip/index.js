@@ -1,0 +1,68 @@
+import React, { Component, Fragment, forwardRef } from "react";
+import PropTypes from "prop-types";
+import Tag from "./components/tag";
+
+class Tooltip extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showTag: false,
+      x: null,
+      y: null,
+      width: null
+    };
+  }
+
+  showTag = () => this.setState({ showTag: true });
+
+  hideTag = () => this.setState({ showTag: false });
+
+  getPosition = element => {
+    const { x, y, width } = this.state;
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      if (width !== rect.width || x !== rect.x || y !== rect.y) {
+        this.setState({
+          x: rect.x,
+          y: rect.y,
+          width: rect.width
+        });
+      }
+    }
+  };
+
+  render() {
+    const { tag, children, align } = this.props;
+    const { showTag, x, y, width } = this.state;
+
+    const newChildren = React.Children.map(children, (child, index) =>
+      React.cloneElement(child, {
+        index,
+        onMouseOver: this.showTag,
+        onFocus: this.showTag,
+        onMouseLeave: this.hideTag,
+        ref: element => this.getPosition(element),
+        ...child.props
+      })
+    );
+
+    return (
+      <Fragment>
+        {showTag && <Tag align={align} x={x} y={y} width={width} tag={tag} />}
+        {newChildren}
+      </Fragment>
+    );
+  }
+}
+
+Tooltip.defaultProps = {
+  align: "left"
+};
+
+Tooltip.propTypes = {
+  children: PropTypes.any.isRequired,
+  tag: PropTypes.any.isRequired,
+  align: PropTypes.string
+};
+
+export default Tooltip;

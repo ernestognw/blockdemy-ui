@@ -1,0 +1,51 @@
+{
+  "name": "blockdemy-ui",
+  "version": "0.0.4",
+  "description": "Blockdemy design system used across the blockdemy platforms ecosystem",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "yarn clean && webpack --mode production && yarn copypackage",
+    "dev": "yarn clean && webpack --mode production --watch && yarn copypackage",
+    "clean": "rimraf lib",
+    "upload": "cd ./lib && yarn publish",
+    "copypackage": "cp -rf package.json lib",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [
+    "design",
+    "system",
+    "ui",
+    "components",
+    "react"
+  ],
+  "author": "Ernesto García",
+  "license": "MIT",
+  "peerDependencies": {
+    "styled-components": "^4.4.0"
+  },
+  "dependencies": {
+    "@storybook/addon-knobs": "^5.2.5",
+    "prop-types": "^15.7.2",
+    "react-md-icon": "^1.13.0",
+    "styled-system": "^5.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/react": "^5.2.5",
+    "babel-loader": "^8.0.6",
+    "react": "^16.10.2",
+    "react-dom": "^16.11.0",
+    "rimraf": "^3.0.0",
+    "styled-components": "^4.4.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
