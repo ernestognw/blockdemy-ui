@@ -35,16 +35,17 @@ class Tooltip extends Component {
     const { tag, children, align } = this.props;
     const { showTag, x, y, width } = this.state;
 
-    const newChildren = React.Children.map(children, (child, index) =>
-      React.cloneElement(child, {
-        index,
-        onMouseOver: this.showTag,
-        onFocus: this.showTag,
-        onMouseLeave: this.hideTag,
-        ref: element => this.getPosition(element),
-        ...child.props
-      })
-    );
+    const newChildren = React.Children.map(children, (child, index) => (
+      <div ref={element => this.getPosition(element)}>
+        {React.cloneElement(child, {
+          index,
+          onMouseOver: this.showTag,
+          onFocus: this.showTag,
+          onMouseLeave: this.hideTag,
+          ...child.props
+        })}
+      </div>
+    ));
 
     return (
       <Fragment>

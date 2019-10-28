@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PillContainer from "./elements";
+import propTypes from "@styled-system/prop-types";
 
 const Pill = ({
   children,
@@ -37,7 +38,8 @@ Pill.propTypes = {
   variant: PropTypes.string,
   color: PropTypes.string,
   fontColor: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
+  ...propTypes.space
 };
 
 export default Pill;

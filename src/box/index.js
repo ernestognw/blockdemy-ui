@@ -1,13 +1,16 @@
-import styled from "styled-components";
-import { space, layout, color, typography, flexbox, grid } from "styled-system";
+import React from "react";
+import StyledBox from "./elements";
+import propTypes from "@styled-system/prop-types";
 
-const Box = styled.div`
-  ${space}
-  ${layout}
-  ${color}
-  ${typography}
-  ${flexbox}
-  ${grid}
-`;
+const Box = ({ ...props }) => <StyledBox {...props} />;
+
+Box.propTypes = {
+  ...propTypes.space,
+  ...propTypes.layout,
+  ...propTypes.color,
+  ...propTypes.typography,
+  ...propTypes.flexbox,
+  ...propTypes.grid
+};
 
 export default Box;

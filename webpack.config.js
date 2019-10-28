@@ -15,6 +15,7 @@ module.exports = {
     navbar: "./src/navbar",
     pill: "./src/pill",
     "side-modal": "./src/side-modal",
+    select: "./src/select",
     tabs: "./src/tabs",
     textarea: "./src/textarea",
     toast: "./src/toast",

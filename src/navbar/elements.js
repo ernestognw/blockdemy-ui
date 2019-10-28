@@ -10,7 +10,7 @@ const Container = styled.nav`
   display: flex;
   z-index: 200;
   transition: all 0.3s ease;
-  background-color: ${({ theme }) => theme.colors.lighter};
+  background-color: ${({ theme, color }) => theme.colors[color]};
   box-shadow: ${({ theme }) => theme.shadow};
   ${color}
 `;
@@ -26,6 +26,14 @@ const Content = styled.div`
   ${({ theme }) => theme.media.tablet`
       padding: 0 20px;    
   `};
+
+  ${props =>
+    props.shrink &&
+    `
+  max-width: ${props.theme.maxWidth}
+  margin-left: auto;
+  margin-right: auto;
+  `}
 `;
 
 export { Container, Content };

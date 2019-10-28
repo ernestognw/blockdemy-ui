@@ -2,11 +2,12 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import {
   Container,
-  PseudoInput,
+  PseudoSelect,
   Label,
   Message,
   LeftIconContainer,
-  InputGroup,
+  OptionsButton,
+  SelectGroup,
   Prefix
 } from "./elements";
 
@@ -36,9 +37,9 @@ class Input extends Component {
       onChange,
       children,
       prefix,
+      selectIcon,
       className,
       align,
-      placeholder,
       ...props
     } = this.props;
     const { active } = this.state;
@@ -66,7 +67,7 @@ class Input extends Component {
             {leftIcon}
           </LeftIconContainer>
         )}
-        <InputGroup>
+        <SelectGroup>
           {prefix && (
             <Prefix
               leftIcon={leftIcon}
@@ -77,20 +78,21 @@ class Input extends Component {
               {prefix}
             </Prefix>
           )}
-          <PseudoInput
+          <PseudoSelect
             id={id}
             value={value}
             onChange={onChange}
             success={success}
             warning={warning}
             error={error}
-            leftIcon={!prefix && leftIcon}
+            leftIcon={leftIcon}
             prefix={prefix}
-            align={align}
-            placeholder={placeholder}
             {...props}
-          />
-        </InputGroup>
+          >
+            {children}
+          </PseudoSelect>
+          {selectIcon || <OptionsButton label={label} message={message} />}
+        </SelectGroup>
         {message && (
           <Message success={success} warning={warning} error={error}>
             {message}
@@ -104,14 +106,15 @@ class Input extends Component {
 Input.defaultProps = {
   label: "",
   leftIcon: "",
+  select: false,
   id: null,
   success: false,
   warning: false,
   error: false,
   message: "",
-  placeholder: "",
   children: "",
   prefix: "",
+  selectIcon: "",
   className: "",
   align: "left"
 };
@@ -119,6 +122,7 @@ Input.defaultProps = {
 Input.propTypes = {
   label: PropTypes.string,
   leftIcon: PropTypes.any,
+  select: PropTypes.bool,
   id: PropTypes.string,
   success: PropTypes.bool,
   warning: PropTypes.bool,
@@ -126,9 +130,9 @@ Input.propTypes = {
   message: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string,
   children: PropTypes.any,
   prefix: PropTypes.string,
+  selectIcon: PropTypes.any,
   className: PropTypes.string,
   align: PropTypes.string
 };

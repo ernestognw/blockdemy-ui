@@ -11,19 +11,17 @@ class BlockdemyUI {
 
   getTheme = () => this.theme;
 
-  BlockdemyUIProvider = ({ ...props }) => {
-    return (
-      <ThemeProvider theme={this.theme} {...props}>
-        <Fragment>
-          <GlobalStyle />
-          <div id="toast" />
-          <div id="tooltips" />
-          <div id="modal" />
-          {props.children}
-        </Fragment>
-      </ThemeProvider>
-    );
-  };
+  BlockdemyUIProvider = ({ ...props }) => (
+    <ThemeProvider theme={this.theme} {...props}>
+      <Fragment>
+        <GlobalStyle />
+        <div id="toast" />
+        <div id="tooltips" />
+        <div id="modal" />
+        {props.children}
+      </Fragment>
+    </ThemeProvider>
+  );
 }
 
 export default BlockdemyUI;

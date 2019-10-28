@@ -12,5 +12,11 @@ addDecorator(story => (
 
 export { getTheme };
 
+const req = require.context(".", true, /\.stories\.js$/);
+
+const load = () => {
+  req.keys().forEach(req);
+};
+
 // automatically import all files ending in *.stories.js
-configure(require.context(".", true, /\.stories\.js$/), module);
+configure(load, module);

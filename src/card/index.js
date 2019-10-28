@@ -1,19 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {
-  Card,
+  DefaultCard,
   CardHeaderContainer,
-  CardBody,
-  CardFooter,
+  Body,
+  Footer,
   HeaderTitle,
   HeaderSubtitle
 } from "./elements";
+
+const Card = ({ children, ...props }) => (
+  <DefaultCard {...props}>{children}</DefaultCard>
+);
 
 const CardHeader = ({ title, subtitle, ...props }) => (
   <CardHeaderContainer {...props}>
     {title && <HeaderTitle>{title}</HeaderTitle>}
     {subtitle && <HeaderSubtitle>{subtitle}</HeaderSubtitle>}
   </CardHeaderContainer>
+);
+
+const CardBody = ({ children, ...props }) => <Body {...props}>{children}</Body>;
+
+const CardFooter = ({ children, ...props }) => (
+  <Footer {...props}>{children}</Footer>
 );
 
 CardHeader.defaultProps = {

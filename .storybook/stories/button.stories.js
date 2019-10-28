@@ -1,116 +1,69 @@
 import React, { Fragment } from "react";
-
 import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import Button from "../../src/button";
+import { withInfo } from "@storybook/addon-info";
+
 import Box from "../../src/box";
+import Button from "../../src/button";
+import { brandColors } from "../utils";
 
 const Normal = () => (
   <Box display="flex" width={1} alignItems="center" flexDirection="column">
-    <Button my={10} color="primary">
-      Normal button
-    </Button>
-    <Button my={10} color="secondary">
-      Normal button
-    </Button>
-    <Button my={10} color="info">
-      Normal button
-    </Button>
-    <Button my={10} color="default">
-      Normal button
-    </Button>
-    <Button my={10} color="success">
-      Normal button
-    </Button>
-    <Button my={10} color="warning">
-      Normal button
-    </Button>
-    <Button my={10} color="danger">
-      Normal button
-    </Button>
+    {brandColors.map(color => (
+      <Button key={color} my={10} color={color.toLowerCase()}>
+        {color} button
+      </Button>
+    ))}
   </Box>
 );
 
 const Soft = () => (
   <Box display="flex" width={1} alignItems="center" flexDirection="column">
-    <Button my={10} variant="soft" color="primary">
-      Soft button
-    </Button>
-    <Button my={10} variant="soft" color="secondary">
-      Soft button
-    </Button>
-    <Button my={10} variant="soft" color="info">
-      Soft button
-    </Button>
-    <Button my={10} variant="soft" color="default">
-      Soft button
-    </Button>
-    <Button my={10} variant="soft" color="success">
-      Soft button
-    </Button>
-    <Button my={10} variant="soft" color="warning">
-      Soft button
-    </Button>
-    <Button my={10} variant="soft" color="danger">
-      Soft button
-    </Button>
+    {brandColors.map(color => (
+      <Button key={color} my={10} variant="soft" color={color.toLowerCase()}>
+        {color} button
+      </Button>
+    ))}
   </Box>
 );
 
 const Outlined = () => (
   <Box display="flex" width={1} alignItems="center" flexDirection="column">
-    <Button my={10} variant="outlined" color="primary">
-      Outlined button
-    </Button>
-    <Button my={10} variant="outlined" color="secondary">
-      Outlined button
-    </Button>
-    <Button my={10} variant="outlined" color="info">
-      Outlined button
-    </Button>
-    <Button my={10} variant="outlined" color="default">
-      Outlined button
-    </Button>
-    <Button my={10} variant="outlined" color="success">
-      Outlined button
-    </Button>
-    <Button my={10} variant="outlined" color="warning">
-      Outlined button
-    </Button>
-    <Button my={10} variant="outlined" color="danger">
-      Outlined button
-    </Button>
+    {brandColors.map(color => (
+      <Button
+        key={color}
+        my={10}
+        variant="outlined"
+        color={color.toLowerCase()}
+      >
+        {color} button
+      </Button>
+    ))}
   </Box>
 );
 
 const Link = () => (
   <Box display="flex" width={1} alignItems="center" flexDirection="column">
-    <Button my={10} variant="link" color="primary">
-      Link button
-    </Button>
-    <Button my={10} variant="link" color="secondary">
-      Link button
-    </Button>
-    <Button my={10} variant="link" color="info">
-      Link button
-    </Button>
-    <Button my={10} variant="link" color="default">
-      Link button
-    </Button>
-    <Button my={10} variant="link" color="success">
-      Link button
-    </Button>
-    <Button my={10} variant="link" color="warning">
-      Link button
-    </Button>
-    <Button my={10} variant="link" color="danger">
-      Link button
-    </Button>
+    {brandColors.map(color => (
+      <Button key={color} my={10} variant="link" color={color.toLowerCase()}>
+        {color} button
+      </Button>
+    ))}
   </Box>
 );
 
-export { Normal, Soft, Outlined, Link };
+const title = "Button";
+
+storiesOf(title, module)
+  .addDecorator(
+    withInfo({
+      propTablesExclude: [Box]
+    })
+  )
+  .add("Normal", Normal)
+  .add("Soft", Soft)
+  .add("Outlined", Outlined)
+  .add("Link", Link);
 
 export default {
-  title: "Button"
+  title
 };

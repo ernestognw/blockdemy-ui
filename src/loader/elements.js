@@ -13,18 +13,18 @@ const ldsRing = keyframes`
 const LoaderWrapper = styled.div`
   display: inline-block;
   position: relative;
-  width: ${({ size }) => (size ? `${size}px` : "35px")};
-  height: ${({ size }) => (size ? `${size}px` : "35px")};
+  width: ${({ size }) => `${size}px`};
+  height: ${({ size }) => `${size}px`};
   & div {
     box-sizing: border-box;
     display: block;
     position: absolute;
-    width: ${({ size }) => (size ? `${size}px` : "35px")};
-    height: ${({ size }) => (size ? `${size}px` : "35px")};
-    border: 2px solid ${({ theme }) => theme.colors.secondary};
+    width: ${({ size }) => `${size}px`};
+    height: ${({ size }) => `${size}px`};
+    border: 2px solid ${({ theme, color }) => theme.colors[color]};
     border-radius: 50%;
     animation: ${ldsRing} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: ${({ theme }) => theme.colors.secondary} transparent
+    border-color: ${({ theme, color }) => theme.colors[color]} transparent
       transparent transparent;
   }
   & div:nth-child(1) {
@@ -46,10 +46,4 @@ const LoaderWrapper = styled.div`
   ${space}
 `;
 
-const LoaderContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export { LoaderContainer, LoaderWrapper };
+export default LoaderWrapper;

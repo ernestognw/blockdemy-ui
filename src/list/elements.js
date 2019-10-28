@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { space } from "styled-system";
 
-const List = styled.div`
+const DefaultList = styled.div`
   margin: 0;
   padding: 0;
   position: relative;
@@ -11,7 +11,7 @@ const List = styled.div`
   overflow-y: auto;
 `;
 
-const ListItem = styled.div`
+const Item = styled.div`
   width: 100%;
   display: flex;
   position: relative;
@@ -23,30 +23,30 @@ const ListItem = styled.div`
   text-decoration: none;
 
   ${space}
+
+  ${props =>
+    props.clickable &&
+    `
+    cursor: pointer;
+  `}
 `;
 
-const ListItemTextContainer = styled.div`
+const ItemTextContainer = styled.div`
   flex: 1 1 auto;
   padding: 0 16px;
   min-width: 0;
 `;
 
-const ListPrimaryText = styled.span`
+const PrimaryText = styled.span`
   font-size: 1rem;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.default};
 `;
 
-const ListSecondaryText = styled.p`
+const SecondaryText = styled.p`
   font-size: 0.875rem;
   margin: 0;
   color: ${({ theme }) => theme.colors.lightGrey};
 `;
 
-export {
-  List,
-  ListItem,
-  ListItemTextContainer,
-  ListPrimaryText,
-  ListSecondaryText
-};
+export { DefaultList, Item, ItemTextContainer, PrimaryText, SecondaryText };

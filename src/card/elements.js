@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { color, space } from "styled-system";
 
-const Card = styled.div`
+const DefaultCard = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@ const CardHeaderContainer = styled.div`
 const HeaderTitle = styled.h5`
   font-size: 20px;
   font-weight: 500;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
   color: ${({ theme }) => theme.colors.default};
 `;
 
@@ -44,12 +44,12 @@ const HeaderSubtitle = styled.h6`
   color: ${({ theme }) => theme.colors.lightDark};
 `;
 
-const CardBody = styled.div`
+const Body = styled.div`
   padding: 1.25rem;
   flex: 1 1 auto;
 `;
 
-const CardFooter = styled.div`
+const Footer = styled.div`
   padding: 1.25rem 1.5rem;
   border-top: 1px solid ${({ theme }) => theme.colors.veryLightGrey};
   background-color: ${({ theme }) => theme.colors.lighter};
@@ -59,10 +59,10 @@ const CardFooter = styled.div`
 `;
 
 export {
-  Card,
+  DefaultCard,
   CardHeaderContainer,
-  CardBody,
-  CardFooter,
+  Body,
+  Footer,
   HeaderTitle,
   HeaderSubtitle
 };

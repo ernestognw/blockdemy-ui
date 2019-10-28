@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-
 import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+
 import { getTheme } from "../config.js";
 import Box from "../../src/box";
 import Typography from "../../src/typography";
+import { brandColors, grayscaleColors } from "../utils";
 
 const theme = getTheme();
 
@@ -16,90 +16,21 @@ const Brand = () => (
     gridGap={10}
     gridTemplateColumns="1fr 1fr 1fr 1fr"
   >
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="lighter"
-      flexDirection="column"
-      bg="primary"
-    >
-      <Typography>Primary</Typography>
-      {theme.colors.primary}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="lighter"
-      flexDirection="column"
-      bg="secondary"
-    >
-      <Typography>Secondary</Typography>
-      {theme.colors.secondary}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="lighter"
-      flexDirection="column"
-      bg="info"
-    >
-      <Typography>Info</Typography>
-      {theme.colors.info}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="lighter"
-      flexDirection="column"
-      bg="default"
-    >
-      <Typography>Default</Typography>
-      {theme.colors.default}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="lighter"
-      flexDirection="column"
-      bg="success"
-    >
-      <Typography>Success</Typography>
-      {theme.colors.success}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="lighter"
-      flexDirection="column"
-      bg="warning"
-    >
-      <Typography>Warning</Typography>
-      {theme.colors.warning}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="lighter"
-      flexDirection="column"
-      bg="danger"
-    >
-      <Typography>Danger</Typography>
-      {theme.colors.danger}
-    </Box>
+    {brandColors.map(color => (
+      <Box
+        key={color}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        height={200}
+        color="lighter"
+        flexDirection="column"
+        bg={color.toLowerCase()}
+      >
+        <Typography variant="heading">{color}</Typography>
+        {theme.colors[color.toLowerCase()]}
+      </Box>
+    ))}
   </Box>
 );
 
@@ -111,90 +42,21 @@ const Soft = () => (
     gridGap={10}
     gridTemplateColumns="1fr 1fr 1fr 1fr"
   >
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="primary"
-      flexDirection="column"
-      bg={theme.softColors.primary}
-    >
-      <Typography>Primary</Typography>
-      {theme.softColors.primary}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="secondary"
-      flexDirection="column"
-      bg={theme.softColors.secondary}
-    >
-      <Typography>Secondary</Typography>
-      {theme.softColors.secondary}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="info"
-      flexDirection="column"
-      bg={theme.softColors.info}
-    >
-      <Typography>Info</Typography>
-      {theme.softColors.info}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="default"
-      flexDirection="column"
-      bg={theme.softColors.default}
-    >
-      <Typography>Default</Typography>
-      {theme.softColors.default}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="success"
-      flexDirection="column"
-      bg={theme.softColors.success}
-    >
-      <Typography>Success</Typography>
-      {theme.softColors.success}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="warning"
-      flexDirection="column"
-      bg={theme.softColors.warning}
-    >
-      <Typography>Warning</Typography>
-      {theme.softColors.warning}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="danger"
-      flexDirection="column"
-      bg={theme.softColors.danger}
-    >
-      <Typography>Danger</Typography>
-      {theme.softColors.danger}
-    </Box>
+    {brandColors.map(color => (
+      <Box
+        key={color}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        height={200}
+        color={color.toLowerCase()}
+        flexDirection="column"
+        bg={theme.softColors[color.toLowerCase()]}
+      >
+        <Typography variant="heading">{color}</Typography>
+        {theme.softColors[color.toLowerCase()]}
+      </Box>
+    ))}
   </Box>
 );
 
@@ -206,107 +68,31 @@ const Grayscale = () => (
     gridGap={10}
     gridTemplateColumns="1fr 1fr 1fr 1fr"
   >
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="lighter"
-      flexDirection="column"
-      bg="darker"
-    >
-      <Typography>Darker</Typography>
-      {theme.colors.darker}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="lighter"
-      flexDirection="column"
-      bg="dark"
-    >
-      <Typography>Dark</Typography>
-      {theme.colors.dark}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="lighter"
-      flexDirection="column"
-      bg="semiDark"
-    >
-      <Typography>Semi Dark</Typography>
-      {theme.colors.semiDark}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="lighter"
-      flexDirection="column"
-      bg="lightDark"
-    >
-      <Typography>Light Dark</Typography>
-      {theme.colors.lightDark}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="darker"
-      flexDirection="column"
-      bg="lightGrey"
-    >
-      <Typography>Light Grey</Typography>
-      {theme.colors.lightGrey}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="darker"
-      flexDirection="column"
-      bg="veryLightGrey"
-    >
-      <Typography>Very Light Grey</Typography>
-      {theme.colors.veryLightGrey}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="darker"
-      flexDirection="column"
-      bg="light"
-    >
-      <Typography>Light</Typography>
-      {theme.colors.light}
-    </Box>
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height={200}
-      color="darker"
-      flexDirection="column"
-      bg="lighter"
-    >
-      <Typography>Lighter</Typography>
-      {theme.colors.lighter}
-    </Box>
+    {grayscaleColors.map((color, index) => (
+      <Box
+        key={color}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        height={200}
+        color={index > grayscaleColors.length / 2 ? "darker" : "lighter"}
+        flexDirection="column"
+        bg={color}
+      >
+        <Typography variant="heading">{color}</Typography>
+        {theme.colors[color]}
+      </Box>
+    ))}
   </Box>
 );
 
-export { Brand, Soft, Grayscale };
+const title = "Colors";
+
+storiesOf(title, module)
+  .add("Brand", Brand)
+  .add("Soft", Soft)
+  .add("Grayscale", Grayscale);
 
 export default {
-  title: "Colors"
+  title
 };

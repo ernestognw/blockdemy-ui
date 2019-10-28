@@ -2,25 +2,20 @@ import styled from "styled-components";
 import { space } from "styled-system";
 
 const ProfilePictureContainer = styled.div`
-  width: 40px;
-  height: 40px;
+  width: ${({ size }) => size}px;
+  height: ${({ size }) => size}px;
   border-radius: 50%;
   overflow: hidden;
   background: ${({ theme }) => theme.colors.light};
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  ${space}
+  ${({ borderWidth, borderColor, theme }) =>
+    `border: ${borderWidth}px solid ${theme.colors[borderColor]}`}
 
-  ${({ size }) =>
-    size &&
-    `
-    width: ${size}px;
-    height: ${size}px;
-  `};
-
-  &:nth-child(1) {
-    margin-left: 0px;
-  }
+  ${space};
 `;
 
 const ProfilePictureImage = styled.img`

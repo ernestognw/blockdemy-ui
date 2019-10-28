@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import RoundArrowDropDown from "react-md-icon/dist/RoundArrowDropDown";
+import getOptionsButtonTop from "./utils";
 import { space } from "styled-system";
 
 const Container = styled.div`
@@ -33,8 +34,9 @@ const Message = styled.div`
   ${({ theme, error }) => error && `color: ${theme.colors.danger} !important;`};
 `;
 
-const PseudoInput = styled.input`
+const PseudoSelect = styled.select`
   background-color: ${({ theme }) => theme.colors.lighter};
+  font-weight: "light";
   font-size: 0.875rem;
   border-radius: 5px;
   flex-grow: 1;
@@ -46,17 +48,17 @@ const PseudoInput = styled.input`
   appearance: initial;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-  ${({ theme, disabled }) =>
+  ${({ disabled, theme }) =>
     disabled &&
     `
     background-color: ${theme.colors.light};
   `}
 
-  ${({ align }) =>
-    align &&
+  ${({ value }) =>
+    !value &&
     `
-    text-align: ${align}
-  `}
+    color: #808080;
+  `};
 
   ${({ leftIcon }) =>
     leftIcon &&
@@ -73,32 +75,24 @@ const PseudoInput = styled.input`
     `};
 
   &:focus {
-    outline: none
-  }  
-
-  ${({ readOnly, theme, success, warning, error }) =>
-    !readOnly &&
-    `
-  &:focus {
-    border: 1px solid ${theme.colors.secondary};
-    ${success &&
+    outline: none;
+    border: 1px solid ${({ theme }) => theme.colors.secondary};
+    ${({ success, theme }) =>
+      success &&
       `
         border: 1px solid ${theme.colors.success} !important;
       `};
-    ${warning &&
+    ${({ warning, theme }) =>
+      warning &&
       `
         border: 1px solid ${theme.colors.warning} !important;
       `};
-    ${error &&
+    ${({ error, theme }) =>
+      error &&
       `
         border: 1px solid ${theme.colors.danger} !important;
       `};
   }
-  `}
-
-  ${({ theme }) => theme.media.phone`
-    width: auto;
-  `};
 `;
 
 const LeftIconContainer = styled.div`
@@ -136,7 +130,20 @@ const LeftIconContainer = styled.div`
 `};
 `;
 
-const InputGroup = styled.div`
+const OptionsButton = styled(RoundArrowDropDown)`
+  top: ${getOptionsButtonTop};
+  right: 0;
+  color: rgba(0, 0, 0, 0.54);
+  position: absolute;
+  pointer-events: none;
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 24px;
+`;
+
+const SelectGroup = styled.div`
   display: flex;
 `;
 
@@ -161,10 +168,11 @@ const Prefix = styled.span`
 
 export {
   Container,
-  PseudoInput,
   Label,
   Message,
   LeftIconContainer,
-  InputGroup,
+  PseudoSelect,
+  OptionsButton,
+  SelectGroup,
   Prefix
 };

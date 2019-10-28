@@ -1,19 +1,37 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {
-  List,
-  ListItem,
-  ListItemTextContainer,
-  ListPrimaryText,
-  ListSecondaryText
+  DefaultList,
+  Item,
+  ItemTextContainer,
+  PrimaryText,
+  SecondaryText
 } from "./elements";
 
-const ListItemText = ({ primary, secondary, ...props }) => (
-  <ListItemTextContainer {...props}>
-    <ListPrimaryText>{primary}</ListPrimaryText>
-    {secondary && <ListSecondaryText>{secondary}</ListSecondaryText>}
-  </ListItemTextContainer>
+const List = ({ children, ...props }) => (
+  <DefaultList {...props}>{children}</DefaultList>
 );
+
+const ListItemText = ({ primary, secondary, ...props }) => (
+  <ItemTextContainer {...props}>
+    <PrimaryText>{primary}</PrimaryText>
+    {secondary && <SecondaryText>{secondary}</SecondaryText>}
+  </ItemTextContainer>
+);
+
+const ListItem = ({ children, clickable, ...props }) => (
+  <Item clickable={clickable} {...props}>
+    {children}
+  </Item>
+);
+
+ListItem.defaultProps = {
+  clickable: false
+};
+
+ListItem.propTypes = {
+  clickable: PropTypes.bool
+};
 
 ListItemText.defaultProps = {
   secondary: ""

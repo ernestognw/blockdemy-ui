@@ -185,11 +185,11 @@ const setTag = (
         <P
           className={className}
           underline={underline}
-          uppercase={uppercase}
+          uppercase={true}
           color={color}
           fontSize={fontSize}
           align={align}
-          fontWeight={fontWeight || "medium"}
+          fontWeight={fontWeight || "bold"}
           variant={variant}
           {...props}
         >
@@ -219,7 +219,7 @@ const setTag = (
         <P
           className={className}
           underline={underline}
-          uppercase={uppercase}
+          uppercase={true}
           color={color}
           fontSize={fontSize}
           align={align}

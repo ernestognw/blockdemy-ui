@@ -61,7 +61,7 @@ class Modal extends Component {
                     </CloseButton>
                   </ContentHeader>
                 ) : (
-                  <CloseButton marginY onClick={closeButton}>
+                  <CloseButton onClick={closeButton}>
                     <RoundClear />
                   </CloseButton>
                 )}
@@ -78,7 +78,7 @@ class Modal extends Component {
                               variant={secondaryVariant}
                               color={secondaryColor}
                               onClick={secondaryAction}
-                              mr="10"
+                              mr={10}
                             >
                               {secondaryText}
                             </Button>
