@@ -4,11 +4,13 @@
   "description": "Blockdemy design system used across the blockdemy platforms ecosystem",
   "main": "lib/index.js",
   "scripts": {
-    "build": "yarn clean && webpack --mode production && yarn copypackage",
-    "dev": "yarn clean && webpack --mode production --watch && yarn copypackage",
+    "build": "rm -rf .site && build-storybook -c .storybook -o .site",
+    "build:lib": "yarn clean && webpack --mode production && yarn copypackage && yarn copyreadme",
+    "dev": "yarn clean && webpack --mode production --watch",
     "clean": "rimraf lib",
     "upload": "cd ./lib && yarn publish",
     "copypackage": "cp -rf package.json lib",
+    "copyreadme": "cp -rf README.md lib",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

@@ -10,7 +10,7 @@
 
 <h3> Documentation </h3>
 
-<p>You can find many use cases and visual examples, along with the source code for each sample on our <a href="ui.blockdemy.com">Storybook</a></p>
+<p>You can find many use cases and visual examples, along with the source code for each sample on our <a href="https://ui.blockdemy.com">Storybook</a></p>
 
 <h3> Getting started </h3>
 
