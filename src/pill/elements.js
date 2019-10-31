@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import getStyle from "./utils";
+import { getStyle, getPadding, getFontSize } from "./utils";
 import { space } from "styled-system";
 
 const PillContainer = styled.div`
   width: fit-content;
-  padding: ${({ size }) => (size === "small" ? "3.5px 5.5px" : "8px 10px")};
+  padding: ${({ size }) => getPadding(size)};
   border-radius: ${({ theme }) => theme.radius};
   display: flex;
   align-items: center;
-  font-size: ${({ size }) => (size === "small" ? "0.7rem" : "0.85rem")};
+  font-size: ${({ size }) => getFontSize(size)};
   margin: 0;
 
   ${getStyle};

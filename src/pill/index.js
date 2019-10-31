@@ -25,7 +25,7 @@ const Pill = ({
 );
 
 Pill.defaultProps = {
-  size: "",
+  size: "normal",
   variant: "",
   color: "primary",
   fontColor: null,
@@ -34,7 +34,7 @@ Pill.defaultProps = {
 
 Pill.propTypes = {
   children: PropTypes.any.isRequired,
-  size: PropTypes.string,
+  size: PropTypes.oneOfType(["small", "normal", "large"]),
   variant: PropTypes.string,
   color: PropTypes.string,
   fontColor: PropTypes.string,

@@ -10,7 +10,7 @@ const Simple = () => (
   <Box p={30} display="flex" width={1} justifyContent="center">
     {brandColors.map((color, index) => (
       <LoaderContainer key={color}>
-        <Loader mx={20} size={index * 5 + 15} />
+        <Loader mx={20} size={(index * 5 + 15).toString()} />
       </LoaderContainer>
     ))}
   </Box>
@@ -20,7 +20,11 @@ const Colors = () => (
   <Box p={30} display="flex" width={1} justifyContent="center">
     {brandColors.map((color, index) => (
       <LoaderContainer key={color}>
-        <Loader mx={20} color={color.toLowerCase()} size={index * 5 + 15} />
+        <Loader
+          mx={20}
+          color={color.toLowerCase()}
+          size={(index * 5 + 15).toString()}
+        />
       </LoaderContainer>
     ))}
   </Box>

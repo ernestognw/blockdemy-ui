@@ -14,7 +14,7 @@ Navbar.defaultProps = {
 };
 
 Navbar.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.any.isRequired,
   shrink: PropTypes.bool,
   color: PropTypes.string.isRequired
 };

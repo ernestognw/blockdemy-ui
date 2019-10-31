@@ -1,16 +1,16 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { storiesOf } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
 
 import Box from "../../src/box";
-import Button from "../../src/button";
+import Pill from "../../src/pill";
 import { brandColors } from "../utils";
 
 const Normal = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
+        <Pill
           size="large"
           key={color}
           my={20}
@@ -18,19 +18,19 @@ const Normal = () => (
           color={color.toLowerCase()}
         >
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button key={color} my={20} mx={10} color={color.toLowerCase()}>
+        <Pill key={color} my={20} mx={10} color={color.toLowerCase()}>
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
+        <Pill
           size="small"
           key={color}
           my={20}
@@ -38,7 +38,7 @@ const Normal = () => (
           color={color.toLowerCase()}
         >
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
   </Box>
@@ -48,7 +48,7 @@ const Soft = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
+        <Pill
           size="large"
           key={color}
           my={20}
@@ -57,12 +57,12 @@ const Soft = () => (
           color={color.toLowerCase()}
         >
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
+        <Pill
           key={color}
           my={20}
           mx={10}
@@ -70,12 +70,12 @@ const Soft = () => (
           color={color.toLowerCase()}
         >
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
+        <Pill
           size="small"
           key={color}
           my={20}
@@ -84,7 +84,7 @@ const Soft = () => (
           color={color.toLowerCase()}
         >
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
   </Box>
@@ -94,7 +94,7 @@ const Outlined = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
+        <Pill
           size="large"
           key={color}
           my={20}
@@ -103,12 +103,12 @@ const Outlined = () => (
           color={color.toLowerCase()}
         >
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
+        <Pill
           key={color}
           my={20}
           mx={10}
@@ -116,12 +116,12 @@ const Outlined = () => (
           color={color.toLowerCase()}
         >
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
+        <Pill
           size="small"
           key={color}
           my={20}
@@ -130,7 +130,7 @@ const Outlined = () => (
           color={color.toLowerCase()}
         >
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
   </Box>
@@ -140,7 +140,7 @@ const Link = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
+        <Pill
           size="large"
           key={color}
           my={20}
@@ -148,19 +148,19 @@ const Link = () => (
           color={color.toLowerCase()}
         >
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button key={color} my={20} variant="link" color={color.toLowerCase()}>
+        <Pill key={color} my={20} variant="link" color={color.toLowerCase()}>
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
+        <Pill
           size="small"
           key={color}
           my={20}
@@ -168,13 +168,13 @@ const Link = () => (
           color={color.toLowerCase()}
         >
           {color}
-        </Button>
+        </Pill>
       ))}
     </Box>
   </Box>
 );
 
-const title = "Button";
+const title = "Pill";
 
 storiesOf(title, module)
   .addDecorator(

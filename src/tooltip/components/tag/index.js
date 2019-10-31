@@ -36,15 +36,25 @@ class Tag extends Component {
   };
 
   render() {
-    const { tag, x, y, width, showTag, align } = this.props;
+    const { tag, x, y, width, height, showTag, position, align } = this.props;
     const { width: thisWidth, height: thisHeight } = this.state;
+
+    let yValue;
+
+    if (position == "bottom") {
+      yValue = y + height + 10 + window.pageYOffset;
+    } else {
+      yValue = y - thisHeight - 10 + window.pageYOffset;
+    }
+
     return ReactDOM.createPortal(
       <Text
         showTag={showTag}
         ref={ref => this.getWidth(ref)}
         x={x - thisWidth / 2 + width / 2}
-        y={y - thisHeight - 10 + window.pageYOffset}
+        y={yValue}
         align={align}
+        position={position}
       >
         {tag}
       </Text>,
@@ -64,7 +74,8 @@ Tag.propTypes = {
   showTag: PropTypes.bool,
   width: PropTypes.number.isRequired,
   x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired
+  y: PropTypes.number.isRequired,
+  position: PropTypes.oneOf(["top", "bottom"]).isRequired
 };
 
 export default Tag;

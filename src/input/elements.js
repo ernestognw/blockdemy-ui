@@ -36,7 +36,7 @@ const Message = styled.div`
 const PseudoInput = styled.input`
   background-color: ${({ theme }) => theme.colors.lighter};
   font-size: 0.875rem;
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.radius};
   flex-grow: 1;
   width: 100%;
   border: 1px solid ${({ theme }) => theme.colors.lightGrey};
@@ -72,29 +72,18 @@ const PseudoInput = styled.input`
     border-bottom-left-radius: 0;
     `};
 
-  &:focus {
-    outline: none
-  }  
-
   ${({ readOnly, theme, success, warning, error }) =>
     !readOnly &&
     `
-  &:focus {
-    border: 1px solid ${theme.colors.secondary};
-    ${success &&
-      `
-        border: 1px solid ${theme.colors.success} !important;
-      `};
-    ${warning &&
-      `
-        border: 1px solid ${theme.colors.warning} !important;
-      `};
-    ${error &&
-      `
-        border: 1px solid ${theme.colors.danger} !important;
-      `};
-  }
+    ${success && `border: 1px solid ${theme.colors.success}; `};
+    ${warning && `border: 1px solid ${theme.colors.warning}; `};
+    ${error && `border: 1px solid ${theme.colors.danger};`};
   `}
+
+  &:focus {
+    outline: none;
+    border: 1px solid ${({ theme }) => theme.colors.secondary};
+  }  
 
   ${({ theme }) => theme.media.phone`
     width: auto;

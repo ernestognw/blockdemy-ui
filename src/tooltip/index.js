@@ -25,15 +25,16 @@ class Tooltip extends Component {
         this.setState({
           x: rect.x,
           y: rect.y,
-          width: rect.width
+          width: rect.width,
+          height: rect.height
         });
       }
     }
   };
 
   render() {
-    const { tag, children, align } = this.props;
-    const { showTag, x, y, width } = this.state;
+    const { tag, children, align, position } = this.props;
+    const { showTag, x, y, width, height } = this.state;
 
     const newChildren = React.Children.map(children, (child, index) => (
       <div ref={element => this.getPosition(element)}>
@@ -49,7 +50,17 @@ class Tooltip extends Component {
 
     return (
       <Fragment>
-        {showTag && <Tag align={align} x={x} y={y} width={width} tag={tag} />}
+        {showTag && (
+          <Tag
+            align={align}
+            x={x}
+            y={y}
+            height={height}
+            width={width}
+            tag={tag}
+            position={position}
+          />
+        )}
         {newChildren}
       </Fragment>
     );
@@ -57,13 +68,15 @@ class Tooltip extends Component {
 }
 
 Tooltip.defaultProps = {
-  align: "left"
+  align: "left",
+  position: "top"
 };
 
 Tooltip.propTypes = {
   children: PropTypes.any.isRequired,
   tag: PropTypes.any.isRequired,
-  align: PropTypes.string
+  align: PropTypes.string,
+  position: PropTypes.oneOf(["top", "bottom"])
 };
 
 export default Tooltip;

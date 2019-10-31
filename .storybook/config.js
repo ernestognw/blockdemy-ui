@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
 import { configure, addDecorator } from "@storybook/react";
 import BlockdemyUI from "../src";
+import Toast from "../src/toast";
 
 const { BlockdemyUIProvider, getTheme } = new BlockdemyUI();
+const { toast } = new Toast();
 
 addDecorator(story => (
   <BlockdemyUIProvider>
@@ -10,7 +12,7 @@ addDecorator(story => (
   </BlockdemyUIProvider>
 ));
 
-export { getTheme };
+export { getTheme, toast };
 
 const req = require.context(".", true, /\.stories\.js$/);
 

@@ -22,6 +22,8 @@ const getIcon = type => {
       return <RoundCheckCircle />;
     case "info":
       return <RoundInfo />;
+    case "default":
+      return <RoundInfo />;
     case "secondary":
       return <RoundWarning />;
     case "warning":

@@ -13,4 +13,26 @@ const getStyle = ({ variant, theme, color }) => {
   }
 };
 
-export default getStyle;
+const getPadding = size => {
+  switch (size) {
+    case "small":
+      return "3.5px 5.5px";
+    case "large":
+      return "12px 16px";
+    default:
+      return "8px 10px";
+  }
+};
+
+const getFontSize = size => {
+  switch (size) {
+    case "small":
+      return "0.7rem";
+    case "large":
+      return "1rem";
+    default:
+      return "0.85rem";
+  }
+};
+
+export { getStyle, getPadding, getFontSize };

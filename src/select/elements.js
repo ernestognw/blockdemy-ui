@@ -38,7 +38,7 @@ const PseudoSelect = styled.select`
   background-color: ${({ theme }) => theme.colors.lighter};
   font-weight: "light";
   font-size: 0.875rem;
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.radius};
   flex-grow: 1;
   width: 100%;
   border: 1px solid ${({ theme }) => theme.colors.lightGrey};
@@ -74,24 +74,17 @@ const PseudoSelect = styled.select`
     border-bottom-left-radius: 0;
     `};
 
+  ${({ readOnly, theme, success, warning, error }) =>
+    !readOnly &&
+    `
+    ${success && `border: 1px solid ${theme.colors.success}; `};
+    ${warning && `border: 1px solid ${theme.colors.warning}; `};
+    ${error && `border: 1px solid ${theme.colors.danger};`};
+  `}
+
   &:focus {
     outline: none;
     border: 1px solid ${({ theme }) => theme.colors.secondary};
-    ${({ success, theme }) =>
-      success &&
-      `
-        border: 1px solid ${theme.colors.success} !important;
-      `};
-    ${({ warning, theme }) =>
-      warning &&
-      `
-        border: 1px solid ${theme.colors.warning} !important;
-      `};
-    ${({ error, theme }) =>
-      error &&
-      `
-        border: 1px solid ${theme.colors.danger} !important;
-      `};
   }
 `;
 

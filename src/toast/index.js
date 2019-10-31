@@ -22,9 +22,11 @@ class Toast {
       this.createToast("success", title, message, options),
     info: (title, message, options) =>
       this.createToast("info", title, message, options),
+    default: (title, message, options) =>
+      this.createToast("default", title, message, options),
     warning: (title, message, options) =>
       this.createToast("warning", title, message, options),
-    error: (title, message, options) =>
+    danger: (title, message, options) =>
       this.createToast("danger", title, message, options)
   };
 

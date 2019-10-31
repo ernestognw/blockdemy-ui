@@ -24,7 +24,7 @@ const TextAreaContent = styled.textarea`
   ::-webkit-scrollbar {
     display: none;
   }
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.radius};
   border: 1px solid ${({ theme }) => theme.colors.lightGrey};
   &:focus {
     transition: 0.3s;

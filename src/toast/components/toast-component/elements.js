@@ -56,7 +56,7 @@ const Container = styled.div`
   width: 100%;
   padding: 0.85rem 1.25rem;
   background-color: ${({ theme, type }) => theme.colors[type]};
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.radius};
   box-shadow: 0 10px 60px 0 rgba(29, 29, 31, 0.09);
   margin-bottom: 10px;
   animation: ${({ isGoingToBeRemoved }) =>

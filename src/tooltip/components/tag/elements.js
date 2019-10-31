@@ -17,7 +17,7 @@ const animationShow = css`
 const Text = styled.pre`
   position: absolute;
   background: rgba(0, 0, 0, 0.85);
-  border-radius: 6px;
+  border-radius: ${({ theme }) => theme.radius};
   color: ${({ theme }) => theme.colors.lighter};
   font-size: 0.8rem;
   z-index: 4000;
@@ -34,13 +34,24 @@ const Text = styled.pre`
   &:after {
     content: "";
     position: absolute;
-    top: 100%;
     left: calc(50% - 5px);
     width: 0;
     height: 0;
     border-top: solid 5px rgba(0, 0, 0, 0.85);
     border-left: solid 5px transparent;
     border-right: solid 5px transparent;
+
+    ${({ position }) => {
+      switch (position) {
+        case "top":
+          return "top: 100%;";
+        case "bottom":
+          return `bottom: 100%;
+            transform: rotate(180deg);`;
+        default:
+          return "top: 100%;";
+      }
+    }}
   }
 `;
 

@@ -4,7 +4,7 @@ import { space, typography } from "styled-system";
 
 const Button = styled.button`
   position: relative;
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.radius};
   cursor: pointer;
   font-weight: 500;
   border: none;

@@ -147,8 +147,8 @@ const WithFooter = () => {
       </Button>
       <Modal
         size="small"
-        primaryAction={() => {}}
-        secondaryAction={() => {}}
+        primaryAction={() => toggleSmallModal(!activeSmall)}
+        secondaryAction={() => toggleSmallModal(!activeSmall)}
         secondaryVariant="outlined"
         active={activeSmall}
         closeButton={() => toggleSmallModal(!activeSmall)}
@@ -156,8 +156,8 @@ const WithFooter = () => {
         <Typography>Body of a small modal with footer</Typography>
       </Modal>
       <Modal
-        primaryAction={() => {}}
-        secondaryAction={() => {}}
+        primaryAction={() => toggleModal(!active)}
+        secondaryAction={() => toggleModal(!active)}
         secondaryVariant="outlined"
         active={active}
         closeButton={() => toggleModal(!active)}
@@ -166,8 +166,8 @@ const WithFooter = () => {
       </Modal>
       <Modal
         size="large"
-        primaryAction={() => {}}
-        secondaryAction={() => {}}
+        primaryAction={() => toggleLargeModal(!activeLarge)}
+        secondaryAction={() => toggleLargeModal(!activeLarge)}
         secondaryVariant="outlined"
         active={activeLarge}
         closeButton={() => toggleLargeModal(!activeLarge)}

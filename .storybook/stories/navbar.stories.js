@@ -55,7 +55,9 @@ const Shrinked = () => {
             Select navbar color
           </option>
           {colors.map(color => (
-            <option value={color}>{color}</option>
+            <option key={color} value={color}>
+              {color}
+            </option>
           ))}
         </Select>
       </Box>
@@ -102,7 +104,9 @@ const FullWidth = () => {
             Select navbar color
           </option>
           {colors.map(color => (
-            <option value={color}>{color}</option>
+            <option key={color} value={color}>
+              {color}
+            </option>
           ))}
         </Select>
       </Box>
@@ -119,7 +123,7 @@ storiesOf(title, module)
     })
   )
   .add("Shrinked", Shrinked)
-  .add("Full Width", FullWidth)
+  .add("Full Width", FullWidth);
 
 export default {
   title

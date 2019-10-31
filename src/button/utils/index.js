@@ -18,7 +18,7 @@ const getSize = ({ size }) => {
     case "small":
       return "padding: .425rem .5rem; font-size: 10px;";
     case "large":
-      return "padding: .875rem 1rem";
+      return "padding: .875rem 1.5rem";
     default:
       return "padding: .625rem 1.25rem";
   }
