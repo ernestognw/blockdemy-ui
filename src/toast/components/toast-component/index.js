@@ -85,7 +85,9 @@ class ToastComponent extends Component {
         </CloseContainer>
         <MainIconContainer>{getIcon(type)}</MainIconContainer>
         <TextContainer>
-          <Typography variant="heading">{title}</Typography>
+          <Typography uppercase fontWeight="bold" fontSize="14px">
+            {title}
+          </Typography>
           {message && (
             <Typography mt="5" fontSize="12px">
               {message}
