@@ -1,12 +1,12 @@
 {
   "name": "blockdemy-ui",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Blockdemy design system used across the blockdemy platforms ecosystem",
   "main": "lib/index.js",
   "homepage": "http://ui.blockdemy.com/",
   "scripts": {
     "build": "rm -rf .site && build-storybook -c .storybook -o .site",
-    "build:lib": "yarn clean && webpack --mode production && yarn copypackage",
+    "build:lib": "yarn clean && webpack --mode production && yarn copypackage && yarn copyreadme",
     "dev": "yarn clean && webpack --mode production --watch",
     "clean": "rimraf lib",
     "upload": "cd ./lib && yarn publish",
