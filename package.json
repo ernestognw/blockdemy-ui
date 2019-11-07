@@ -28,7 +28,6 @@
     "styled-components": "^4.4.0"
   },
   "dependencies": {
-    "@storybook/addon-knobs": "^5.2.5",
     "prop-types": "^15.7.2",
     "react-md-icon": "^1.13.0",
     "styled-system": "^5.1.2"
@@ -41,6 +40,7 @@
     "@babel/preset-react": "^7.6.3",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-info": "^5.2.5",
+    "@storybook/addon-knobs": "^5.2.5",
     "@storybook/addon-links": "^5.2.5",
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
