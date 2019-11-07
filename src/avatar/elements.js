@@ -20,6 +20,7 @@ const ProfilePictureContainer = styled.div`
 
 const ProfilePictureImage = styled.img`
   height: 100%;
+  min-width: 100%;
 `;
 
 export { ProfilePictureContainer, ProfilePictureImage };

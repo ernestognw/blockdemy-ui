@@ -13,7 +13,7 @@ const Container = styled.nav`
   background-color: ${({ theme, color }) => theme.colors[color]};
   ${color}
 
-  ${({ shadow }) => shadow && `box-shadow: ${theme.shadow};`}
+  ${({ shadow, theme }) => shadow && `box-shadow: ${theme.shadow};`}
 
   ${({ hideBg, theme, color }) =>
     hideBg &&
