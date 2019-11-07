@@ -13,6 +13,20 @@ const Container = styled.nav`
   background-color: ${({ theme, color }) => theme.colors[color]};
   box-shadow: ${({ theme }) => theme.shadow};
   ${color}
+
+  ${props =>
+    props.hideBg &&
+    `
+    background-position-y: -66px;
+    background-color: ${({ theme, color }) => theme.colors[color]};
+  `};
+
+  ${props =>
+    props.hideNavbar &&
+    `
+    opacity: 0;
+    margin-top: -66px;
+  `};
 `;
 
 const Content = styled.div`
