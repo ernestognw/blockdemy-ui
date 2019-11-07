@@ -7,7 +7,6 @@ const setTag = (
   variant,
   fontWeight,
   children,
-  align,
   fontSize,
   className,
   underline,
@@ -24,7 +23,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "bold"}
           {...props}
         >
@@ -40,7 +38,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "bold"}
           {...props}
         >
@@ -56,7 +53,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "bold"}
           {...props}
         >
@@ -72,7 +68,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "bold"}
           {...props}
         >
@@ -88,7 +83,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "bold"}
           {...props}
         >
@@ -104,7 +98,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "bold"}
           {...props}
         >
@@ -120,7 +113,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "medium"}
           variant={variant}
           {...props}
@@ -137,7 +129,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "medium"}
           variant={variant}
           {...props}
@@ -154,7 +145,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "medium"}
           variant={variant}
           {...props}
@@ -171,7 +161,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "medium"}
           variant={variant}
           {...props}
@@ -185,10 +174,9 @@ const setTag = (
         <P
           className={className}
           underline={underline}
-          uppercase={true}
+          uppercase={typeof uppercase == "undefined" ? true : uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "bold"}
           variant={variant}
           {...props}
@@ -205,7 +193,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight || "bold"}
           variant={variant}
           {...props}
@@ -219,10 +206,9 @@ const setTag = (
         <P
           className={className}
           underline={underline}
-          uppercase={true}
+          uppercase={typeof uppercase == "undefined" ? true : uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight}
           variant={variant}
           {...props}
@@ -239,7 +225,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight}
           variant={variant}
           {...props}
@@ -256,7 +241,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight}
           variant={variant}
           {...props}
@@ -273,7 +257,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight}
           variant={variant}
           {...props}
@@ -290,7 +273,6 @@ const setTag = (
           uppercase={uppercase}
           color={color}
           fontSize={fontSize}
-          align={align}
           fontWeight={fontWeight}
           variant={variant}
           {...props}
