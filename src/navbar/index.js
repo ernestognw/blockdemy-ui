@@ -18,9 +18,9 @@ Navbar.defaultProps = {
 Navbar.propTypes = {
   children: PropTypes.any.isRequired,
   shrink: PropTypes.bool,
-  color: PropTypes.string.isRequired
+  color: PropTypes.string.isRequired,
   hideBg: PropTypes.bool,
-  hideNavbar: PropTypes.bool,
+  hideNavbar: PropTypes.bool
 };
 
 export default Navbar;
