@@ -11,18 +11,19 @@ const Container = styled.nav`
   z-index: 200;
   transition: all 0.3s ease;
   background-color: ${({ theme, color }) => theme.colors[color]};
-  box-shadow: ${({ theme }) => theme.shadow};
   ${color}
 
-  ${props =>
-    props.hideBg &&
+  ${({ shadow }) => shadow && `box-shadow: ${theme.shadow};`}
+
+  ${({ hideBg, theme, color }) =>
+    hideBg &&
     `
     background-position-y: -66px;
-    background-color: ${({ theme, color }) => theme.colors[color]};
+    background-color: ${theme.colors[color]};
   `};
 
-  ${props =>
-    props.hideNavbar &&
+  ${({ hideNavbar }) =>
+    hideNavbar &&
     `
     opacity: 0;
     margin-top: -66px;

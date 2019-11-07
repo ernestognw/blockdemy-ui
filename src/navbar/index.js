@@ -2,8 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Container, Content } from "./elements";
 
-const Navbar = ({ children, shrink, color, hideBg, hideNavbar, ...props }) => (
-  <Container color={color} hideBg={hideBg} hideNavbar={hideNavbar} {...props}>
+const Navbar = ({
+  children,
+  shrink,
+  color,
+  hideBg,
+  hideNavbar,
+  shadow,
+  ...props
+}) => (
+  <Container
+    color={color}
+    hideBg={hideBg}
+    hideNavbar={hideNavbar}
+    shadow={shadow}
+    {...props}
+  >
     <Content shrink={shrink}>{children}</Content>
   </Container>
 );
@@ -12,7 +26,8 @@ Navbar.defaultProps = {
   shrink: true,
   color: "lighter",
   hideBg: false,
-  hideNavbar: false
+  hideNavbar: false,
+  shadow: true
 };
 
 Navbar.propTypes = {
@@ -20,7 +35,8 @@ Navbar.propTypes = {
   shrink: PropTypes.bool,
   color: PropTypes.string.isRequired,
   hideBg: PropTypes.bool,
-  hideNavbar: PropTypes.bool
+  hideNavbar: PropTypes.bool,
+  shadow: PropTypes.bool
 };
 
 export default Navbar;
