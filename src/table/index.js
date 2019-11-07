@@ -45,4 +45,4 @@ TableCell.propTypes = {
   clickable: PropTypes.bool
 };
 
-export { DefaultTable, Head, Row, Cell, Body };
+export { Table, TableHead, TableRow, TableCell, TableBody };

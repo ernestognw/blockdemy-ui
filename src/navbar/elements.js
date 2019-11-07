@@ -19,7 +19,7 @@ const Container = styled.nav`
     hideBg &&
     `
     background-position-y: -66px;
-    background-color: ${theme.colors[color]};
+    background-color: transparent;
   `};
 
   ${({ hideNavbar }) =>
