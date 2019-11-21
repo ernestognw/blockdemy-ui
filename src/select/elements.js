@@ -36,13 +36,12 @@ const Message = styled.div`
 
 const PseudoSelect = styled.select`
   background-color: ${({ theme }) => theme.colors.lighter};
-  font-weight: "light";
   font-size: 0.875rem;
   border-radius: ${({ theme }) => theme.radius};
   flex-grow: 1;
   width: 100%;
   border: 1px solid ${({ theme }) => theme.colors.lightGrey};
-  padding: 0.625rem 0.75rem;
+  padding: 0.625rem 1.5rem 0.625rem 0.75rem;
   -webkit-appearance: initial;
   -moz-appearance: initial;
   appearance: initial;

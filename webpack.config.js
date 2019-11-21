@@ -7,6 +7,7 @@ module.exports = {
     avatar: "./src/avatar",
     box: "./src/box",
     button: "./src/button",
+    breadcrumb: "./src/breadcrumb",
     card: "./src/card",
     input: "./src/input",
     list: "./src/list",

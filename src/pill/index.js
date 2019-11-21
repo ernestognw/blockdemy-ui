@@ -34,7 +34,7 @@ Pill.defaultProps = {
 
 Pill.propTypes = {
   children: PropTypes.any.isRequired,
-  size: PropTypes.oneOfType(["small", "normal", "large"]),
+  size: PropTypes.oneOf(["small", "normal", "large"]),
   variant: PropTypes.string,
   color: PropTypes.string,
   fontColor: PropTypes.string,
