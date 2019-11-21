@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Card } from "../card";
 
 const Route = styled.div`
+  font-size: ${({ fontSize }) => fontSize};
   font-weight: ${({ last }) => (last ? "bold" : "initial")};
   cursor: ${({ last }) => (last ? "initial" : "pointer")};
   color: ${({ last, theme, lastColor, prevColor }) =>

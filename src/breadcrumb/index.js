@@ -8,7 +8,7 @@ const Breadcrumb = ({
   children,
   p,
   bg,
-  fontWeight,
+  fontSize,
   prevColor,
   lastColor,
   ...props
@@ -19,6 +19,7 @@ const Breadcrumb = ({
         <Route
           prevColor={prevColor}
           lastColor={lastColor}
+          fontSize={fontSize}
           last={index === children.length - 1}
         >
           {child}
@@ -31,7 +32,7 @@ const Breadcrumb = ({
 Breadcrumb.defaultProps = {
   p: 15,
   bg: "light",
-  fontWeight: "12px",
+  fontSize: "12px",
   prevColor: "default",
   lastColor: "primary"
 };
@@ -42,6 +43,8 @@ Breadcrumb.propTypes = {
   bg: PropTypes.string,
   prevColor: PropTypes.string,
   lastColor: PropTypes.string,
+  p: PropTypes.number,
+  bg: PropTypes.string,
   ...propTypes.space,
   ...propTypes.font
 };
