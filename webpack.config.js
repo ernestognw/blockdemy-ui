@@ -18,7 +18,7 @@ module.exports = {
     "side-modal": "./src/side-modal",
     select: "./src/select",
     table: "./src/table",
-    tabs: "./src/tabs",
+    tab: "./src/tab",
     textarea: "./src/textarea",
     toast: "./src/toast",
     tooltip: "./src/tooltip",

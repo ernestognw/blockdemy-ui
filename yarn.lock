@@ -2533,6 +2533,15 @@ binary-extensions@^1.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.13.1.tgz#598afe54755b2868a5330d2aff9d4ebb53209b65"
   integrity sha512-Un7MIEDdUC5gNpcGDV97op1Ywk748MpHcFTHoYs6qnj1Z3j7I53VG3nwZhKzoBZmbdRNnb6WRdFlwl7tSDuZGw==
 
+blockdemy-ui@0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/blockdemy-ui/-/blockdemy-ui-0.1.4.tgz#517ac6eaa939403a97b8e4c160ea483c942a6106"
+  integrity sha512-P/1D3r8spadJ9IyP2TvktvUa2upVkAUxBZEirGR7fdVV9cgqDTrB2cq5PnUXvxLHjLO0i0fT6rb0TjexB+8UeQ==
+  dependencies:
+    prop-types "^15.7.2"
+    react-md-icon "^1.13.0"
+    styled-system "^5.1.2"
+
 bluebird@^3.3.5, bluebird@^3.5.5:
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.1.tgz#df70e302b471d7473489acf26a93d63b53f874de"

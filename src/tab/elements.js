@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Tabs = styled.nav`
+const DefaultTabs = styled.nav`
   width: 100%;
   height: 100%;
   display: flex;
@@ -10,7 +10,7 @@ const Tabs = styled.nav`
   align-items: center;
 `;
 
-const Tab = styled.div`
+const DefaultTab = styled.div`
   color: ${({ theme }) => theme.colors.default};
   opacity: 0.7;
   font-weight: 500;
@@ -34,9 +34,9 @@ const Tab = styled.div`
   `}
 `;
 
-const TabContent = styled.div`
+const DefaultTabContent = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export { Tabs, Tab, TabContent };
+export { DefaultTabs, DefaultTab, DefaultTabContent };
