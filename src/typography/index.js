@@ -9,6 +9,7 @@ const Typography = ({
   className,
   underline,
   uppercase,
+  capitalize,
   ...props
 }) => {
   return setTag(
@@ -20,6 +21,7 @@ const Typography = ({
     className,
     underline,
     uppercase,
+    capitalize,
     { ...props }
   );
 };

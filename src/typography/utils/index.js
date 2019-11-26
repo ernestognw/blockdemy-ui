@@ -8,6 +8,8 @@ const addSpacing = ({ font }) =>
 
 const underline = ({ underline }) => underline && "text-decoration: underline";
 const uppercase = ({ uppercase }) => uppercase && "text-transform: uppercase";
+const capitalize = ({ capitalize }) =>
+  capitalize && "text-transform: capitalize";
 const fontSize = ({ fontSize }) => fontSize && `font-size: ${fontSize}`;
 
-export { addSpacing, underline, uppercase, fontSize };
+export { addSpacing, underline, uppercase, capitalize, fontSize };

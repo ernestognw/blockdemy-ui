@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { space, color, typography } from "styled-system";
-import { addSpacing, underline, uppercase, fontSize } from "./utils";
+import {
+  addSpacing,
+  underline,
+  uppercase,
+  capitalize,
+  fontSize
+} from "./utils";
 import theme from "../utils/default-theme";
 
 const H1 = styled.h1`
@@ -15,6 +21,7 @@ const H1 = styled.h1`
   ${typography};
   ${underline};
   ${uppercase};
+  ${capitelize};
 `;
 
 const H2 = styled.h2`
@@ -29,6 +36,7 @@ const H2 = styled.h2`
   ${typography};
   ${underline};
   ${uppercase};
+  ${capitelize};
 `;
 
 const H3 = styled.h3`
@@ -43,6 +51,7 @@ const H3 = styled.h3`
   ${typography};
   ${underline};
   ${uppercase};
+  ${capitelize};
 `;
 
 const H4 = styled.h4`
@@ -57,6 +66,7 @@ const H4 = styled.h4`
   ${typography};
   ${underline};
   ${uppercase};
+  ${capitelize};
 `;
 
 const H5 = styled.h5`
@@ -71,6 +81,7 @@ const H5 = styled.h5`
   ${typography};
   ${underline};
   ${uppercase};
+  ${capitelize};
 `;
 
 const H6 = styled.h6`
@@ -85,6 +96,7 @@ const H6 = styled.h6`
   ${typography};
   ${underline};
   ${uppercase};
+  ${capitelize};
 `;
 
 const P = styled.p`
@@ -99,6 +111,7 @@ const P = styled.p`
   ${typography};
   ${underline};
   ${uppercase};
+  ${capitelize};
 
   ${({ variant, theme }) =>
     variant === "muted" &&
