@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import StyledBox from "./elements";
 import propTypes from "@styled-system/prop-types";
 
