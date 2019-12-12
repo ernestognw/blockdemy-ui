@@ -8,6 +8,8 @@ const Box = styled.div`
   ${typography}
   ${flexbox}
   ${grid}
+
+  cursor: ${({ clickable }) => (clickable ? "pointer" : "initial")}
 `;
 
 export default Box;

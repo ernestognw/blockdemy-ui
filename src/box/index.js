@@ -2,7 +2,13 @@ import React from "react";
 import StyledBox from "./elements";
 import propTypes from "@styled-system/prop-types";
 
-const Box = ({ ...props }) => <StyledBox {...props} />;
+const Box = ({ clickable, ...props }) => (
+  <StyledBox clickable={clickable} {...props} />
+);
+
+Box.defaultProps = {
+  clickable: false
+};
 
 Box.propTypes = {
   ...propTypes.space,
@@ -10,7 +16,8 @@ Box.propTypes = {
   ...propTypes.color,
   ...propTypes.typography,
   ...propTypes.flexbox,
-  ...propTypes.grid
+  ...propTypes.grid,
+  clickable: PropTypes.bool
 };
 
 export default Box;
