@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import ReactDOM from "react-dom";
+import { createPortal } from "react-dom";
 import Text from "./elements";
 
 class Tag extends Component {
@@ -47,7 +47,7 @@ class Tag extends Component {
       yValue = y - thisHeight - 10 + window.pageYOffset;
     }
 
-    return ReactDOM.createPortal(
+    return createPortal(
       <Text
         showTag={showTag}
         ref={ref => this.getWidth(ref)}

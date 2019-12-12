@@ -21,11 +21,17 @@ const TextAreaContent = styled.textarea`
   padding: 10px;
   font-size: 0.875rem;
   resize: vertical;
+  border-radius: ${({ theme }) => theme.radius};
+  border: 1px solid ${({ theme }) => theme.colors.lightGrey};
+
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.lightGrey};
+  }
+
   ::-webkit-scrollbar {
     display: none;
   }
-  border-radius: ${({ theme }) => theme.radius};
-  border: 1px solid ${({ theme }) => theme.colors.lightGrey};
+
   &:focus {
     transition: 0.3s;
     outline: none;

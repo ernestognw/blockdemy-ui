@@ -1,15 +1,15 @@
-import { Component } from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
+import { Component } from "react";
+import PropTypes from "prop-types";
+import { createPortal } from "react-dom";
 
 class ModalPortal extends Component {
   // Inside of component because if we put this out, ssr would crash,
   // due to inexistence of document at server
-  modalsRoot = document.getElementById('modal');
+  modalsRoot = document.getElementById("modal");
 
   constructor(props) {
     super(props);
-    this.modal = document.createElement('div');
+    this.modal = document.createElement("div");
   }
 
   componentDidMount = () => {
@@ -22,7 +22,7 @@ class ModalPortal extends Component {
 
   render() {
     const { children } = this.props;
-    return ReactDOM.createPortal(children, this.modal);
+    return createPortal(children, this.modal);
   }
 }
 

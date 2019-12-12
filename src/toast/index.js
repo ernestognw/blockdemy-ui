@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { unmountComponentAtNode, render } from "react-dom";
 import defaultTheme from "../utils/default-theme";
 import { ThemeProvider } from "styled-components";
 import ToastComponent from "./components/toast-component";
@@ -39,11 +39,11 @@ class Toast {
     toastRoot.appendChild(toastContainer);
 
     const removeElements = () => {
-      ReactDOM.unmountComponentAtNode(toastContainer);
+      unmountComponentAtNode(toastContainer);
       toastRoot.removeChild(toastContainer);
     };
 
-    ReactDOM.render(
+    render(
       <ThemeProvider theme={this.theme}>
         <ToastComponent
           removeElements={removeElements}

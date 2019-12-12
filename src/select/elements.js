@@ -45,7 +45,11 @@ const PseudoSelect = styled.select`
   -webkit-appearance: initial;
   -moz-appearance: initial;
   appearance: initial;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.45s ease;
+
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.lightGrey};
+  }
 
   ${({ disabled, theme }) =>
     disabled &&
@@ -149,7 +153,7 @@ const Prefix = styled.span`
   border: 1px solid ${({ theme }) => theme.colors.lightGrey};
   border-right: none;
   padding: 0.625rem 0.75rem;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.45s ease;
 
   ${({ leftIcon }) =>
     leftIcon &&
