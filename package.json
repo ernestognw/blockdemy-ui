@@ -25,10 +25,9 @@
   "author": "Ernesto García",
   "license": "MIT",
   "peerDependencies": {
-    "styled-components": "^4.4.0"
+    "styled-components": ">=4.4.0"
   },
   "dependencies": {
-    "blockdemy-ui": "0.1.4",
     "prop-types": "^15.7.2",
     "react-md-icon": "^1.13.0",
     "styled-system": "^5.1.2"
