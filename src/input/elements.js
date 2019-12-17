@@ -39,7 +39,7 @@ const PseudoInput = styled.input`
   border-radius: ${({ theme }) => theme.radius};
   flex-grow: 1;
   width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.lightGrey};
+  border: 1px solid ${({ theme }) => theme.colors.veryLightGrey};
   padding: 0.625rem 0.75rem;
   -webkit-appearance: initial;
   -moz-appearance: initial;
@@ -87,7 +87,8 @@ const PseudoInput = styled.input`
   &:focus {
     outline: none;
     border: 1px solid ${({ theme }) => theme.colors.secondary};
-  }  
+    box-shadow: 0 0 0 0.1rem ${({ theme }) => theme.colors.secondary}33;
+  } 
 
   ${({ theme }) => theme.media.phone`
     width: auto;
@@ -140,7 +141,7 @@ const Prefix = styled.span`
   border-top-left-radius: 5px;
   color: ${({ theme }) => theme.colors.lightGrey};
   border-bottom-left-radius: 5px;
-  border: 1px solid ${({ theme }) => theme.colors.lightGrey};
+  border: 1px solid ${({ theme }) => theme.colors.veryLightGrey};
   border-right: none;
   padding: 0.625rem 0.75rem;
   transition: all 0.45s ease;

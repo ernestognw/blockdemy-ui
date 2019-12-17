@@ -22,7 +22,7 @@ const TextAreaContent = styled.textarea`
   font-size: 0.875rem;
   resize: vertical;
   border-radius: ${({ theme }) => theme.radius};
-  border: 1px solid ${({ theme }) => theme.colors.lightGrey};
+  border: 1px solid ${({ theme }) => theme.colors.veryLightGrey};
 
   ::placeholder {
     color: ${({ theme }) => theme.colors.lightGrey};
@@ -36,6 +36,7 @@ const TextAreaContent = styled.textarea`
     transition: 0.3s;
     outline: none;
     border: 1px solid ${({ theme }) => theme.colors.secondary};
+    box-shadow: 0 0 0 0.1rem ${({ theme }) => theme.colors.secondary}33;
   }
 `;
 
