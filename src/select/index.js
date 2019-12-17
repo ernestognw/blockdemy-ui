@@ -80,6 +80,7 @@ class Input extends Component {
           )}
           <PseudoSelect
             id={id}
+            label={label}
             value={value}
             onChange={onChange}
             success={success}

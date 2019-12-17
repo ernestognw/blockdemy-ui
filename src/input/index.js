@@ -79,6 +79,7 @@ class Input extends Component {
           )}
           <PseudoInput
             id={id}
+            label={label}
             value={value}
             onChange={onChange}
             success={success}

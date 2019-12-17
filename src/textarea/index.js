@@ -39,6 +39,7 @@ class TextArea extends Component {
         )}
         <TextAreaContent
           autoFocus={autofocus}
+          label={label}
           value={value}
           name={name}
           required={required}
