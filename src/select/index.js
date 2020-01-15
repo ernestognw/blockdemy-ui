@@ -40,6 +40,7 @@ class Input extends Component {
       selectIcon,
       className,
       align,
+      disabled,
       ...props
     } = this.props;
     const { active } = this.state;
@@ -88,6 +89,7 @@ class Input extends Component {
             error={error}
             leftIcon={leftIcon}
             prefix={prefix}
+            disabled={disabled}
             {...props}
           >
             {children}
@@ -117,7 +119,8 @@ Input.defaultProps = {
   prefix: "",
   selectIcon: "",
   className: "",
-  align: "left"
+  align: "left",
+  disabled: false
 };
 
 Input.propTypes = {
@@ -135,7 +138,8 @@ Input.propTypes = {
   prefix: PropTypes.string,
   selectIcon: PropTypes.any,
   className: PropTypes.string,
-  align: PropTypes.string
+  align: PropTypes.string,
+  disabled: PropTypes.bool
 };
 
 export default Input;

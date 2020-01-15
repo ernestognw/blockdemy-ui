@@ -39,6 +39,7 @@ class Input extends Component {
       className,
       align,
       placeholder,
+      disabled,
       ...props
     } = this.props;
     const { active } = this.state;
@@ -89,6 +90,7 @@ class Input extends Component {
             prefix={prefix}
             align={align}
             placeholder={placeholder}
+            disabled={disabled}
             {...props}
           />
         </InputGroup>
@@ -114,7 +116,8 @@ Input.defaultProps = {
   children: "",
   prefix: "",
   className: "",
-  align: "left"
+  align: "left",
+  disabled: false
 };
 
 Input.propTypes = {
@@ -131,7 +134,8 @@ Input.propTypes = {
   children: PropTypes.any,
   prefix: PropTypes.string,
   className: PropTypes.string,
-  align: PropTypes.string
+  align: PropTypes.string,
+  disabled: PropTypes.bool
 };
 
 export default Input;

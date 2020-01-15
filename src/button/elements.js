@@ -65,8 +65,13 @@ const Button = styled.button`
         color: ${theme.colors.dark};
         background: ${theme.colors.veryLightGrey};
         cursor: initial;
+        box-shadow: none;
+        border: none;
         &:hover {
+          color: ${theme.colors.dark};
+          border: none;
           box-shadow: none;
+          background: ${theme.colors.veryLightGrey};
         }
     `};
 
