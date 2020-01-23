@@ -61,7 +61,7 @@ class Modal extends Component {
                     </CloseButton>
                   </ContentHeader>
                 ) : (
-                  <CloseButton onClick={closeButton}>
+                  <CloseButton noHeader onClick={closeButton}>
                     <RoundClear />
                   </CloseButton>
                 )}

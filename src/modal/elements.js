@@ -107,10 +107,19 @@ const CloseButton = styled(Button)`
   font-size: 1.2rem;
   text-align: center;
   background: transparent;
+  box-shadow: none;
 
   &:hover {
     box-shadow: none;
+    color: initial;
+    background-color: initial;
   }
+
+  ${props =>
+    props.noHeader &&
+    `
+    top: 5px;
+  `}
 `;
 
 const ModalActions = styled.div`

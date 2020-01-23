@@ -82,9 +82,12 @@ const CloseButton = styled(Button)`
   font-size: 1.25rem;
   text-align: center;
   z-index: 100;
+  box-shadow: none;
 
   &:hover {
     box-shadow: none;
+    color: initial;
+    background-color: initial;
   }
 `;
 
