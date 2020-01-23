@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
-import { ThemeProvider, withTheme } from "styled-components";
+import { ThemeProvider, ServerStyleSheet } from "styled-components";
 import PropTypes from "prop-types";
 import defaultTheme from "./utils/default-theme";
 import GlobalStyle from "./utils/default-theme/css";
+
+export { ServerStyleSheet };
 
 class BlockdemyUI {
   constructor(theme) {
