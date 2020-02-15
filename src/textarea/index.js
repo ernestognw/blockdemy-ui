@@ -61,7 +61,7 @@ TextArea.defaultProps = {
   placeholder: null,
   label: null,
   required: null,
-  id: '',
+  id: null,
   name: '',
   rows: '3',
   className: ''
