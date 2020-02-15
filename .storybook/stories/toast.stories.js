@@ -1,29 +1,29 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { withInfo } from "@storybook/addon-info";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
-import Box from "../../src/box";
-import Button from "../../src/button";
-import { brandColors } from "../utils";
-import { toast } from "../config";
+import Box from '../../src/box';
+import Button from '../../src/button';
+import { brandColors } from '../utils';
+import { toast } from '../config';
 
 const message = color => `Example of a ${color} toast`;
 
 const getToast = color => {
   switch (color) {
-    case "primary":
+    case 'primary':
       return toast.primary(color, message(color));
-    case "secondary":
+    case 'secondary':
       return toast.secondary(color, message(color));
-    case "info":
+    case 'info':
       return toast.info(color, message(color));
-    case "default":
+    case 'default':
       return toast.default(color, message(color));
-    case "success":
+    case 'success':
       return toast.success(color, message(color));
-    case "warning":
+    case 'warning':
       return toast.warning(color, message(color));
-    case "danger":
+    case 'danger':
       return toast.danger(color, message(color));
     default:
       return toast.primary(color, message(color));
@@ -49,7 +49,7 @@ const Normal = () => {
   );
 };
 
-const title = "Toast";
+const title = 'Toast';
 
 storiesOf(title, module)
   .addDecorator(
@@ -57,7 +57,7 @@ storiesOf(title, module)
       propTablesExclude: [Box, Button]
     })
   )
-  .add("Normal", Normal);
+  .add('Normal', Normal);
 
 export default {
   title

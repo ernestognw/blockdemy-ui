@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   DefaultCard,
   CardHeaderContainer,
@@ -7,11 +7,9 @@ import {
   Footer,
   HeaderTitle,
   HeaderSubtitle
-} from "./elements";
+} from './elements';
 
-const Card = ({ children, ...props }) => (
-  <DefaultCard {...props}>{children}</DefaultCard>
-);
+const Card = ({ children, ...props }) => <DefaultCard {...props}>{children}</DefaultCard>;
 
 const CardHeader = ({ title, subtitle, ...props }) => (
   <CardHeaderContainer {...props}>
@@ -22,9 +20,11 @@ const CardHeader = ({ title, subtitle, ...props }) => (
 
 const CardBody = ({ children, ...props }) => <Body {...props}>{children}</Body>;
 
-const CardFooter = ({ children, ...props }) => (
-  <Footer {...props}>{children}</Footer>
-);
+const CardFooter = ({ children, ...props }) => <Footer {...props}>{children}</Footer>;
+
+Card.propTypes = {
+  children: PropTypes.any.isRequired
+};
 
 CardHeader.defaultProps = {
   title: null,
@@ -32,8 +32,16 @@ CardHeader.defaultProps = {
 };
 
 CardHeader.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   subtitle: PropTypes.string
+};
+
+CardBody.propTypes = {
+  children: PropTypes.any.isRequired
+};
+
+CardFooter.propTypes = {
+  children: PropTypes.any.isRequired
 };
 
 export { Card, CardFooter, CardBody, CardHeader };

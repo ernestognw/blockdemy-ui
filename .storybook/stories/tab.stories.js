@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { storiesOf } from "@storybook/react";
-import { withInfo } from "@storybook/addon-info";
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
-import Box from "../../src/box";
-import { Tabs, Tab, TabContent } from "../../src/tab";
-import { Card, CardBody } from "../../src/card";
-import { brandColors } from "../utils";
+import Box from '../../src/box';
+import { Tabs, Tab, TabContent } from '../../src/tab';
+import { Card, CardBody } from '../../src/card';
+import { brandColors } from '../utils';
 
 const Normal = () => {
   const [tab, setTab] = useState(1);
@@ -37,7 +37,7 @@ const Normal = () => {
   );
 };
 
-const title = "Tab";
+const title = 'Tab';
 
 storiesOf(title, module)
   .addDecorator(
@@ -45,7 +45,7 @@ storiesOf(title, module)
       propTablesExclude: [Box, Card]
     })
   )
-  .add("Normal", Normal);
+  .add('Normal', Normal);
 
 export default {
   title

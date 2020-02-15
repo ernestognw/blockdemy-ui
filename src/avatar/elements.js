@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { space } from "styled-system";
+import styled from 'styled-components';
+import { space } from 'styled-system';
 
 const ProfilePictureContainer = styled.div`
   width: ${({ size }) => size}px;

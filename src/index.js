@@ -1,8 +1,7 @@
-import React, { Fragment } from "react";
-import { ThemeProvider, ServerStyleSheet } from "styled-components";
-import PropTypes from "prop-types";
-import defaultTheme from "./utils/default-theme";
-import GlobalStyle from "./utils/default-theme/css";
+import React from 'react';
+import { ThemeProvider, ServerStyleSheet } from 'styled-components';
+import defaultTheme from './utils/default-theme';
+import GlobalStyle from './utils/default-theme/css';
 
 export { ServerStyleSheet };
 
@@ -13,15 +12,15 @@ class BlockdemyUI {
 
   getTheme = () => this.theme;
 
-  BlockdemyUIProvider = ({ ...props }) => (
+  BlockdemyUIProvider = props => (
     <ThemeProvider theme={this.theme} {...props}>
-      <Fragment>
+      <>
         <GlobalStyle />
         <div id="toast" />
         <div id="tooltips" />
         <div id="modal" />
         {props.children}
-      </Fragment>
+      </>
     </ThemeProvider>
   );
 }

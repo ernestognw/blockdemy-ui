@@ -1,34 +1,29 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import RoundClear from "react-md-icon/dist/RoundClear";
-import RoundThumbUp from "react-md-icon/dist/RoundThumbUp";
-import RoundCheckCircle from "react-md-icon/dist/RoundCheckCircle";
-import RoundInfo from "react-md-icon/dist/RoundInfo";
-import RoundCancel from "react-md-icon/dist/RoundCancel";
-import RoundWarning from "react-md-icon/dist/RoundWarning";
-import Typography from "../../../typography";
-import {
-  Container,
-  CloseContainer,
-  TextContainer,
-  MainIconContainer
-} from "./elements";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import RoundClear from 'react-md-icon/dist/RoundClear';
+import RoundThumbUp from 'react-md-icon/dist/RoundThumbUp';
+import RoundCheckCircle from 'react-md-icon/dist/RoundCheckCircle';
+import RoundInfo from 'react-md-icon/dist/RoundInfo';
+import RoundCancel from 'react-md-icon/dist/RoundCancel';
+import RoundWarning from 'react-md-icon/dist/RoundWarning';
+import Typography from '../../../typography';
+import { Container, CloseContainer, TextContainer, MainIconContainer } from './elements';
 
 const getIcon = type => {
   switch (type) {
-    case "primary":
+    case 'primary':
       return <RoundThumbUp />;
-    case "success":
+    case 'success':
       return <RoundCheckCircle />;
-    case "info":
+    case 'info':
       return <RoundInfo />;
-    case "default":
+    case 'default':
       return <RoundInfo />;
-    case "secondary":
+    case 'secondary':
       return <RoundWarning />;
-    case "warning":
+    case 'warning':
       return <RoundWarning />;
-    case "danger":
+    case 'danger':
       return <RoundCancel />;
     default:
       return <RoundThumbUp />;
@@ -100,7 +95,7 @@ class ToastComponent extends Component {
 }
 
 ToastComponent.defaultProps = {
-  message: ""
+  message: ''
 };
 
 ToastComponent.propTypes = {

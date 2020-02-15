@@ -1,18 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Box from "../box";
-import propTypes from "@styled-system/prop-types";
-import { Container, Route } from "./elements";
+import React from 'react';
+import PropTypes from 'prop-types';
+import propTypes from '@styled-system/prop-types';
+import Box from '../box';
+import { Container, Route } from './elements';
 
-const Breadcrumb = ({
-  children,
-  p,
-  bg,
-  fontSize,
-  prevColor,
-  lastColor,
-  ...props
-}) => (
+const Breadcrumb = ({ children, p, bg, fontSize, prevColor, lastColor, ...props }) => (
   <Container bg={bg} p={p} {...props}>
     <Box display="flex">
       {React.Children.map(children, (child, index) => (
@@ -31,10 +23,9 @@ const Breadcrumb = ({
 
 Breadcrumb.defaultProps = {
   p: 15,
-  bg: "light",
-  fontSize: "12px",
-  prevColor: "default",
-  lastColor: "primary"
+  bg: 'light',
+  prevColor: 'default',
+  lastColor: 'primary'
 };
 
 Breadcrumb.propTypes = {
@@ -43,8 +34,6 @@ Breadcrumb.propTypes = {
   bg: PropTypes.string,
   prevColor: PropTypes.string,
   lastColor: PropTypes.string,
-  p: PropTypes.number,
-  bg: PropTypes.string,
   ...propTypes.space,
   ...propTypes.font
 };

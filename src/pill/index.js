@@ -1,17 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import PillContainer from "./elements";
-import propTypes from "@styled-system/prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import propTypes from '@styled-system/prop-types';
+import PillContainer from './elements';
 
-const Pill = ({
-  children,
-  size,
-  color,
-  fontColor,
-  variant,
-  className,
-  ...props
-}) => (
+const Pill = ({ children, size, color, fontColor, variant, className, ...props }) => (
   <PillContainer
     color={color}
     fontColor={fontColor}
@@ -25,16 +17,16 @@ const Pill = ({
 );
 
 Pill.defaultProps = {
-  size: "normal",
-  variant: "",
-  color: "primary",
+  size: 'normal',
+  variant: '',
+  color: 'primary',
   fontColor: null,
   className: null
 };
 
 Pill.propTypes = {
   children: PropTypes.any.isRequired,
-  size: PropTypes.oneOf(["small", "normal", "large"]),
+  size: PropTypes.oneOf(['small', 'normal', 'large']),
   variant: PropTypes.string,
   color: PropTypes.string,
   fontColor: PropTypes.string,

@@ -1,7 +1,7 @@
-import React, { Fragment, Component } from "react";
-import PropTypes from "prop-types";
-import RoundClear from "react-md-icon/dist/RoundClear";
-import ModalPortal from "../utils/modal-portal";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import RoundClear from 'react-md-icon/dist/RoundClear';
+import ModalPortal from '../utils/modal-portal';
 import {
   ModalBox,
   ModalContainer,
@@ -10,7 +10,7 @@ import {
   ModalTitle,
   ModalBody,
   CloseButton
-} from "./elements";
+} from './elements';
 
 class SideModal extends Component {
   componentDidUpdate = prevProps => {
@@ -18,7 +18,7 @@ class SideModal extends Component {
     const { body } = document;
     if (prevProps.active !== active) {
       if (active) {
-        body.style.overflow = "hidden";
+        body.style.overflow = 'hidden';
       } else {
         body.style.overflow = null;
       }
@@ -28,7 +28,7 @@ class SideModal extends Component {
   render() {
     const { active, closeButton, title, children } = this.props;
     return (
-      <Fragment>
+      <>
         {active && (
           <ModalPortal>
             <ModalContainer>
@@ -45,7 +45,7 @@ class SideModal extends Component {
             </ModalContainer>
           </ModalPortal>
         )}
-      </Fragment>
+      </>
     );
   }
 }

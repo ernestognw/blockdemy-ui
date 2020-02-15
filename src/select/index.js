@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   Container,
   PseudoSelect,
@@ -9,7 +9,7 @@ import {
   OptionsButton,
   SelectGroup,
   Prefix
-} from "./elements";
+} from './elements';
 
 class Input extends Component {
   constructor(props) {
@@ -54,7 +54,7 @@ class Input extends Component {
         {label && (
           <Label weight="light" htmlFor={id}>
             {label}
-            {props.required && "*"}
+            {props.required && '*'}
           </Label>
         )}
         {leftIcon && (
@@ -70,12 +70,7 @@ class Input extends Component {
         )}
         <SelectGroup>
           {prefix && (
-            <Prefix
-              leftIcon={leftIcon}
-              success={success}
-              warning={warning}
-              error={error}
-            >
+            <Prefix leftIcon={leftIcon} success={success} warning={warning} error={error}>
               {prefix}
             </Prefix>
           )}
@@ -107,19 +102,19 @@ class Input extends Component {
 }
 
 Input.defaultProps = {
-  label: "",
-  leftIcon: "",
+  label: '',
+  leftIcon: '',
   select: false,
   id: null,
   success: false,
   warning: false,
   error: false,
-  message: "",
-  children: "",
-  prefix: "",
-  selectIcon: "",
-  className: "",
-  align: "left",
+  message: '',
+  children: '',
+  prefix: '',
+  selectIcon: '',
+  className: '',
+  align: 'left',
   disabled: false
 };
 

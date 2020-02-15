@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from "styled-components";
+import styled, { keyframes, css } from 'styled-components';
 
 const show = keyframes`
   0% {
@@ -32,7 +32,7 @@ const Text = styled.pre`
   ${({ showTag }) => showTag && animationShow};
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     left: calc(50% - 5px);
     width: 0;
@@ -43,13 +43,13 @@ const Text = styled.pre`
 
     ${({ position }) => {
       switch (position) {
-        case "top":
-          return "top: 100%;";
-        case "bottom":
+        case 'top':
+          return 'top: 100%;';
+        case 'bottom':
           return `bottom: 100%;
             transform: rotate(180deg);`;
         default:
-          return "top: 100%;";
+          return 'top: 100%;';
       }
     }}
   }

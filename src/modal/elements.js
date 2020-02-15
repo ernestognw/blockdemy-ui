@@ -1,7 +1,7 @@
-import styled, { keyframes, css } from "styled-components";
-import Button from "../button";
-import getWidth from "./utils";
-import { color } from "styled-system";
+import styled, { keyframes, css } from 'styled-components';
+import { color } from 'styled-system';
+import Button from '../button';
+import getWidth from './utils';
 
 const fadeIn = keyframes`
   from {

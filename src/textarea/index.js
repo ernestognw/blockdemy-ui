@@ -1,6 +1,6 @@
-import React, { Component, createRef } from "react";
-import PropTypes from "prop-types";
-import { TextAreaContainer, Label, TextAreaContent } from "./elements";
+import React, { Component, createRef } from 'react';
+import PropTypes from 'prop-types';
+import { TextAreaContainer, Label, TextAreaContent } from './elements';
 
 class TextArea extends Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class TextArea extends Component {
         {label && (
           <Label weight="light" htmlFor={id}>
             {label}
-            {required && "*"}
+            {required && '*'}
           </Label>
         )}
         <TextAreaContent
@@ -61,10 +61,10 @@ TextArea.defaultProps = {
   placeholder: null,
   label: null,
   required: null,
-  id: "",
-  name: "",
-  rows: "3",
-  className: ""
+  id: '',
+  name: '',
+  rows: '3',
+  className: ''
 };
 
 TextArea.propTypes = {

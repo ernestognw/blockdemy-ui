@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   Container,
   PseudoInput,
@@ -8,7 +8,7 @@ import {
   LeftIconContainer,
   InputGroup,
   Prefix
-} from "./elements";
+} from './elements';
 
 class Input extends Component {
   constructor(props) {
@@ -53,7 +53,7 @@ class Input extends Component {
         {label && (
           <Label weight="light" htmlFor={id}>
             {label}
-            {props.required && "*"}
+            {props.required && '*'}
           </Label>
         )}
         {leftIcon && (
@@ -69,12 +69,7 @@ class Input extends Component {
         )}
         <InputGroup>
           {prefix && (
-            <Prefix
-              leftIcon={leftIcon}
-              success={success}
-              warning={warning}
-              error={error}
-            >
+            <Prefix leftIcon={leftIcon} success={success} warning={warning} error={error}>
               {prefix}
             </Prefix>
           )}
@@ -105,18 +100,18 @@ class Input extends Component {
 }
 
 Input.defaultProps = {
-  label: "",
-  leftIcon: "",
+  label: '',
+  leftIcon: '',
   id: null,
   success: false,
   warning: false,
   error: false,
-  message: "",
-  placeholder: "",
-  children: "",
-  prefix: "",
-  className: "",
-  align: "left",
+  message: '',
+  placeholder: '',
+  children: '',
+  prefix: '',
+  className: '',
+  align: 'left',
   disabled: false
 };
 

@@ -1,15 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import propTypes from "@styled-system/prop-types";
-import { DefaultTable, Head, Row, Cell, Body } from "./elements";
+import React from 'react';
+import propTypes from '@styled-system/prop-types';
+import PropTypes from 'prop-types';
+import { DefaultTable, Head, Row, Cell, Body } from './elements';
 
-const Table = ({ children, ...props }) => (
-  <DefaultTable {...props}>{children}</DefaultTable>
-);
+const Table = ({ children, ...props }) => <DefaultTable {...props}>{children}</DefaultTable>;
 
-const TableHead = ({ children, ...props }) => (
-  <Head {...props}>{children}</Head>
-);
+const TableHead = ({ children, ...props }) => <Head {...props}>{children}</Head>;
 
 const TableRow = ({ children, clickable, ...props }) => (
   <Row clickable={clickable} {...props}>
@@ -17,32 +13,41 @@ const TableRow = ({ children, clickable, ...props }) => (
   </Row>
 );
 
-const TableCell = ({ children, wrap, ...props }) => (
-  <Cell {...props}>{children}</Cell>
-);
+const TableCell = ({ children, wrap, ...props }) => <Cell {...props}>{children}</Cell>;
 
-const TableBody = ({ children, ...props }) => (
-  <Body {...props}>{children}</Body>
-);
+const TableBody = ({ children, ...props }) => <Body {...props}>{children}</Body>;
+
+TableHead.propTypes = {
+  children: PropTypes.any.isRequired
+};
+
+Table.propTypes = {
+  children: PropTypes.any.isRequired
+};
 
 TableRow.defaultProps = {
   clickable: false
 };
 
 TableRow.propTypes = {
+  children: PropTypes.any.isRequired,
   clickable: PropTypes.bool
 };
 
 TableCell.defaultProps = {
-  ...propTypes.typography,
   wrap: true,
   clickable: false
 };
 
 TableCell.propTypes = {
   ...propTypes.typography,
+  children: PropTypes.any.isRequired,
   wrap: PropTypes.bool,
   clickable: PropTypes.bool
+};
+
+TableBody.propTypes = {
+  children: PropTypes.any.isRequired
 };
 
 export { Table, TableHead, TableRow, TableCell, TableBody };

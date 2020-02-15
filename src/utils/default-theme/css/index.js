@@ -1,9 +1,4 @@
-import React, { Fragment } from "react";
-import {
-  ThemeProvider as Root,
-  createGlobalStyle,
-  css
-} from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   * {

@@ -1,4 +1,4 @@
-import setTag from "./functions";
+import setTag from './functions';
 
 const Typography = ({
   color,

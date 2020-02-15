@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import propTypes from "@styled-system/prop-types";
-import { ProfilePictureContainer, ProfilePictureImage } from "./elements";
+import React from 'react';
+import PropTypes from 'prop-types';
+import propTypes from '@styled-system/prop-types';
+import { ProfilePictureContainer, ProfilePictureImage } from './elements';
 
 const Avatar = ({ src, size, alt, borderColor, borderWidth, ...props }) => (
   <ProfilePictureContainer
@@ -16,9 +16,10 @@ const Avatar = ({ src, size, alt, borderColor, borderWidth, ...props }) => (
 
 Avatar.defaultProps = {
   size: 32,
-  alt: "",
-  borderColor: "default",
-  borderWidth: "0"
+  alt: '',
+  borderColor: 'default',
+  borderWidth: '0',
+  className: undefined
 };
 
 Avatar.propTypes = {

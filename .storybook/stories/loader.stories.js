@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
-import { storiesOf } from "@storybook/react";
-import { withInfo } from "@storybook/addon-info";
+import React, { Fragment } from 'react';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
-import Box from "../../src/box";
-import Loader, { LoaderContainer } from "../../src/loader";
-import { brandColors } from "../utils";
+import Box from '../../src/box';
+import Loader, { LoaderContainer } from '../../src/loader';
+import { brandColors } from '../utils';
 
 const Simple = () => (
   <Box p={30} display="flex" width={1} justifyContent="center">
@@ -20,17 +20,13 @@ const Colors = () => (
   <Box p={30} display="flex" width={1} justifyContent="center">
     {brandColors.map((color, index) => (
       <LoaderContainer key={color}>
-        <Loader
-          mx={20}
-          color={color.toLowerCase()}
-          size={(index * 5 + 15).toString()}
-        />
+        <Loader mx={20} color={color.toLowerCase()} size={(index * 5 + 15).toString()} />
       </LoaderContainer>
     ))}
   </Box>
 );
 
-const title = "Loader";
+const title = 'Loader';
 
 storiesOf(title, module)
   .addDecorator(
@@ -38,8 +34,8 @@ storiesOf(title, module)
       propTablesExclude: [Box]
     })
   )
-  .add("Simple", Simple)
-  .add("Colors", Colors);
+  .add('Simple', Simple)
+  .add('Colors', Colors);
 
 export default {
   title

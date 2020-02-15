@@ -1,13 +1,6 @@
-import styled from "styled-components";
-import { space, color, typography } from "styled-system";
-import {
-  addSpacing,
-  underline,
-  uppercase,
-  capitalize,
-  fontSize
-} from "./utils";
-import theme from "../utils/default-theme";
+import styled from 'styled-components';
+import { space, color, typography } from 'styled-system';
+import { addSpacing, underline, uppercase, capitalize, fontSize } from './utils';
 
 const H1 = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.h1};
@@ -101,7 +94,7 @@ const H6 = styled.h6`
 
 const P = styled.p`
   font-family: ${({ theme, font }) => theme.font[font]};
-  font-size: ${({ variant }) => theme.fontSize[variant || "paragraph"]};
+  font-size: ${({ variant, theme }) => theme.fontSize[variant || 'paragraph']};
   margin: 0;
 
   ${addSpacing};
@@ -114,7 +107,7 @@ const P = styled.p`
   ${capitalize};
 
   ${({ variant, theme }) =>
-    variant === "muted" &&
+    variant === 'muted' &&
     `
     color: ${theme.colors.lightGrey};
   `};

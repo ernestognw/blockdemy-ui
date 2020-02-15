@@ -1,16 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import {
-  DefaultList,
-  Item,
-  ItemTextContainer,
-  PrimaryText,
-  SecondaryText
-} from "./elements";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { DefaultList, Item, ItemTextContainer, PrimaryText, SecondaryText } from './elements';
 
-const List = ({ children, ...props }) => (
-  <DefaultList {...props}>{children}</DefaultList>
-);
+const List = ({ children, ...props }) => <DefaultList {...props}>{children}</DefaultList>;
 
 const ListItemText = ({ primary, secondary, ...props }) => (
   <ItemTextContainer {...props}>
@@ -25,16 +17,21 @@ const ListItem = ({ children, clickable, ...props }) => (
   </Item>
 );
 
+List.propTypes = {
+  children: PropTypes.any.isRequired
+};
+
 ListItem.defaultProps = {
   clickable: false
 };
 
 ListItem.propTypes = {
+  children: PropTypes.any.isRequired,
   clickable: PropTypes.bool
 };
 
 ListItemText.defaultProps = {
-  secondary: ""
+  secondary: ''
 };
 
 ListItemText.propTypes = {

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const DefaultTable = styled.table`
   display: table;
@@ -36,7 +36,7 @@ const Row = styled.tr`
 const Cell = styled.td`
   display: table-cell;
   padding: 6px 16px;
-  text-align: ${props => props.align || "left"};
+  text-align: ${props => props.align || 'left'};
   vertical-align: inherit;
 
   ${props =>

@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import Button from "../button";
+import styled, { keyframes } from 'styled-components';
+import Button from '../button';
 
 const fadeIn = keyframes`
   from {

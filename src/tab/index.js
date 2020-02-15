@@ -1,14 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { DefaultTabs, DefaultTab, DefaultTabContent } from "./elements";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { DefaultTabs, DefaultTab, DefaultTabContent } from './elements';
 
-const Tabs = ({ children, ...props }) => (
-  <DefaultTabs {...props}>{children}</DefaultTabs>
-);
+const Tabs = ({ children, ...props }) => <DefaultTabs {...props}>{children}</DefaultTabs>;
 
-const Tab = ({ children, ...props }) => (
-  <DefaultTab {...props}>{children}</DefaultTab>
-);
+const Tab = ({ children, ...props }) => <DefaultTab {...props}>{children}</DefaultTab>;
 
 const TabContent = ({ children, ...props }) => (
   <DefaultTabContent {...props}>{children}</DefaultTabContent>

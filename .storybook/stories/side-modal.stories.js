@@ -1,23 +1,17 @@
-import React, { useState } from "react";
-import { storiesOf } from "@storybook/react";
-import { withInfo } from "@storybook/addon-info";
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
-import Box from "../../src/box";
-import Button from "../../src/button";
-import SideModal from "../../src/side-modal";
-import Typography from "../../src/typography/";
+import Box from '../../src/box';
+import Button from '../../src/button';
+import SideModal from '../../src/side-modal';
+import Typography from '../../src/typography/';
 
 const Simple = () => {
   const [active, toggleSideModal] = useState(false);
 
   return (
-    <Box
-      p={30}
-      display="flex"
-      width={1}
-      flexDirection="column"
-      alignItems="center"
-    >
+    <Box p={30} display="flex" width={1} flexDirection="column" alignItems="center">
       <Button my={10} color="primary" onClick={() => toggleSideModal(!active)}>
         Open simple side modal
       </Button>
@@ -32,13 +26,7 @@ const WithTitle = () => {
   const [active, toggleSideModal] = useState(false);
 
   return (
-    <Box
-      p={30}
-      display="flex"
-      width={1}
-      flexDirection="column"
-      alignItems="center"
-    >
+    <Box p={30} display="flex" width={1} flexDirection="column" alignItems="center">
       <Button my={10} color="primary" onClick={() => toggleSideModal(!active)}>
         Open side modal with title
       </Button>
@@ -53,7 +41,7 @@ const WithTitle = () => {
   );
 };
 
-const title = "Side Modal";
+const title = 'Side Modal';
 
 storiesOf(title, module)
   .addDecorator(
@@ -61,8 +49,8 @@ storiesOf(title, module)
       propTablesExclude: [Box, Button, Typography]
     })
   )
-  .add("Simple", Simple)
-  .add("With Title", WithTitle);
+  .add('Simple', Simple)
+  .add('With Title', WithTitle);
 
 export default {
   title

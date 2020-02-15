@@ -13,7 +13,9 @@
     "copypackage": "cp -rf package.json lib",
     "copyreadme": "cp -rf README.md lib",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "eslint",
+    "prettier": "prettier --write \"**/*.{js,graphql,json,css}\""
   },
   "keywords": [
     "design",
@@ -25,9 +27,12 @@
   "author": "Ernesto García",
   "license": "MIT",
   "peerDependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.11.0",
     "styled-components": ">=4.4.0"
   },
   "dependencies": {
+    "@styled-system/prop-types": "^5.1.4",
     "prop-types": "^15.7.2",
     "react-md-icon": "^1.13.0",
     "styled-system": "^5.1.2"
@@ -44,14 +49,27 @@
     "@storybook/addon-links": "^5.2.5",
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
-    "@styled-system/prop-types": "^5.1.2",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
-    "react": "^16.10.2",
-    "react-dom": "^16.11.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.3",
+    "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
     "styled-components": "^4.4.0",
-    "webpack": "^4.41.2",
+    "webpack": "^4.41.6",
     "webpack-cli": "^3.3.9"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint .",
+      "pre-commit": "yarn prettier ."
+    }
   }
 }

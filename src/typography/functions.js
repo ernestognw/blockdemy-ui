@@ -1,6 +1,6 @@
-import React from "react";
-import { H1, H2, H3, H4, H5, H6, P } from "./elements";
-import types from "./types";
+import React from 'react';
+import { H1, H2, H3, H4, H5, H6, P } from './elements';
+import types from './types';
 
 const setTag = (
   color,
@@ -25,7 +25,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "bold"}
+          fontWeight={fontWeight || 'bold'}
           {...props}
         >
           {children}
@@ -41,7 +41,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "bold"}
+          fontWeight={fontWeight || 'bold'}
           {...props}
         >
           {children}
@@ -57,7 +57,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "bold"}
+          fontWeight={fontWeight || 'bold'}
           {...props}
         >
           {children}
@@ -73,7 +73,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "bold"}
+          fontWeight={fontWeight || 'bold'}
           {...props}
         >
           {children}
@@ -89,7 +89,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "bold"}
+          fontWeight={fontWeight || 'bold'}
           {...props}
         >
           {children}
@@ -105,7 +105,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "bold"}
+          fontWeight={fontWeight || 'bold'}
           {...props}
         >
           {children}
@@ -121,7 +121,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "medium"}
+          fontWeight={fontWeight || 'medium'}
           variant={variant}
           {...props}
         >
@@ -138,7 +138,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "medium"}
+          fontWeight={fontWeight || 'medium'}
           variant={variant}
           {...props}
         >
@@ -155,7 +155,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "medium"}
+          fontWeight={fontWeight || 'medium'}
           variant={variant}
           {...props}
         >
@@ -172,7 +172,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "medium"}
+          fontWeight={fontWeight || 'medium'}
           variant={variant}
           {...props}
         >
@@ -185,11 +185,11 @@ const setTag = (
         <P
           className={className}
           underline={underline}
-          uppercase={typeof uppercase == "undefined" ? true : uppercase}
+          uppercase={typeof uppercase === 'undefined' ? true : uppercase}
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "bold"}
+          fontWeight={fontWeight || 'bold'}
           variant={variant}
           {...props}
         >
@@ -206,7 +206,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || "bold"}
+          fontWeight={fontWeight || 'bold'}
           variant={variant}
           {...props}
         >
@@ -219,7 +219,7 @@ const setTag = (
         <P
           className={className}
           underline={underline}
-          uppercase={typeof uppercase == "undefined" ? true : uppercase}
+          uppercase={typeof uppercase === 'undefined' ? true : uppercase}
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}

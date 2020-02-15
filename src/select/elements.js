@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import RoundArrowDropDown from "react-md-icon/dist/RoundArrowDropDown";
-import getOptionsButtonTop from "./utils";
-import { space } from "styled-system";
+import styled from 'styled-components';
+import RoundArrowDropDown from 'react-md-icon/dist/RoundArrowDropDown';
+import { space } from 'styled-system';
+import getOptionsButtonTop from './utils';
 
 const Container = styled.div`
   position: relative;
@@ -21,16 +21,14 @@ const Label = styled.label`
 
 const Message = styled.div`
   font-size: 0.75rem;
-  font-weight: "light";
+  font-weight: 'light';
   color: ${({ theme }) => theme.colors.default};
   text-align: left;
   margin-bottom: 10px;
   margin-top: 10px;
 
-  ${({ theme, success }) =>
-    success && `color: ${theme.colors.success} !important;`};
-  ${({ theme, warning }) =>
-    warning && `color: ${theme.colors.warning} !important;`};
+  ${({ theme, success }) => success && `color: ${theme.colors.success} !important;`};
+  ${({ theme, warning }) => warning && `color: ${theme.colors.warning} !important;`};
   ${({ theme, error }) => error && `color: ${theme.colors.danger} !important;`};
 `;
 
@@ -146,7 +144,7 @@ const SelectGroup = styled.div`
 
 const Prefix = styled.span`
   background-color: ${({ theme }) => theme.colors.veryLightGrey};
-  font-weight: "light";
+  font-weight: 'light';
   font-size: 0.875rem;
   border-top-left-radius: 5px;
   color: ${({ theme }) => theme.colors.lightGrey};

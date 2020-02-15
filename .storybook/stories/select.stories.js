@@ -1,39 +1,29 @@
-import React, { Fragment, useState } from "react";
-import { storiesOf } from "@storybook/react";
-import { withInfo } from "@storybook/addon-info";
+import React, { Fragment, useState } from 'react';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
-import RoundInfo from "react-md-icon/dist/RoundInfo";
-import Box from "../../src/box";
-import Select from "../../src/select";
-import { Card, CardBody, CardHeader } from "../../src/card";
-import { brandColors } from "../utils";
+import RoundInfo from 'react-md-icon/dist/RoundInfo';
+import Box from '../../src/box';
+import Select from '../../src/select';
+import { Card, CardBody, CardHeader } from '../../src/card';
+import { brandColors } from '../utils';
 
-const options = ["Option 1", "Option 2", "Option 3"];
+const options = ['Option 1', 'Option 2', 'Option 3'];
 
 const Simple = () => {
-  const [value1, setValue1] = useState("");
-  const [value2, setValue2] = useState("");
-  const [value3, setValue3] = useState("");
-  const [value4, setValue4] = useState("");
-  const [value5, setValue5] = useState("");
-  const [value6, setValue6] = useState("");
+  const [value1, setValue1] = useState('');
+  const [value2, setValue2] = useState('');
+  const [value3, setValue3] = useState('');
+  const [value4, setValue4] = useState('');
+  const [value5, setValue5] = useState('');
+  const [value6, setValue6] = useState('');
 
   return (
-    <Box
-      p={30}
-      display="flex"
-      width={1}
-      alignItems="center"
-      flexDirection="column"
-    >
+    <Box p={30} display="flex" width={1} alignItems="center" flexDirection="column">
       <Card>
         <CardHeader title="Simple selects" />
         <CardBody>
-          <Select
-            mb={30}
-            value={value1}
-            onChange={({ target }) => setValue1(target.value)}
-          >
+          <Select mb={30} value={value1} onChange={({ target }) => setValue1(target.value)}>
             <option value="" hidden>
               Simple
             </option>
@@ -126,18 +116,12 @@ const Simple = () => {
 };
 
 const WithState = () => {
-  const [value1, setValue1] = useState("");
-  const [value2, setValue2] = useState("");
-  const [value3, setValue3] = useState("");
+  const [value1, setValue1] = useState('');
+  const [value2, setValue2] = useState('');
+  const [value3, setValue3] = useState('');
 
   return (
-    <Box
-      p={30}
-      display="flex"
-      width={1}
-      alignItems="center"
-      flexDirection="column"
-    >
+    <Box p={30} display="flex" width={1} alignItems="center" flexDirection="column">
       <Card>
         <CardHeader title="Selects with state" />
         <CardBody>
@@ -198,7 +182,7 @@ const WithState = () => {
   );
 };
 
-const title = "Select";
+const title = 'Select';
 
 storiesOf(title, module)
   .addDecorator(
@@ -206,8 +190,8 @@ storiesOf(title, module)
       propTablesExclude: [Box, Card, CardHeader, CardBody]
     })
   )
-  .add("Simple", Simple)
-  .add("With State", WithState);
+  .add('Simple', Simple)
+  .add('With State', WithState);
 
 export default {
   title

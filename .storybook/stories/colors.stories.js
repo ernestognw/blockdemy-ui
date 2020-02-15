@@ -1,21 +1,15 @@
-import React, { Fragment } from "react";
-import { storiesOf } from "@storybook/react";
+import React, { Fragment } from 'react';
+import { storiesOf } from '@storybook/react';
 
-import { getTheme } from "../config.js";
-import Box from "../../src/box";
-import Typography from "../../src/typography";
-import { brandColors, grayscaleColors } from "../utils";
+import { getTheme } from '../config.js';
+import Box from '../../src/box';
+import Typography from '../../src/typography';
+import { brandColors, grayscaleColors } from '../utils';
 
 const theme = getTheme();
 
 const Brand = () => (
-  <Box
-    display="grid"
-    width={1}
-    p={20}
-    gridGap={10}
-    gridTemplateColumns="1fr 1fr 1fr 1fr"
-  >
+  <Box display="grid" width={1} p={20} gridGap={10} gridTemplateColumns="1fr 1fr 1fr 1fr">
     {brandColors.map(color => (
       <Box
         key={color}
@@ -35,13 +29,7 @@ const Brand = () => (
 );
 
 const Soft = () => (
-  <Box
-    display="grid"
-    width={1}
-    p={20}
-    gridGap={10}
-    gridTemplateColumns="1fr 1fr 1fr 1fr"
-  >
+  <Box display="grid" width={1} p={20} gridGap={10} gridTemplateColumns="1fr 1fr 1fr 1fr">
     {brandColors.map(color => (
       <Box
         key={color}
@@ -61,13 +49,7 @@ const Soft = () => (
 );
 
 const Grayscale = () => (
-  <Box
-    display="grid"
-    width={1}
-    p={20}
-    gridGap={10}
-    gridTemplateColumns="1fr 1fr 1fr 1fr"
-  >
+  <Box display="grid" width={1} p={20} gridGap={10} gridTemplateColumns="1fr 1fr 1fr 1fr">
     {grayscaleColors.map((color, index) => (
       <Box
         key={color}
@@ -75,7 +57,7 @@ const Grayscale = () => (
         alignItems="center"
         justifyContent="center"
         height={200}
-        color={index > grayscaleColors.length / 2 ? "darker" : "lighter"}
+        color={index > grayscaleColors.length / 2 ? 'darker' : 'lighter'}
         flexDirection="column"
         bg={color}
       >
@@ -86,12 +68,12 @@ const Grayscale = () => (
   </Box>
 );
 
-const title = "Colors";
+const title = 'Colors';
 
 storiesOf(title, module)
-  .add("Brand", Brand)
-  .add("Soft", Soft)
-  .add("Grayscale", Grayscale);
+  .add('Brand', Brand)
+  .add('Soft', Soft)
+  .add('Grayscale', Grayscale);
 
 export default {
   title

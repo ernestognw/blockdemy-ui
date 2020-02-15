@@ -1,6 +1,6 @@
-import React, { Component, Fragment, forwardRef } from "react";
-import PropTypes from "prop-types";
-import Tag from "./components/tag";
+import React, { Children, cloneElement, Component } from 'react';
+import PropTypes from 'prop-types';
+import Tag from './components/tag';
 
 class Tooltip extends Component {
   constructor(props) {
@@ -36,12 +36,9 @@ class Tooltip extends Component {
     const { tag, children, align, position } = this.props;
     const { showTag, x, y, width, height } = this.state;
 
-    const newChildren = React.Children.map(children, (child, index) => (
-      <div
-        className={child.props.className}
-        ref={element => this.getPosition(element)}
-      >
-        {React.cloneElement(child, {
+    const newChildren = Children.map(children, (child, index) => (
+      <div className={child.props.className} ref={element => this.getPosition(element)}>
+        {cloneElement(child, {
           index,
           onMouseOver: this.showTag,
           onFocus: this.showTag,
@@ -52,7 +49,7 @@ class Tooltip extends Component {
     ));
 
     return (
-      <Fragment>
+      <>
         {showTag && (
           <Tag
             align={align}
@@ -65,21 +62,21 @@ class Tooltip extends Component {
           />
         )}
         {newChildren}
-      </Fragment>
+      </>
     );
   }
 }
 
 Tooltip.defaultProps = {
-  align: "left",
-  position: "top"
+  align: 'left',
+  position: 'top'
 };
 
 Tooltip.propTypes = {
   children: PropTypes.any.isRequired,
   tag: PropTypes.any.isRequired,
   align: PropTypes.string,
-  position: PropTypes.oneOf(["top", "bottom"])
+  position: PropTypes.oneOf(['top', 'bottom'])
 };
 
 export default Tooltip;

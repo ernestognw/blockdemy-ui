@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { createPortal } from "react-dom";
-import Text from "./elements";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { createPortal } from 'react-dom';
+import Text from './elements';
 
 class Tag extends Component {
   // Inside of component because if we put this out, ssr would crash,
   // due to inexistence of document at server
-  tooltipRoot = document.getElementById("tooltips");
+  tooltipRoot = document.getElementById('tooltips');
 
   constructor(props) {
     super(props);
-    this.el = document.createElement("div");
+    this.el = document.createElement('div');
     this.state = {
       width: null,
       height: null
@@ -41,7 +41,7 @@ class Tag extends Component {
 
     let yValue;
 
-    if (position == "bottom") {
+    if (position === 'bottom') {
       yValue = y + height + 10 + window.pageYOffset;
     } else {
       yValue = y - thisHeight - 10 + window.pageYOffset;
@@ -65,7 +65,7 @@ class Tag extends Component {
 
 Tag.defaultProps = {
   showTag: false,
-  align: "left"
+  align: 'left'
 };
 
 Tag.propTypes = {
@@ -73,9 +73,10 @@ Tag.propTypes = {
   align: PropTypes.string,
   showTag: PropTypes.bool,
   width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired,
-  position: PropTypes.oneOf(["top", "bottom"]).isRequired
+  position: PropTypes.oneOf(['top', 'bottom']).isRequired
 };
 
 export default Tag;

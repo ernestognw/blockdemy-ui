@@ -1,32 +1,23 @@
-import React, { Fragment } from "react";
-import { storiesOf } from "@storybook/react";
-import { withInfo } from "@storybook/addon-info";
+import React, { Fragment } from 'react';
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 
-import Box from "../../src/box";
-import Avatar from "../../src/avatar";
-import Pill from "../../src/pill";
-import { List, ListItem, ListItemText } from "../../src/list";
-import { Card, CardBody, CardHeader } from "../../src/card";
-import { brandColors } from "../utils";
+import Box from '../../src/box';
+import Avatar from '../../src/avatar';
+import Pill from '../../src/pill';
+import { List, ListItem, ListItemText } from '../../src/list';
+import { Card, CardBody, CardHeader } from '../../src/card';
+import { brandColors } from '../utils';
 
 const Normal = () => (
-  <Box
-    p={30}
-    display="flex"
-    width={1}
-    alignItems="center"
-    flexDirection="column"
-  >
+  <Box p={30} display="flex" width={1} alignItems="center" flexDirection="column">
     <Card>
       <CardHeader title="Simple list" />
       <CardBody>
         <List>
           {brandColors.map((color, index) => (
             <ListItem key={color}>
-              <ListItemText
-                primary={`Item ${index + 1}`}
-                secondary="Simple item"
-              />
+              <ListItemText primary={`Item ${index + 1}`} secondary="Simple item" />
             </ListItem>
           ))}
         </List>
@@ -36,13 +27,7 @@ const Normal = () => (
 );
 
 const Clickable = () => (
-  <Box
-    p={30}
-    display="flex"
-    width={1}
-    alignItems="center"
-    flexDirection="column"
-  >
+  <Box p={30} display="flex" width={1} alignItems="center" flexDirection="column">
     <Card>
       <CardHeader
         title="Clickable list elements"
@@ -65,13 +50,7 @@ const Clickable = () => (
 );
 
 const Composed = () => (
-  <Box
-    p={30}
-    display="flex"
-    width={1}
-    alignItems="center"
-    flexDirection="column"
-  >
+  <Box p={30} display="flex" width={1} alignItems="center" flexDirection="column">
     <Card>
       <CardHeader
         title="Composed list elements"
@@ -82,9 +61,7 @@ const Composed = () => (
           {brandColors.map((color, index) => (
             <ListItem key={color}>
               <Avatar
-                src={`https://i.pravatar.cc/100?img${Math.round(
-                  Math.random() * 70
-                )}`}
+                src={`https://i.pravatar.cc/100?img${Math.round(Math.random() * 70)}`}
                 borderColor={color.toLowerCase()}
                 borderWidth="2"
                 size="40"
@@ -104,7 +81,7 @@ const Composed = () => (
   </Box>
 );
 
-const title = "List";
+const title = 'List';
 
 storiesOf(title, module)
   .addDecorator(
@@ -112,9 +89,9 @@ storiesOf(title, module)
       propTablesExclude: [Box, Card, CardBody, CardHeader, Avatar, Pill]
     })
   )
-  .add("Normal", Normal)
-  .add("Clickable", Clickable)
-  .add("Composed", Composed);
+  .add('Normal', Normal)
+  .add('Clickable', Clickable)
+  .add('Composed', Composed);
 
 export default {
   title

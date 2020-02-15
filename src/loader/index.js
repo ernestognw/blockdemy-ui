@@ -1,17 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import LoaderWrapper from "./elements";
-import propTypes from "@styled-system/prop-types";
-import Box from "../box";
+import React from 'react';
+import PropTypes from 'prop-types';
+import propTypes from '@styled-system/prop-types';
+import LoaderWrapper from './elements';
+import Box from '../box';
 
 const Loader = ({ size, alignSelf, className, color, ...props }) => (
-  <LoaderWrapper
-    className={className}
-    size={size}
-    alignSelf={alignSelf}
-    color={color}
-    {...props}
-  >
+  <LoaderWrapper className={className} size={size} alignSelf={alignSelf} color={color} {...props}>
     <div />
     <div />
     <div />
@@ -19,20 +13,21 @@ const Loader = ({ size, alignSelf, className, color, ...props }) => (
   </LoaderWrapper>
 );
 
-const LoaderContainer = ({ ...props }) => (
-  <Box
-    display="flex"
-    alignItems="center"
-    justifyContent="center"
-    {...props}
-  ></Box>
+const LoaderContainer = ({ children, ...props }) => (
+  <Box display="flex" alignItems="center" justifyContent="center" {...props}>
+    {children}
+  </Box>
 );
 
+LoaderContainer.propTypes = {
+  children: PropTypes.any.isRequired
+};
+
 Loader.defaultProps = {
-  size: "35",
-  alignSelf: "",
-  className: "",
-  color: "secondary"
+  size: '35',
+  alignSelf: '',
+  className: '',
+  color: 'secondary'
 };
 
 Loader.propTypes = {

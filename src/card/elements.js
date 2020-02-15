@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { color, space } from "styled-system";
+import styled from 'styled-components';
+import { color, space } from 'styled-system';
 
 const DefaultCard = styled.div`
   position: relative;
@@ -15,8 +15,7 @@ const DefaultCard = styled.div`
   ${space}
 
   &:hover {
-    box-shadow: ${({ noHover, theme }) =>
-      noHover ? theme.shadow : theme.shadowHover};
+    box-shadow: ${({ noHover, theme }) => (noHover ? theme.shadow : theme.shadowHover)};
     transition: 0.5s all;
   }
 `;
@@ -58,11 +57,4 @@ const Footer = styled.div`
   display: flex;
 `;
 
-export {
-  DefaultCard,
-  CardHeaderContainer,
-  Body,
-  Footer,
-  HeaderTitle,
-  HeaderSubtitle
-};
+export { DefaultCard, CardHeaderContainer, Body, Footer, HeaderTitle, HeaderSubtitle };

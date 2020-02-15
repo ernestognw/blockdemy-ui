@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Card, CardBody } from "../card";
-import { color, space } from "styled-system";
+import styled from 'styled-components';
+import { color, space } from 'styled-system';
+import { Card, CardBody } from '../card';
 
 const Container = styled(Card)`
   width: 100%;

@@ -1,9 +1,9 @@
-import React, { Fragment, Component } from "react";
-import PropTypes from "prop-types";
-import ModalPortal from "../utils/modal-portal";
-import RoundClear from "react-md-icon/dist/RoundClear";
-import Button from "../button";
-import Loader from "../loader";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import RoundClear from 'react-md-icon/dist/RoundClear';
+import ModalPortal from '../utils/modal-portal';
+import Button from '../button';
+import Loader from '../loader';
 import {
   ModalContainer,
   ModalBox,
@@ -14,7 +14,7 @@ import {
   ContentHeader,
   ContentBody,
   ContentFooter
-} from "./elements";
+} from './elements';
 
 class Modal extends Component {
   componentDidUpdate = prevProps => {
@@ -22,7 +22,7 @@ class Modal extends Component {
     const { body } = document;
     if (prevProps.active !== active) {
       if (active) {
-        body.style.overflow = "hidden";
+        body.style.overflow = 'hidden';
       } else {
         body.style.overflow = null;
       }
@@ -48,7 +48,7 @@ class Modal extends Component {
       zIndex
     } = this.props;
     return (
-      <Fragment>
+      <>
         {active && (
           <ModalPortal>
             <ModalContainer zIndex={zIndex}>
@@ -72,7 +72,7 @@ class Modal extends Component {
                       {loading ? (
                         <Loader />
                       ) : (
-                        <Fragment>
+                        <>
                           {secondaryAction && (
                             <Button
                               variant={secondaryVariant}
@@ -92,7 +92,7 @@ class Modal extends Component {
                               {primaryText}
                             </Button>
                           )}
-                        </Fragment>
+                        </>
                       )}
                     </ModalActions>
                   </ContentFooter>
@@ -102,24 +102,24 @@ class Modal extends Component {
             </ModalContainer>
           </ModalPortal>
         )}
-      </Fragment>
+      </>
     );
   }
 }
 
 Modal.defaultProps = {
-  title: "",
+  title: '',
   primaryAction: null,
-  primaryVariant: "",
-  primaryText: "Confirm",
-  primaryColor: "primary",
+  primaryVariant: '',
+  primaryText: 'Confirm',
+  primaryColor: 'primary',
   secondaryAction: null,
-  secondaryVariant: "",
-  secondaryText: "Cancel",
-  secondaryColor: "danger",
+  secondaryVariant: '',
+  secondaryText: 'Cancel',
+  secondaryColor: 'danger',
   loading: false,
-  size: "",
-  zIndex: "3000"
+  size: '',
+  zIndex: '3000'
 };
 
 Modal.propTypes = {

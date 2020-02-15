@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { color } from "styled-system";
+import styled from 'styled-components';
+import { color } from 'styled-system';
 
 const Container = styled.nav`
   height: 66px;
@@ -10,12 +10,12 @@ const Container = styled.nav`
   display: flex;
   z-index: 200;
   transition: all 0.3s ease;
-  background-color: ${({ theme, color }) => theme.colors[color]};
+  background-color: ${({ theme, color: colorProp }) => theme.colors[colorProp]};
   ${color}
 
   ${({ shadow, theme }) => shadow && `box-shadow: ${theme.shadow};`}
 
-  ${({ hideBg, theme, color }) =>
+  ${({ hideBg }) =>
     hideBg &&
     `
     background-position-y: -66px;
