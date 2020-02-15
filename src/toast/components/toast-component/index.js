@@ -40,6 +40,8 @@ class ToastComponent extends Component {
 
   componentDidMount = () => this.startCounting();
 
+  componentWillUnmount = () => this.cancelCounting();
+
   cancelCounting = () => clearTimeout(this.timeOut);
 
   startCounting = () => {
