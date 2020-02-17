@@ -51,6 +51,7 @@ const PseudoInput = styled.input`
     disabled &&
     `
     background-color: ${theme.colors.light};
+    cursor: not-allowed;
   `}
 
   ${({ align }) =>

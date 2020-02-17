@@ -19,7 +19,8 @@ Button.defaultProps = {
   uppercase: true,
   color: 'default',
   fullWidth: false,
-  disabled: false
+  disabled: false,
+  size: 'normal'
 };
 
 Button.propTypes = {
@@ -28,6 +29,7 @@ Button.propTypes = {
   uppercase: PropTypes.bool,
   fullWidth: PropTypes.bool,
   disabled: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'normal', 'large']),
   ...propTypes.space,
   ...propTypes.typography
 };
