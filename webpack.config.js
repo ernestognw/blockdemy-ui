@@ -18,6 +18,7 @@ module.exports = {
     pill: './src/pill',
     'side-modal': './src/side-modal',
     select: './src/select',
+    radio: './src/radio',
     table: './src/table',
     tab: './src/tab',
     textarea: './src/textarea',
