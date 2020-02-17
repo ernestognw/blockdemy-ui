@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MdArrowDropDown } from 'react-icons/md';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 import { space } from 'styled-system';
 import getOptionsButtonTop from './utils';
 
@@ -126,17 +126,16 @@ const LeftIconContainer = styled.div`
 `};
 `;
 
-const OptionsButton = styled(MdArrowDropDown)`
+const OptionsButton = styled(MdKeyboardArrowDown)`
   top: ${getOptionsButtonTop};
-  right: 0;
+  right: 5px;
   color: rgba(0, 0, 0, 0.54);
   position: absolute;
   pointer-events: none;
-  fill: currentColor;
   width: 1em;
   height: 1em;
   display: inline-block;
-  font-size: 24px;
+  font-size: 16px;
 `;
 
 const SelectGroup = styled.div`

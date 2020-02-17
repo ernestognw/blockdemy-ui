@@ -1,11 +1,11 @@
 const getOptionsButtonTop = ({ label, message }) => {
   if ((label && message) || (!label && !message)) {
-    return 'calc(52% - 12px)';
+    return 'calc(52% - 8px)';
   }
   if (label) {
-    return '55%';
+    return '62%';
   }
-  return '10%';
+  return '18%';
 };
 
 export default getOptionsButtonTop;

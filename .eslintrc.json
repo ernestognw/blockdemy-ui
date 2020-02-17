@@ -42,7 +42,6 @@
     "no-shadow": [1],
     "camelcase": [1],
     "no-underscore-dangle": [0, "always"],
-    "curly": [2, "all"],
     "no-unused-expressions": [
       "error",
       {

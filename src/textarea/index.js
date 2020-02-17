@@ -64,7 +64,8 @@ TextArea.defaultProps = {
   id: null,
   name: '',
   rows: '3',
-  className: ''
+  className: '',
+  value: undefined
 };
 
 TextArea.propTypes = {
@@ -72,7 +73,7 @@ TextArea.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
   autofocus: PropTypes.bool,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   placeholder: PropTypes.string,
   label: PropTypes.string,
   required: PropTypes.bool,

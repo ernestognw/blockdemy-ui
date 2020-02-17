@@ -14,14 +14,12 @@ const Checkbox = ({
   error,
   checked,
   onChange,
-  className,
   disabled,
   children,
-  required,
   ...props
 }) => {
   return (
-    <Container className={className} {...props}>
+    <Container {...props}>
       <ClickableSection disabled={disabled}>
         <VisuallyHidden
           as="input"
@@ -36,7 +34,6 @@ const Checkbox = ({
           checked={checked}
           value={checked}
           disabled={disabled}
-          required={required}
           {...props}
         />
         <CheckContainer
@@ -46,9 +43,10 @@ const Checkbox = ({
           error={error}
           color={color}
           checked={checked}
+          visible={checked}
           disabled={disabled}
         >
-          {checked && <MdDone />}
+          <MdDone />
         </CheckContainer>
         {children && <Box ml={5}>{children}</Box>}
       </ClickableSection>
@@ -63,9 +61,7 @@ Checkbox.defaultProps = {
   success: false,
   warning: false,
   error: false,
-  className: '',
   disabled: false,
-  required: false,
   children: undefined
 };
 
@@ -78,9 +74,7 @@ Checkbox.propTypes = {
   error: PropTypes.bool,
   checked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
-  className: PropTypes.string,
   disabled: PropTypes.bool,
-  required: PropTypes.bool,
   children: PropTypes.any
 };
 

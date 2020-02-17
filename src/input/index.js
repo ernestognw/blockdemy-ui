@@ -110,7 +110,8 @@ Input.defaultProps = {
   prefix: '',
   className: '',
   align: 'left',
-  disabled: false
+  disabled: false,
+  value: undefined
 };
 
 Input.propTypes = {
@@ -121,7 +122,7 @@ Input.propTypes = {
   warning: PropTypes.bool,
   error: PropTypes.bool,
   message: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   prefix: PropTypes.string,

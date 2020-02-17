@@ -11,7 +11,7 @@ import {
   Prefix
 } from './elements';
 
-class Input extends Component {
+class Select extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -101,24 +101,25 @@ class Input extends Component {
   }
 }
 
-Input.defaultProps = {
-  label: '',
-  leftIcon: '',
+Select.defaultProps = {
+  label: undefined,
+  leftIcon: undefined,
   select: false,
   id: null,
   success: false,
   warning: false,
   error: false,
-  message: '',
-  children: '',
-  prefix: '',
-  selectIcon: '',
-  className: '',
+  message: undefined,
+  children: undefined,
+  prefix: undefined,
+  selectIcon: undefined,
+  className: undefined,
   align: 'left',
-  disabled: false
+  disabled: false,
+  value: undefined
 };
 
-Input.propTypes = {
+Select.propTypes = {
   label: PropTypes.string,
   leftIcon: PropTypes.any,
   select: PropTypes.bool,
@@ -127,7 +128,7 @@ Input.propTypes = {
   warning: PropTypes.bool,
   error: PropTypes.bool,
   message: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   children: PropTypes.any,
   prefix: PropTypes.string,
@@ -137,4 +138,4 @@ Input.propTypes = {
   disabled: PropTypes.bool
 };
 
-export default Input;
+export default Select;

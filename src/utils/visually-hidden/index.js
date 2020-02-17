@@ -11,6 +11,7 @@ const VisuallyHidden = styled(Box)`
   overflow: hidden;
   white-space: nowrap;
   position: absolute;
+  clip: rect(0px, 0px, 0px, 0px);
 `;
 
 export default VisuallyHidden;

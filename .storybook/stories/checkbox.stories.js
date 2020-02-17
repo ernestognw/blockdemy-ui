@@ -23,9 +23,9 @@ const Normal = () => {
             mx={10}
             checked={largeChecks[idx]}
             onChange={({ target: { value } }) => {
-              const largeChecksToSET = [...largeChecks];
-              largeChecksToSET[idx] = value;
-              setLargeChecks(largeChecksToSET);
+              const largeChecksToSet = [...largeChecks];
+              largeChecksToSet[idx] = value;
+              setLargeChecks(largeChecksToSet);
             }}
             color={color.toLowerCase()}
           >
@@ -91,9 +91,9 @@ const WithState = () => {
             mx={10}
             checked={largeChecks[idx]}
             onChange={({ target: { value } }) => {
-              const largeChecksToSET = [...largeChecks];
-              largeChecksToSET[idx] = value;
-              setLargeChecks(largeChecksToSET);
+              const largeChecksToSet = [...largeChecks];
+              largeChecksToSet[idx] = value;
+              setLargeChecks(largeChecksToSet);
             }}
             color={color.toLowerCase()}
           >
