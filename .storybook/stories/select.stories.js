@@ -1,4 +1,5 @@
-import React, { Fragment, useState } from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
@@ -6,7 +7,6 @@ import RoundInfo from 'react-md-icon/dist/RoundInfo';
 import Box from '../../src/box';
 import Select from '../../src/select';
 import { Card, CardBody, CardHeader } from '../../src/card';
-import { brandColors } from '../utils';
 
 const options = ['Option 1', 'Option 2', 'Option 3'];
 

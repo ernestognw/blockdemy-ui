@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
+import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import BlockdemyUI from '../src';
 import Toast from '../src/toast';

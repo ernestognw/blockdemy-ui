@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
@@ -6,7 +7,6 @@ import { Card, CardFooter, CardBody, CardHeader } from '../../src/card';
 import Box from '../../src/box';
 import Button from '../../src/button';
 import Typography from '../../src/typography';
-import { brandColors } from '../utils';
 
 const Simple = () => (
   <Box p={30} display="flex" width={1} alignItems="center" flexDirection="column">

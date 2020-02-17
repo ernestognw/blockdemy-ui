@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
@@ -5,7 +6,7 @@ import { withInfo } from '@storybook/addon-info';
 import Box from '../../src/box';
 import Button from '../../src/button';
 import SideModal from '../../src/side-modal';
-import Typography from '../../src/typography/';
+import Typography from '../../src/typography';
 
 const Simple = () => {
   const [active, toggleSideModal] = useState(false);

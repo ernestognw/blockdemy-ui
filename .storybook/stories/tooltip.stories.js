@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
@@ -5,7 +6,6 @@ import { withInfo } from '@storybook/addon-info';
 import Box from '../../src/box';
 import Tooltip from '../../src/tooltip';
 import Pill from '../../src/pill';
-import { brandColors } from '../utils';
 
 const Normal = () => (
   <Box display="flex" pt={100} width={1} justifyContent="space-evenly">

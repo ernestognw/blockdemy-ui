@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
@@ -5,7 +6,6 @@ import { withInfo } from '@storybook/addon-info';
 import Box from '../../src/box';
 import { Tabs, Tab, TabContent } from '../../src/tab';
 import { Card, CardBody } from '../../src/card';
-import { brandColors } from '../utils';
 
 const Normal = () => {
   const [tab, setTab] = useState(1);

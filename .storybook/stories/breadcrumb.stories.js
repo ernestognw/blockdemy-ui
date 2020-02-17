@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
-import { storiesOf } from '@storybook/react';
+/* eslint-disable import/no-extraneous-dependencies */
+import React from 'react';
 import { withInfo } from '@storybook/addon-info';
+import { storiesOf } from '@storybook/react';
 
 import Box from '../../src/box';
 import Breadcrumb from '../../src/breadcrumb';
@@ -11,10 +12,10 @@ const LastColor = () => (
     {brandColors.map(color => (
       <Box key={color} mb={20}>
         <Breadcrumb lastColor={color.toLowerCase()}>
-          <a>Path</a>
-          <a>To</a>
-          <a>My</a>
-          <a>Destination</a>
+          <a href="/">Path</a>
+          <a href="/">To</a>
+          <a href="/">My</a>
+          <a href="/">Destination</a>
         </Breadcrumb>
       </Box>
     ))}
@@ -26,10 +27,10 @@ const PrevColor = () => (
     {brandColors.map(color => (
       <Box key={color} mb={20}>
         <Breadcrumb prevColor={color.toLowerCase()} lastColor="default">
-          <a>Path</a>
-          <a>To</a>
-          <a>My</a>
-          <a>Destination</a>
+          <a href="/">Path</a>
+          <a href="/">To</a>
+          <a href="/">My</a>
+          <a href="/">Destination</a>
         </Breadcrumb>
       </Box>
     ))}
@@ -44,10 +45,10 @@ const Background = () => (
           prevColor={color.includes('light') || color.includes('Light') ? 'default' : 'lighter'}
           bg={color}
         >
-          <a>Path</a>
-          <a>To</a>
-          <a>My</a>
-          <a>Destination</a>
+          <a href="/">Path</a>
+          <a href="/">To</a>
+          <a href="/">My</a>
+          <a href="/">Destination</a>
         </Breadcrumb>
       </Box>
     ))}

@@ -1,8 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Typography from '../../src/typography';
 import Box from '../../src/box';
 import Checkbox from '../../src/checkbox';
 import { brandColors } from '../utils';

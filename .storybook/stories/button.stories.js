@@ -1,6 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
+import { storiesOf } from '@storybook/react';
 
 import Box from '../../src/box';
 import Button from '../../src/button';

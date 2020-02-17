@@ -1,4 +1,5 @@
-import React, { Fragment, useState } from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import RoundMenu from 'react-md-icon/dist/RoundMenu';
@@ -38,9 +39,9 @@ const Shrinked = () => {
           <option value="" hidden>
             Select navbar color
           </option>
-          {colors.map(color => (
-            <option key={color} value={color}>
-              {color}
+          {colors.map(colorMapped => (
+            <option key={colorMapped} value={colorMapped}>
+              {colorMapped}
             </option>
           ))}
         </Select>
@@ -74,9 +75,9 @@ const FullWidth = () => {
           <option value="" hidden>
             Select navbar color
           </option>
-          {colors.map(color => (
-            <option key={color} value={color}>
-              {color}
+          {colors.map(colorMapped => (
+            <option key={colorMapped} value={colorMapped}>
+              {colorMapped}
             </option>
           ))}
         </Select>
