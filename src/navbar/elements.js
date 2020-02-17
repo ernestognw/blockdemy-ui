@@ -45,7 +45,7 @@ const Content = styled.div`
   ${props =>
     props.shrink &&
     `
-  max-width: ${props.theme.maxWidth}
+  max-width: ${props.theme.maxWidth};
   margin-left: auto;
   margin-right: auto;
   `}
