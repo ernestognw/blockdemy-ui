@@ -1,32 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import RoundClear from 'react-md-icon/dist/RoundClear';
-import RoundThumbUp from 'react-md-icon/dist/RoundThumbUp';
-import RoundCheckCircle from 'react-md-icon/dist/RoundCheckCircle';
-import RoundInfo from 'react-md-icon/dist/RoundInfo';
-import RoundCancel from 'react-md-icon/dist/RoundCancel';
-import RoundWarning from 'react-md-icon/dist/RoundWarning';
+import { MdClear, MdThumbUp, MdCheckCircle, MdInfo, MdCancel, MdWarning } from 'react-icons/md';
 import Typography from '../../../typography';
 import { Container, CloseContainer, TextContainer, MainIconContainer } from './elements';
 
 const getIcon = type => {
   switch (type) {
     case 'primary':
-      return <RoundThumbUp />;
+      return <MdThumbUp />;
     case 'success':
-      return <RoundCheckCircle />;
+      return <MdCheckCircle />;
     case 'info':
-      return <RoundInfo />;
+      return <MdInfo />;
     case 'default':
-      return <RoundInfo />;
+      return <MdInfo />;
     case 'secondary':
-      return <RoundWarning />;
+      return <MdWarning />;
     case 'warning':
-      return <RoundWarning />;
+      return <MdWarning />;
     case 'danger':
-      return <RoundCancel />;
+      return <MdCancel />;
     default:
-      return <RoundThumbUp />;
+      return <MdThumbUp />;
   }
 };
 
@@ -78,7 +73,7 @@ class ToastComponent extends Component {
         onClick={this.forceRemove}
       >
         <CloseContainer onClick={this.forceRemove}>
-          <RoundClear />
+          <MdClear />
         </CloseContainer>
         <MainIconContainer>{getIcon(type)}</MainIconContainer>
         <TextContainer>

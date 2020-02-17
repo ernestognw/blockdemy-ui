@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import RoundInfo from 'react-md-icon/dist/RoundInfo';
+import { MdInfo } from 'react-icons/md';
 import Box from '../../src/box';
 import Input from '../../src/input';
 import { Card, CardBody, CardHeader } from '../../src/card';
@@ -54,7 +54,7 @@ const Simple = () => {
             placeholder="With left icon"
             value={value5}
             onChange={({ target }) => setValue5(target.value)}
-            leftIcon={<RoundInfo />}
+            leftIcon={<MdInfo />}
           />
           <Input
             my={30}

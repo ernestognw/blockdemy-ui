@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import RoundMenu from 'react-md-icon/dist/RoundMenu';
+import { MdMenu } from 'react-icons/md';
 
 import Box from '../../src/box';
 import Navbar from '../../src/navbar';
@@ -31,7 +31,7 @@ const Shrinked = () => {
           }
           variant="outlined"
         >
-          <RoundMenu />
+          <MdMenu />
         </Button>
       </Navbar>
       <Box display="flex" width={1} p={40} pt={100} alignItems="center" flexDirection="column">
@@ -67,7 +67,7 @@ const FullWidth = () => {
           }
           variant="outlined"
         >
-          <RoundMenu />
+          <MdMenu />
         </Button>
       </Navbar>
       <Box display="flex" width={1} p={40} pt={100} alignItems="center" flexDirection="column">
@@ -91,7 +91,7 @@ const title = 'Navbar';
 storiesOf(title, module)
   .addDecorator(
     withInfo({
-      propTablesExclude: [Box, Select, Button, RoundMenu]
+      propTablesExclude: [Box, Select, Button, MdMenu]
     })
   )
   .add('Shrinked', Shrinked)

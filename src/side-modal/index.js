@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import RoundClear from 'react-md-icon/dist/RoundClear';
+import { MdClear } from 'react-icons/md';
 import ModalPortal from '../utils/modal-portal';
 import {
   ModalBox,
@@ -34,7 +34,7 @@ class SideModal extends Component {
             <ModalContainer>
               <ModalBox id="side-modal-box">
                 <CloseButton onClick={closeButton}>
-                  <RoundClear />
+                  <MdClear />
                 </CloseButton>
                 <ModalTitleContainer>
                   {title && <ModalTitle>{title}</ModalTitle>}

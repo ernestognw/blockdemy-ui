@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import RoundClear from 'react-md-icon/dist/RoundClear';
+import { MdClear } from 'react-icons/md';
 import ModalPortal from '../utils/modal-portal';
 import Button from '../button';
 import Loader from '../loader';
@@ -57,12 +57,12 @@ class Modal extends Component {
                   <ContentHeader>
                     <ModalTitle>{title}</ModalTitle>
                     <CloseButton onClick={closeButton}>
-                      <RoundClear />
+                      <MdClear />
                     </CloseButton>
                   </ContentHeader>
                 ) : (
                   <CloseButton noHeader onClick={closeButton}>
-                    <RoundClear />
+                    <MdClear />
                   </CloseButton>
                 )}
                 <ContentBody>{children}</ContentBody>

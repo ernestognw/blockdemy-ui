@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RoundThumbUp from 'react-md-icon/dist/RoundThumbUp';
-import RoundCheckCircle from 'react-md-icon/dist/RoundCheckCircle';
-import RoundInfo from 'react-md-icon/dist/RoundInfo';
-import RoundCancel from 'react-md-icon/dist/RoundCancel';
-import RoundWarning from 'react-md-icon/dist/RoundWarning';
+import { MdThumbUp, MdCheckCircle, MdInfo, MdCancel, MdWarning } from 'react-icons/md';
 import propTypes from '@styled-system/prop-types';
 import Typography from '../typography';
 import { Container, Body, IconContainer, Text } from './elements';
@@ -12,19 +8,19 @@ import { Container, Body, IconContainer, Text } from './elements';
 const getIcon = type => {
   switch (type) {
     case 'primary':
-      return <RoundThumbUp />;
+      return <MdThumbUp />;
     case 'success':
-      return <RoundCheckCircle />;
+      return <MdCheckCircle />;
     case 'info':
-      return <RoundInfo />;
+      return <MdInfo />;
     case 'secondary':
-      return <RoundWarning />;
+      return <MdWarning />;
     case 'warning':
-      return <RoundWarning />;
+      return <MdWarning />;
     case 'danger':
-      return <RoundCancel />;
+      return <MdCancel />;
     default:
-      return <RoundThumbUp />;
+      return <MdThumbUp />;
   }
 };
 

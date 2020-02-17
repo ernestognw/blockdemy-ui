@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RoundDone from 'react-md-icon/dist/RoundDone';
+import { MdDone } from 'react-icons/md';
 import VisuallyHidden from '../utils/visually-hidden';
 import Box from '../box';
 import { Container, CheckContainer, ClickableSection } from './elements';
@@ -48,7 +48,7 @@ const Checkbox = ({
           checked={checked}
           disabled={disabled}
         >
-          {checked && <RoundDone />}
+          {checked && <MdDone />}
         </CheckContainer>
         {children && <Box ml={5}>{children}</Box>}
       </ClickableSection>

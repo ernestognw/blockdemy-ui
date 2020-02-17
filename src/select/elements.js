@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import RoundArrowDropDown from 'react-md-icon/dist/RoundArrowDropDown';
+import { MdArrowDropDown } from 'react-icons/md';
 import { space } from 'styled-system';
 import getOptionsButtonTop from './utils';
 
@@ -126,7 +126,7 @@ const LeftIconContainer = styled.div`
 `};
 `;
 
-const OptionsButton = styled(RoundArrowDropDown)`
+const OptionsButton = styled(MdArrowDropDown)`
   top: ${getOptionsButtonTop};
   right: 0;
   color: rgba(0, 0, 0, 0.54);
