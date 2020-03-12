@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import propTypes from '@styled-system/prop-types';
 import StyledBox from './elements';
 
-const Box = ({ clickable, ...props }) => <StyledBox clickable={clickable} {...props} />;
+const Box = ({ clickable, ...props }) => (
+  <StyledBox clickable={clickable ? 'true' : undefined} {...props} />
+);
 
 Box.defaultProps = {
   clickable: false
