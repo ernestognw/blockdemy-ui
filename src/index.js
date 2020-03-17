@@ -1,9 +1,9 @@
 import React from 'react';
-import { ThemeProvider, ServerStyleSheet } from 'styled-components';
+import styled, { ThemeProvider, ServerStyleSheet } from 'styled-components';
 import defaultTheme from './utils/default-theme';
 import GlobalStyle from './utils/default-theme/css';
 
-export { ServerStyleSheet };
+export { ServerStyleSheet, styled };
 
 class BlockdemyUI {
   constructor(theme) {
