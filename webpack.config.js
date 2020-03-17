@@ -8,6 +8,7 @@ module.exports = {
     box: './src/box',
     button: './src/button',
     checkbox: './src/checkbox',
+    collapse: './src/collapse',
     breadcrumb: './src/breadcrumb',
     card: './src/card',
     input: './src/input',
