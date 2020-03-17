@@ -21,7 +21,7 @@ const Label = styled.label`
 
 const Message = styled.div`
   font-size: 0.75rem;
-  font-weight: 'light';
+  font-weight: light;
   color: ${({ theme }) => theme.colors.default};
   text-align: left;
   margin-bottom: 10px;
@@ -68,12 +68,26 @@ const PseudoSelect = styled.select`
     padding-left: 2.5rem;
     `};
 
+  ${({ rightIcon }) =>
+    rightIcon &&
+    `
+    padding-right: 3.5rem;
+    `};
+
   ${({ prefix }) =>
     prefix &&
     `
     border-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    `};
+
+  ${({ suffix }) =>
+    suffix &&
+    `
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     `};
 
   ${({ readOnly, theme, success, warning, error }) =>
@@ -126,9 +140,44 @@ const LeftIconContainer = styled.div`
 `};
 `;
 
+const RightIconContainer = styled.div`
+  position: absolute;
+  display: block;
+  right: 0;
+  padding: 0.675rem 0.75rem;
+  color: ${({ theme }) => theme.colors.lightDark};
+  font-size: 16px;
+
+  ${({ message }) =>
+    message &&
+    `
+    margin-top: 0px;
+  `};
+
+  ${({ active, theme, success, warning, error }) =>
+    active &&
+    `
+	svg {
+		color: ${theme.colors.secondary};
+    ${success &&
+      `
+      color: ${theme.colors.success} !important;
+    `};
+  ${warning &&
+    `
+      color: ${theme.colors.warning} !important;
+    `};
+  ${error &&
+    `
+      color: ${theme.colors.danger} !important;
+    `};
+	}
+`};
+`;
+
 const OptionsButton = styled(MdKeyboardArrowDown)`
   top: ${getOptionsButtonTop};
-  right: 5px;
+  right: ${props => (props.rightIcon ? '37px' : `${props.suffixWidth + 5}px`)};
   color: rgba(0, 0, 0, 0.54);
   position: absolute;
   pointer-events: none;
@@ -144,7 +193,7 @@ const SelectGroup = styled.div`
 
 const Prefix = styled.span`
   background-color: ${({ theme }) => theme.colors.veryLightGrey};
-  font-weight: 'light';
+  font-weight: light;
   font-size: 0.875rem;
   border-top-left-radius: 5px;
   color: ${({ theme }) => theme.colors.lightGrey};
@@ -153,12 +202,19 @@ const Prefix = styled.span`
   border-right: none;
   padding: 0.625rem 0.75rem;
   transition: all 0.45s ease;
+`;
 
-  ${({ leftIcon }) =>
-    leftIcon &&
-    `
-    padding-left: 2.5rem;
-    `};
+const Suffix = styled.span`
+  background-color: ${({ theme }) => theme.colors.veryLightGrey};
+  font-weight: light;
+  font-size: 0.875rem;
+  border-top-right-radius: 5px;
+  color: ${({ theme }) => theme.colors.lightGrey};
+  border-bottom-right-radius: 5px;
+  border: 1px solid ${({ theme }) => theme.colors.veryLightGrey};
+  border-left: none;
+  padding: 0.625rem 0.75rem;
+  transition: all 0.45s ease;
 `;
 
 export {
@@ -166,8 +222,10 @@ export {
   Label,
   Message,
   LeftIconContainer,
+  RightIconContainer,
   PseudoSelect,
   OptionsButton,
   SelectGroup,
-  Prefix
+  Prefix,
+  Suffix
 };

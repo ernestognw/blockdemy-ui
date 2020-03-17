@@ -15,6 +15,8 @@ const Simple = () => {
   const [value4, setValue4] = useState('');
   const [value5, setValue5] = useState('');
   const [value6, setValue6] = useState('');
+  const [value7, setValue7] = useState('');
+  const [value8, setValue8] = useState('');
 
   return (
     <Box p={30} display="flex" width={1} alignItems="center" flexDirection="column">
@@ -58,10 +60,24 @@ const Simple = () => {
           />
           <Input
             my={30}
-            placeholder="With prefix"
+            placeholder="With right icon"
             value={value6}
             onChange={({ target }) => setValue6(target.value)}
+            rightIcon={<MdInfo />}
+          />
+          <Input
+            my={30}
+            placeholder="With prefix"
+            value={value7}
+            onChange={({ target }) => setValue7(target.value)}
             prefix="prefix"
+          />
+          <Input
+            my={30}
+            placeholder="With suffix"
+            value={value8}
+            onChange={({ target }) => setValue8(target.value)}
+            suffix="suffix"
           />
         </CardBody>
       </Card>

@@ -6,18 +6,28 @@ import {
   Label,
   Message,
   LeftIconContainer,
+  RightIconContainer,
   OptionsButton,
   SelectGroup,
-  Prefix
+  Prefix,
+  Suffix
 } from './elements';
 
 class Select extends Component {
   constructor(props) {
     super(props);
+    this.suffixRef = React.createRef();
     this.state = {
-      active: false
+      active: false,
+      suffixWidth: 0
     };
   }
+
+  componentDidMount = () => {
+    setTimeout(() => {
+      this.setState({ suffixWidth: this.suffixRef.current.offsetWidth });
+    }, 1);
+  };
 
   toggleActive = () => {
     const { active } = this.state;
@@ -28,6 +38,7 @@ class Select extends Component {
     const {
       label,
       leftIcon,
+      rightIcon,
       id,
       success,
       warning,
@@ -37,13 +48,14 @@ class Select extends Component {
       onChange,
       children,
       prefix,
+      suffix,
       selectIcon,
       className,
       align,
       disabled,
       ...props
     } = this.props;
-    const { active } = this.state;
+    const { active, suffixWidth } = this.state;
     return (
       <Container
         className={className}
@@ -68,9 +80,20 @@ class Select extends Component {
             {leftIcon}
           </LeftIconContainer>
         )}
+        {rightIcon && (
+          <RightIconContainer
+            success={success}
+            warning={warning}
+            error={error}
+            message={message}
+            active={active}
+          >
+            {rightIcon}
+          </RightIconContainer>
+        )}
         <SelectGroup>
           {prefix && (
-            <Prefix leftIcon={leftIcon} success={success} warning={warning} error={error}>
+            <Prefix success={success} warning={warning} error={error}>
               {prefix}
             </Prefix>
           )}
@@ -83,13 +106,27 @@ class Select extends Component {
             warning={warning}
             error={error}
             leftIcon={leftIcon}
+            rightIcon={rightIcon}
             prefix={prefix}
+            suffix={suffix}
             disabled={disabled}
             {...props}
           >
             {children}
           </PseudoSelect>
-          {selectIcon || <OptionsButton label={label} message={message} />}
+          {selectIcon || (
+            <OptionsButton
+              suffixWidth={suffixWidth}
+              rightIcon={rightIcon}
+              label={label}
+              message={message}
+            />
+          )}
+          {suffix && (
+            <Suffix ref={this.suffixRef} success={success} warning={warning} error={error}>
+              {suffix}
+            </Suffix>
+          )}
         </SelectGroup>
         {message && (
           <Message success={success} warning={warning} error={error}>
@@ -104,6 +141,7 @@ class Select extends Component {
 Select.defaultProps = {
   label: undefined,
   leftIcon: undefined,
+  rightIcon: undefined,
   select: false,
   id: null,
   success: false,
@@ -112,6 +150,7 @@ Select.defaultProps = {
   message: undefined,
   children: undefined,
   prefix: undefined,
+  suffix: undefined,
   selectIcon: undefined,
   className: undefined,
   align: 'left',
@@ -122,6 +161,7 @@ Select.defaultProps = {
 Select.propTypes = {
   label: PropTypes.string,
   leftIcon: PropTypes.any,
+  rightIcon: PropTypes.any,
   select: PropTypes.bool,
   id: PropTypes.string,
   success: PropTypes.bool,
@@ -132,6 +172,7 @@ Select.propTypes = {
   onChange: PropTypes.func.isRequired,
   children: PropTypes.any,
   prefix: PropTypes.string,
+  suffix: PropTypes.string,
   selectIcon: PropTypes.any,
   className: PropTypes.string,
   align: PropTypes.string,

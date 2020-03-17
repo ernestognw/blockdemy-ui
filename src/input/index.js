@@ -6,8 +6,10 @@ import {
   Label,
   Message,
   LeftIconContainer,
+  RightIconContainer,
   InputGroup,
-  Prefix
+  Prefix,
+  Suffix
 } from './elements';
 
 class Input extends Component {
@@ -27,6 +29,7 @@ class Input extends Component {
     const {
       label,
       leftIcon,
+      rightIcon,
       id,
       success,
       warning,
@@ -35,6 +38,7 @@ class Input extends Component {
       value,
       onChange,
       prefix,
+      suffix,
       className,
       align,
       placeholder,
@@ -66,9 +70,20 @@ class Input extends Component {
             {leftIcon}
           </LeftIconContainer>
         )}
+        {rightIcon && (
+          <RightIconContainer
+            success={success}
+            warning={warning}
+            error={error}
+            message={message}
+            active={active}
+          >
+            {rightIcon}
+          </RightIconContainer>
+        )}
         <InputGroup>
           {prefix && (
-            <Prefix leftIcon={leftIcon} success={success} warning={warning} error={error}>
+            <Prefix success={success} warning={warning} error={error}>
               {prefix}
             </Prefix>
           )}
@@ -80,13 +95,20 @@ class Input extends Component {
             success={success}
             warning={warning}
             error={error}
-            leftIcon={!prefix && leftIcon}
+            leftIcon={leftIcon}
+            rightIcon={rightIcon}
             prefix={prefix}
+            suffix={suffix}
             align={align}
             placeholder={placeholder}
             disabled={disabled}
             {...props}
           />
+          {suffix && (
+            <Suffix success={success} warning={warning} error={error}>
+              {suffix}
+            </Suffix>
+          )}
         </InputGroup>
         {message && (
           <Message success={success} warning={warning} error={error}>
@@ -101,6 +123,7 @@ class Input extends Component {
 Input.defaultProps = {
   label: '',
   leftIcon: '',
+  rightIcon: '',
   id: null,
   success: false,
   warning: false,
@@ -108,6 +131,7 @@ Input.defaultProps = {
   message: '',
   placeholder: '',
   prefix: '',
+  suffix: '',
   className: '',
   align: 'left',
   disabled: false,
@@ -117,6 +141,7 @@ Input.defaultProps = {
 Input.propTypes = {
   label: PropTypes.string,
   leftIcon: PropTypes.any,
+  rightIcon: PropTypes.any,
   id: PropTypes.string,
   success: PropTypes.bool,
   warning: PropTypes.bool,
@@ -126,6 +151,7 @@ Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   prefix: PropTypes.string,
+  suffix: PropTypes.string,
   className: PropTypes.string,
   align: PropTypes.string,
   disabled: PropTypes.bool

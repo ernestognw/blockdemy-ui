@@ -17,6 +17,8 @@ const Simple = () => {
   const [value4, setValue4] = useState('');
   const [value5, setValue5] = useState('');
   const [value6, setValue6] = useState('');
+  const [value7, setValue7] = useState('');
+  const [value8, setValue8] = useState('');
 
   return (
     <Box p={30} display="flex" width={1} alignItems="center" flexDirection="column">
@@ -96,12 +98,42 @@ const Simple = () => {
           </Select>
           <Select
             my={30}
-            prefix="prefix"
+            rightIcon={<MdInfo />}
             value={value6}
             onChange={({ target }) => setValue6(target.value)}
           >
             <option value="" hidden>
+              With right icon
+            </option>
+            {options.map(option => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </Select>
+          <Select
+            my={30}
+            prefix="prefix"
+            value={value7}
+            onChange={({ target }) => setValue7(target.value)}
+          >
+            <option value="" hidden>
               With prefix
+            </option>
+            {options.map(option => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </Select>
+          <Select
+            my={30}
+            suffix="suffix"
+            value={value8}
+            onChange={({ target }) => setValue8(target.value)}
+          >
+            <option value="" hidden>
+              With suffix
             </option>
             {options.map(option => (
               <option key={option} value={option}>
