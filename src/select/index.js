@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Container,
@@ -13,130 +13,113 @@ import {
   Suffix
 } from './elements';
 
-class Select extends Component {
-  constructor(props) {
-    super(props);
-    this.suffixRef = React.createRef();
-    this.state = {
-      active: false,
-      suffixWidth: 0
-    };
-  }
+const Select = ({
+  label,
+  leftIcon,
+  rightIcon,
+  id,
+  success,
+  warning,
+  error,
+  message,
+  value,
+  onChange,
+  children,
+  prefix,
+  suffix,
+  selectIcon,
+  className,
+  align,
+  disabled,
+  required,
+  ...props
+}) => {
+  const [active, setActive] = useState(false);
+  const [suffixWidth, setSuffixWidth] = useState(0);
+  const suffixRef = React.createRef();
 
-  componentDidMount = () => {
-    setTimeout(() => {
-      this.setState({ suffixWidth: this.suffixRef.current.offsetWidth });
-    }, 1);
-  };
+  useEffect(() => {
+    if (suffixRef && suffixRef.current) setSuffixWidth(suffixRef.current.offsetWidth);
+  }, [suffixRef]);
 
-  toggleActive = () => {
-    const { active } = this.state;
-    this.setState({ active: !active });
-  };
+  const toggleActive = () => setActive(!active);
 
-  render() {
-    const {
-      label,
-      leftIcon,
-      rightIcon,
-      id,
-      success,
-      warning,
-      error,
-      message,
-      value,
-      onChange,
-      children,
-      prefix,
-      suffix,
-      selectIcon,
-      className,
-      align,
-      disabled,
-      ...props
-    } = this.props;
-    const { active, suffixWidth } = this.state;
-    return (
-      <Container
-        className={className}
-        onFocus={this.toggleActive}
-        onBlur={this.toggleActive}
-        {...props}
-      >
-        {label && (
-          <Label weight="light" htmlFor={id}>
-            {label}
-            {props.required && '*'}
-          </Label>
+  return (
+    <Container className={className} onFocus={toggleActive} onBlur={toggleActive} {...props}>
+      {label && (
+        <Label weight="light" htmlFor={id}>
+          {label}
+          {required && '*'}
+        </Label>
+      )}
+      {leftIcon && (
+        <LeftIconContainer
+          success={success}
+          warning={warning}
+          error={error}
+          message={message}
+          active={active}
+        >
+          {leftIcon}
+        </LeftIconContainer>
+      )}
+      {rightIcon && (
+        <RightIconContainer
+          success={success}
+          warning={warning}
+          error={error}
+          message={message}
+          active={active}
+        >
+          {rightIcon}
+        </RightIconContainer>
+      )}
+      <SelectGroup>
+        {prefix && (
+          <Prefix success={success} warning={warning} error={error}>
+            {prefix}
+          </Prefix>
         )}
-        {leftIcon && (
-          <LeftIconContainer
-            success={success}
-            warning={warning}
-            error={error}
-            message={message}
-            active={active}
-          >
-            {leftIcon}
-          </LeftIconContainer>
-        )}
-        {rightIcon && (
-          <RightIconContainer
-            success={success}
-            warning={warning}
-            error={error}
-            message={message}
-            active={active}
-          >
-            {rightIcon}
-          </RightIconContainer>
-        )}
-        <SelectGroup>
-          {prefix && (
-            <Prefix success={success} warning={warning} error={error}>
-              {prefix}
-            </Prefix>
-          )}
-          <PseudoSelect
-            id={id}
-            label={label}
-            value={value}
-            onChange={onChange}
-            success={success}
-            warning={warning}
-            error={error}
-            leftIcon={leftIcon}
+        <PseudoSelect
+          id={id}
+          label={label}
+          value={value}
+          onChange={onChange}
+          success={success}
+          warning={warning}
+          error={error}
+          leftIcon={leftIcon}
+          rightIcon={rightIcon}
+          prefix={prefix}
+          suffix={suffix}
+          disabled={disabled}
+          required={required}
+          {...props}
+        >
+          {children}
+        </PseudoSelect>
+        {selectIcon || (
+          <OptionsButton
+            suffixWidth={suffixWidth}
             rightIcon={rightIcon}
-            prefix={prefix}
-            suffix={suffix}
-            disabled={disabled}
-            {...props}
-          >
-            {children}
-          </PseudoSelect>
-          {selectIcon || (
-            <OptionsButton
-              suffixWidth={suffixWidth}
-              rightIcon={rightIcon}
-              label={label}
-              message={message}
-            />
-          )}
-          {suffix && (
-            <Suffix ref={this.suffixRef} success={success} warning={warning} error={error}>
-              {suffix}
-            </Suffix>
-          )}
-        </SelectGroup>
-        {message && (
-          <Message success={success} warning={warning} error={error}>
-            {message}
-          </Message>
+            label={label}
+            message={message}
+          />
         )}
-      </Container>
-    );
-  }
-}
+        {suffix && (
+          <Suffix ref={suffixRef} success={success} warning={warning} error={error}>
+            {suffix}
+          </Suffix>
+        )}
+      </SelectGroup>
+      {message && (
+        <Message success={success} warning={warning} error={error}>
+          {message}
+        </Message>
+      )}
+    </Container>
+  );
+};
 
 Select.defaultProps = {
   label: undefined,
@@ -155,6 +138,7 @@ Select.defaultProps = {
   className: undefined,
   align: 'left',
   disabled: false,
+  required: false,
   value: undefined
 };
 
@@ -176,7 +160,8 @@ Select.propTypes = {
   selectIcon: PropTypes.any,
   className: PropTypes.string,
   align: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  required: PropTypes.bool
 };
 
 export default Select;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Container,
@@ -12,113 +12,98 @@ import {
   Suffix
 } from './elements';
 
-class Input extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false
-    };
-  }
+const Input = ({
+  label,
+  leftIcon,
+  rightIcon,
+  id,
+  success,
+  warning,
+  error,
+  message,
+  value,
+  onChange,
+  prefix,
+  suffix,
+  className,
+  align,
+  placeholder,
+  disabled,
+  required,
+  ...props
+}) => {
+  const [active, setActive] = useState(false);
 
-  toggleActive = () => {
-    const { active } = this.state;
-    this.setState({ active: !active });
-  };
+  const toggleActive = () => setActive(!active);
 
-  render() {
-    const {
-      label,
-      leftIcon,
-      rightIcon,
-      id,
-      success,
-      warning,
-      error,
-      message,
-      value,
-      onChange,
-      prefix,
-      suffix,
-      className,
-      align,
-      placeholder,
-      disabled,
-      ...props
-    } = this.props;
-    const { active } = this.state;
-    return (
-      <Container
-        className={className}
-        onFocus={this.toggleActive}
-        onBlur={this.toggleActive}
-        {...props}
-      >
-        {label && (
-          <Label weight="light" htmlFor={id}>
-            {label}
-            {props.required && '*'}
-          </Label>
+  return (
+    <Container className={className} onFocus={toggleActive} onBlur={toggleActive} {...props}>
+      {label && (
+        <Label weight="light" htmlFor={id}>
+          {label}
+          {required && '*'}
+        </Label>
+      )}
+      {leftIcon && (
+        <LeftIconContainer
+          success={success}
+          warning={warning}
+          error={error}
+          message={message}
+          active={active}
+        >
+          {leftIcon}
+        </LeftIconContainer>
+      )}
+      {rightIcon && (
+        <RightIconContainer
+          success={success}
+          warning={warning}
+          error={error}
+          message={message}
+          active={active}
+        >
+          {rightIcon}
+        </RightIconContainer>
+      )}
+      <InputGroup>
+        {prefix && (
+          <Prefix success={success} warning={warning} error={error}>
+            {prefix}
+          </Prefix>
         )}
-        {leftIcon && (
-          <LeftIconContainer
-            success={success}
-            warning={warning}
-            error={error}
-            message={message}
-            active={active}
-          >
-            {leftIcon}
-          </LeftIconContainer>
+        <PseudoInput
+          id={id}
+          label={label}
+          value={value}
+          onChange={onChange}
+          success={success}
+          warning={warning}
+          error={error}
+          leftIcon={leftIcon}
+          rightIcon={rightIcon}
+          prefix={prefix}
+          suffix={suffix}
+          align={align}
+          placeholder={placeholder}
+          disabled={disabled}
+          required={required}
+          {...props}
+        />
+        {suffix && (
+          <Suffix success={success} warning={warning} error={error}>
+            {suffix}
+          </Suffix>
         )}
-        {rightIcon && (
-          <RightIconContainer
-            success={success}
-            warning={warning}
-            error={error}
-            message={message}
-            active={active}
-          >
-            {rightIcon}
-          </RightIconContainer>
-        )}
-        <InputGroup>
-          {prefix && (
-            <Prefix success={success} warning={warning} error={error}>
-              {prefix}
-            </Prefix>
-          )}
-          <PseudoInput
-            id={id}
-            label={label}
-            value={value}
-            onChange={onChange}
-            success={success}
-            warning={warning}
-            error={error}
-            leftIcon={leftIcon}
-            rightIcon={rightIcon}
-            prefix={prefix}
-            suffix={suffix}
-            align={align}
-            placeholder={placeholder}
-            disabled={disabled}
-            {...props}
-          />
-          {suffix && (
-            <Suffix success={success} warning={warning} error={error}>
-              {suffix}
-            </Suffix>
-          )}
-        </InputGroup>
-        {message && (
-          <Message success={success} warning={warning} error={error}>
-            {message}
-          </Message>
-        )}
-      </Container>
-    );
-  }
-}
+      </InputGroup>
+      {message && (
+        <Message success={success} warning={warning} error={error}>
+          {message}
+        </Message>
+      )}
+    </Container>
+  );
+};
 
 Input.defaultProps = {
   label: '',
@@ -135,6 +120,7 @@ Input.defaultProps = {
   className: '',
   align: 'left',
   disabled: false,
+  required: false,
   value: undefined
 };
 
@@ -154,7 +140,8 @@ Input.propTypes = {
   suffix: PropTypes.string,
   className: PropTypes.string,
   align: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  required: PropTypes.bool
 };
 
 export default Input;

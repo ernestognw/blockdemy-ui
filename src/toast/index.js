@@ -5,7 +5,8 @@ import defaultTheme from '../utils/default-theme';
 import ToastComponent from './components/toast-component';
 
 const defaultOptions = {
-  autoClose: 3000
+  autoClose: 3000,
+  marginTop: 0
 };
 
 class Toast {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { MdClear } from 'react-icons/md';
 import ModalPortal from '../utils/modal-portal';
@@ -16,96 +16,91 @@ import {
   ContentFooter
 } from './elements';
 
-class Modal extends Component {
-  componentDidUpdate = prevProps => {
-    const { active } = this.props;
+const Modal = ({
+  children,
+  title,
+  active,
+  closeButton,
+  primaryAction,
+  primaryVariant,
+  primaryText,
+  primaryColor,
+  secondaryAction,
+  secondaryVariant,
+  secondaryText,
+  secondaryColor,
+  loading,
+  size,
+  zIndex
+}) => {
+  useEffect(() => {
     const { body } = document;
-    if (prevProps.active !== active) {
-      if (active) {
-        body.style.overflow = 'hidden';
-      } else {
-        body.style.overflow = null;
-      }
-    }
-  };
 
-  render() {
-    const {
-      children,
-      title,
-      active,
-      closeButton,
-      primaryAction,
-      primaryVariant,
-      primaryText,
-      primaryColor,
-      secondaryAction,
-      secondaryVariant,
-      secondaryText,
-      secondaryColor,
-      loading,
-      size,
-      zIndex
-    } = this.props;
-    return (
-      <>
-        {active && (
-          <ModalPortal>
-            <ModalContainer zIndex={zIndex}>
-              <ModalBox size={size} animate={active}>
-                {title ? (
-                  <ContentHeader>
-                    <ModalTitle>{title}</ModalTitle>
-                    <CloseButton onClick={closeButton}>
-                      <MdClear />
-                    </CloseButton>
-                  </ContentHeader>
-                ) : (
-                  <CloseButton noHeader onClick={closeButton}>
+    if (active) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = null;
+    }
+  }, [active]);
+
+  return (
+    <>
+      {active && (
+        <ModalPortal>
+          <ModalContainer zIndex={zIndex}>
+            <ModalBox size={size} animate={active}>
+              {title ? (
+                <ContentHeader>
+                  <ModalTitle>{title}</ModalTitle>
+                  <CloseButton onClick={closeButton}>
                     <MdClear />
                   </CloseButton>
-                )}
-                <ContentBody>{children}</ContentBody>
-                {(secondaryAction || primaryAction) && (
-                  <ContentFooter>
-                    <ModalActions>
-                      {loading ? (
-                        <Loader />
-                      ) : (
-                        <>
-                          {secondaryAction && (
-                            <Button
-                              variant={secondaryVariant}
-                              color={secondaryColor}
-                              onClick={secondaryAction}
-                              mr={10}
-                            >
-                              {secondaryText}
-                            </Button>
-                          )}
-                          {primaryAction && (
-                            <Button
-                              variant={primaryVariant}
-                              color={primaryColor}
-                              onClick={primaryAction}
-                            >
-                              {primaryText}
-                            </Button>
-                          )}
-                        </>
-                      )}
-                    </ModalActions>
-                  </ContentFooter>
-                )}
-              </ModalBox>
-              <PseudoContainer onClick={closeButton} />
-            </ModalContainer>
-          </ModalPortal>
-        )}
-      </>
-    );
-  }
-}
+                </ContentHeader>
+              ) : (
+                <CloseButton noHeader onClick={closeButton}>
+                  <MdClear />
+                </CloseButton>
+              )}
+              <ContentBody>{children}</ContentBody>
+              {(secondaryAction || primaryAction) && (
+                <ContentFooter>
+                  <ModalActions>
+                    {loading ? (
+                      <Loader />
+                    ) : (
+                      <>
+                        {secondaryAction && (
+                          <Button
+                            variant={secondaryVariant}
+                            color={secondaryColor}
+                            onClick={secondaryAction}
+                            mr={10}
+                          >
+                            {secondaryText}
+                          </Button>
+                        )}
+                        {primaryAction && (
+                          <Button
+                            variant={primaryVariant}
+                            color={primaryColor}
+                            onClick={primaryAction}
+                          >
+                            {primaryText}
+                          </Button>
+                        )}
+                      </>
+                    )}
+                  </ModalActions>
+                </ContentFooter>
+              )}
+            </ModalBox>
+            <PseudoContainer onClick={closeButton} />
+          </ModalContainer>
+        </ModalPortal>
+      )}
+    </>
+  );
+};
 
 Modal.defaultProps = {
   title: '',

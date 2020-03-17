@@ -1,59 +1,53 @@
-import React, { Component, createRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { TextAreaContainer, Label, TextAreaContent } from './elements';
 
-class TextArea extends Component {
-  constructor(props) {
-    super(props);
-    this.box = createRef();
-  }
+const TextArea = ({
+  id,
+  onChange,
+  autofocus,
+  value,
+  required,
+  placeholder,
+  label,
+  name,
+  rows,
+  className,
+  ...props
+}) => {
+  const box = React.createRef();
 
-  handleKeyUp = () => {
-    const height = this.box.current.offsetHeight;
-    if (height < this.box.current.scrollHeight) {
-      this.box.current.style.height = `${this.box.current.scrollHeight}px`;
+  const handleKeyUp = () => {
+    const height = box.current.offsetHeight;
+    if (height < box.current.scrollHeight) {
+      box.current.style.height = `${box.current.scrollHeight}px`;
     }
   };
 
-  render() {
-    const {
-      id,
-      onChange,
-      autofocus,
-      value,
-      required,
-      placeholder,
-      label,
-      name,
-      rows,
-      className,
-      ...props
-    } = this.props;
-    return (
-      <TextAreaContainer className={className} {...props}>
-        {label && (
-          <Label weight="light" htmlFor={id}>
-            {label}
-            {required && '*'}
-          </Label>
-        )}
-        <TextAreaContent
-          autoFocus={autofocus}
-          label={label}
-          value={value}
-          name={name}
-          required={required}
-          placeholder={placeholder}
-          id={id}
-          ref={this.box}
-          onKeyUp={this.handleKeyUp}
-          onChange={onChange}
-          rows={rows}
-        />
-      </TextAreaContainer>
-    );
-  }
-}
+  return (
+    <TextAreaContainer className={className} {...props}>
+      {label && (
+        <Label weight="light" htmlFor={id}>
+          {label}
+          {required && '*'}
+        </Label>
+      )}
+      <TextAreaContent
+        autoFocus={autofocus}
+        label={label}
+        value={value}
+        name={name}
+        required={required}
+        placeholder={placeholder}
+        id={id}
+        ref={box}
+        onKeyUp={handleKeyUp}
+        onChange={onChange}
+        rows={rows}
+      />
+    </TextAreaContainer>
+  );
+};
 
 TextArea.defaultProps = {
   onChange: () => {},

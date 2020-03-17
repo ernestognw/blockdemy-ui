@@ -12,8 +12,7 @@ class Tag extends Component {
     super(props);
     this.el = document.createElement('div');
     this.state = {
-      width: null,
-      height: null
+      width: null
     };
   }
 
@@ -26,25 +25,25 @@ class Tag extends Component {
   };
 
   getWidth = ref => {
-    const { width: oldWidth, height: oldHeight } = this.state;
+    const { width: oldWidth } = this.state;
     if (ref) {
-      const { width, height } = ref.getBoundingClientRect();
-      if (oldWidth !== width || oldHeight !== height) {
-        this.setState({ width, height });
+      const { width } = ref.getBoundingClientRect();
+      if (oldWidth !== width) {
+        this.setState({ width });
       }
     }
   };
 
   render() {
     const { tag, x, y, width, height, showTag, position, align } = this.props;
-    const { width: thisWidth, height: thisHeight } = this.state;
+    const { width: thisWidth } = this.state;
 
     let yValue;
 
     if (position === 'bottom') {
       yValue = y + height + 10 + window.pageYOffset;
     } else {
-      yValue = y - thisHeight - 10 + window.pageYOffset;
+      yValue = y - height - 10 + window.pageYOffset;
     }
 
     return createPortal(
