@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 import propTypes from '@styled-system/prop-types';
 import Box from '../box';
@@ -7,7 +7,7 @@ import { Container, Route } from './elements';
 const Breadcrumb = ({ children, p, bg, fontSize, prevColor, lastColor, ...props }) => (
   <Container bg={bg} p={p} {...props}>
     <Box display="flex">
-      {React.Children.map(children, (child, index) => (
+      {Children.map(children, (child, index) => (
         <Route
           prevColor={prevColor}
           lastColor={lastColor}

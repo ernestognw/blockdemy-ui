@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createRef } from 'react';
 import PropTypes from 'prop-types';
 import {
   Container,
@@ -36,7 +36,7 @@ const Select = ({
 }) => {
   const [active, setActive] = useState(false);
   const [suffixWidth, setSuffixWidth] = useState(0);
-  const suffixRef = React.createRef();
+  const suffixRef = createRef();
 
   useEffect(() => {
     if (suffixRef && suffixRef.current) setSuffixWidth(suffixRef.current.offsetWidth);

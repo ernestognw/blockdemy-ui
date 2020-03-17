@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import { TextAreaContainer, Label, TextAreaContent } from './elements';
 
@@ -15,7 +15,7 @@ const TextArea = ({
   className,
   ...props
 }) => {
-  const box = React.createRef();
+  const box = createRef();
 
   const handleKeyUp = () => {
     const height = box.current.offsetHeight;
