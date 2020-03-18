@@ -33,7 +33,7 @@ const Container = styled.nav`
 const Content = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${props => props.justify};
   background-position-y: 0px;
   width: 100%;
   padding: 0 20px;
