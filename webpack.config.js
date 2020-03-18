@@ -45,6 +45,8 @@ module.exports = {
     ]
   },
   externals: {
-    'styled-components': 'styled-components'
+    'styled-components': 'styled-components',
+    react: 'commonjs react',
+    'react-dom': 'commonjs react-dom'
   }
 };
