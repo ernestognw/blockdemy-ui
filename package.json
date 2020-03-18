@@ -1,6 +1,6 @@
 {
   "name": "blockdemy-ui",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Blockdemy design system used across the blockdemy platforms ecosystem",
   "main": "lib/index.js",
   "homepage": "http://ui.blockdemy.com/",
