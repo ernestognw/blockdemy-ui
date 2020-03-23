@@ -3,15 +3,8 @@ import PropTypes from 'prop-types';
 import propTypes from '@styled-system/prop-types';
 import PillContainer from './elements';
 
-const Pill = ({ children, size, color, fontColor, variant, className, ...props }) => (
-  <PillContainer
-    color={color}
-    fontColor={fontColor}
-    size={size}
-    variant={variant}
-    className={className}
-    {...props}
-  >
+const Pill = ({ children, size, color, variant, ...props }) => (
+  <PillContainer color={color} size={size} variant={variant} {...props}>
     {children}
   </PillContainer>
 );
@@ -19,9 +12,7 @@ const Pill = ({ children, size, color, fontColor, variant, className, ...props }
 Pill.defaultProps = {
   size: 'normal',
   variant: '',
-  color: 'primary',
-  fontColor: null,
-  className: null
+  color: 'primary'
 };
 
 Pill.propTypes = {
@@ -29,8 +20,6 @@ Pill.propTypes = {
   size: PropTypes.oneOf(['small', 'normal', 'large']),
   variant: PropTypes.string,
   color: PropTypes.string,
-  fontColor: PropTypes.string,
-  className: PropTypes.string,
   ...propTypes.space
 };
 
