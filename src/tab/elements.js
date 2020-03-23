@@ -27,11 +27,12 @@ const DefaultTab = styled.div`
     opacity: 1;
   }
   ${({ active, theme }) =>
-    active &&
-    `
-    border-bottom: 2.5px solid ${theme.colors.secondary};
-    opacity: 1;
-  `}
+    active
+      ? `
+        border-bottom: 2.5px solid ${theme.colors.secondary};
+        opacity: 1;
+      `
+      : ''}
 `;
 
 const DefaultTabContent = styled.div`

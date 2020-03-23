@@ -26,11 +26,7 @@ const Row = styled.tr`
     border-bottom: none;
   }
 
-  ${props =>
-    props.clickable &&
-    `
-    cursor: pointer;
-  `}
+  ${props => (props.clickable ? 'cursor: pointer;' : '')}
 `;
 
 const Cell = styled.td`
@@ -39,11 +35,7 @@ const Cell = styled.td`
   text-align: ${props => props.align || 'left'};
   vertical-align: inherit;
 
-  ${props =>
-    props.clickable &&
-    `
-    cursor: pointer;
-  `}
+  ${props => (props.clickable ? 'cursor: pointer;' : '')}
 `;
 
 const Body = styled.tbody``;

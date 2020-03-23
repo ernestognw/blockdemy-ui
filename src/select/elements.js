@@ -27,9 +27,9 @@ const Message = styled.div`
   margin-bottom: 10px;
   margin-top: 10px;
 
-  ${({ theme, success }) => success && `color: ${theme.colors.success} !important;`};
-  ${({ theme, warning }) => warning && `color: ${theme.colors.warning} !important;`};
-  ${({ theme, error }) => error && `color: ${theme.colors.danger} !important;`};
+  ${({ theme, success }) => (success ? `color: ${theme.colors.success} !important;` : '')};
+  ${({ theme, warning }) => (warning ? `color: ${theme.colors.warning} !important;` : '')};
+  ${({ theme, error }) => (error ? `color: ${theme.colors.danger} !important;` : '')};
 `;
 
 const PseudoSelect = styled.select`
@@ -50,53 +50,45 @@ const PseudoSelect = styled.select`
   }
 
   ${({ disabled, theme }) =>
-    disabled &&
-    `
-    background-color: ${theme.colors.light};
-    cursor: not-allowed;
-  `}
+    disabled
+      ? `
+        background-color: ${theme.colors.light};
+        cursor: not-allowed;
+      `
+      : ' '}
 
-  ${({ value }) =>
-    !value &&
-    `
-    color: #808080;
-  `};
+  ${({ value }) => (!value ? 'color: #808080;' : '')};
 
-  ${({ leftIcon }) =>
-    leftIcon &&
-    `
-    padding-left: 2.5rem;
-    `};
+  ${({ leftIcon }) => (leftIcon ? 'padding-left: 2.5rem;' : '')};
 
-  ${({ rightIcon }) =>
-    rightIcon &&
-    `
-    padding-right: 3.5rem;
-    `};
+  ${({ rightIcon }) => (rightIcon ? 'padding-right: 3.5rem;' : '')};
 
   ${({ prefix }) =>
-    prefix &&
-    `
-    border-left: 0;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    `};
+    prefix
+      ? `
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      `
+      : ''};
 
   ${({ suffix }) =>
-    suffix &&
-    `
-    border-right: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    `};
+    suffix
+      ? `
+        border-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      `
+      : ''};
 
   ${({ readOnly, theme, success, warning, error }) =>
-    !readOnly &&
-    `
-    ${success && `border: 1px solid ${theme.colors.success}; `};
-    ${warning && `border: 1px solid ${theme.colors.warning}; `};
-    ${error && `border: 1px solid ${theme.colors.danger};`};
-  `}
+    !readOnly
+      ? `
+        ${success ? `border: 1px solid ${theme.colors.success};` : ''};
+        ${warning ? `border: 1px solid ${theme.colors.warning};` : ''};
+        ${error ? `border: 1px solid ${theme.colors.danger};` : ''};
+      `
+      : ''}
 
   &:focus {
     outline: none;
@@ -113,31 +105,18 @@ const LeftIconContainer = styled.div`
   color: ${({ theme }) => theme.colors.lightDark};
   font-size: 16px;
 
-  ${({ message }) =>
-    message &&
-    `
-    margin-top: 0px;
-  `};
+  ${({ message }) => (message ? 'margin-top: 0px;' : '')};
 
   ${({ active, theme, success, warning, error }) =>
-    active &&
-    `
-	svg {
-		color: ${theme.colors.secondary};
-    ${success &&
+    active
+      ? `svg {
+          color: ${theme.colors.secondary};
+          ${success ? `color: ${theme.colors.success} !important;` : ''};
+          ${warning ? `color: ${theme.colors.warning} !important;` : ''};
+          ${error ? `color: ${theme.colors.danger} !important;` : ''};
+        }
       `
-      color: ${theme.colors.success} !important;
-    `};
-  ${warning &&
-    `
-      color: ${theme.colors.warning} !important;
-    `};
-  ${error &&
-    `
-      color: ${theme.colors.danger} !important;
-    `};
-	}
-`};
+      : ''};
 `;
 
 const RightIconContainer = styled.div`
@@ -148,31 +127,18 @@ const RightIconContainer = styled.div`
   color: ${({ theme }) => theme.colors.lightDark};
   font-size: 16px;
 
-  ${({ message }) =>
-    message &&
-    `
-    margin-top: 0px;
-  `};
+  ${({ message }) => (message ? 'margin-top: 0px;' : '')};
 
   ${({ active, theme, success, warning, error }) =>
-    active &&
-    `
-	svg {
-		color: ${theme.colors.secondary};
-    ${success &&
+    active
+      ? `svg {
+          color: ${theme.colors.secondary};
+          ${success ? `color: ${theme.colors.success} !important;` : ''};
+          ${warning ? `color: ${theme.colors.warning} !important;` : ''};
+          ${error ? `color: ${theme.colors.danger} !important;` : ''};
+        }
       `
-      color: ${theme.colors.success} !important;
-    `};
-  ${warning &&
-    `
-      color: ${theme.colors.warning} !important;
-    `};
-  ${error &&
-    `
-      color: ${theme.colors.danger} !important;
-    `};
-	}
-`};
+      : ''};
 `;
 
 const OptionsButton = styled(MdKeyboardArrowDown)`

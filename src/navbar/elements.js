@@ -13,21 +13,23 @@ const Container = styled.nav`
   background-color: ${({ theme, color: colorProp }) => theme.colors[colorProp]};
   ${color}
 
-  ${({ shadow, theme }) => shadow && `box-shadow: ${theme.shadow};`}
+  ${({ shadow, theme }) => (shadow ? `box-shadow: ${theme.shadow};` : '')}
 
   ${({ hideBg }) =>
-    hideBg &&
-    `
-    background-position-y: -66px;
-    background-color: transparent;
-  `};
+    hideBg
+      ? `
+        background-position-y: -66px;
+        background-color: transparent;
+      `
+      : ''};
 
   ${({ hideNavbar }) =>
-    hideNavbar &&
-    `
-    opacity: 0;
-    margin-top: -66px;
-  `};
+    hideNavbar
+      ? `
+        opacity: 0;
+        margin-top: -66px;
+      `
+      : ''};
 `;
 
 const Content = styled.div`
@@ -43,12 +45,13 @@ const Content = styled.div`
   `};
 
   ${props =>
-    props.shrink &&
-    `
-  max-width: ${props.theme.maxWidth};
-  margin-left: auto;
-  margin-right: auto;
-  `}
+    props.shrink
+      ? `
+        max-width: ${props.theme.maxWidth};
+        margin-left: auto;
+        margin-right: auto;
+      `
+      : ''}
 `;
 
 export { Container, Content };

@@ -10,8 +10,8 @@ const fadeIn = keyframes`
   }
 
   to {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 `;
 
@@ -57,7 +57,7 @@ const ModalBox = styled.div`
   flex-direction: column;
   flex: 0 1 auto;
   width: ${({ size }) => getWidth(size)};
-  ${({ animate }) => animate && animationIn};
+  ${({ animate }) => (animate ? animationIn : '')};
 `;
 
 const ContentHeader = styled.div`
@@ -115,11 +115,7 @@ const CloseButton = styled(Button)`
     background-color: initial;
   }
 
-  ${props =>
-    props.noHeader &&
-    `
-    top: 5px;
-  `}
+  ${props => (props.noHeader ? 'top: 5px;' : '')}
 `;
 
 const ModalActions = styled.div`

@@ -9,13 +9,14 @@ const Route = styled.div`
     last ? theme.colors[lastColor] : theme.colors[prevColor]};
 
   ${({ last, theme }) =>
-    !last &&
-    `&:after {
-      content: "/";
-      margin-left: 0.4rem;
-      margin-right: 0.4rem;
-      color: ${theme.colors.lightGrey};
-    }`}
+    !last
+      ? `&:after {
+          content: "/";
+          margin-left: 0.4rem;
+          margin-right: 0.4rem;
+          color: ${theme.colors.lightGrey};
+        }`
+      : ''}
 `;
 
 const Container = styled(Card)`

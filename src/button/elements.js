@@ -32,36 +32,32 @@ const Button = styled.button`
   }
 
   ${({ beforeContent }) =>
-    beforeContent &&
-    `
-      &:before {
-        content: '${beforeContent}';
-        position: 'absolute';
-      };
-    `};
+    beforeContent
+      ? ` &:before {
+            content: '${beforeContent}';
+            position: 'absolute';
+          };
+        `
+      : ''};
 
   ${({ afterContent }) =>
-    afterContent &&
-    `
-      &:after {
-        content: '${afterContent}';
-        margin-right: 10px;
-        display: flex;
-        flex: 1;
-        font-size: 10px;
-        text-transform: capitalize;
-      };
-    `};
+    afterContent
+      ? ` &:after {
+            content: '${afterContent}';
+            margin-right: 10px;
+            display: flex;
+            flex: 1;
+            font-size: 10px;
+            text-transform: capitalize;
+          };
+        `
+      : ''};
 
-  ${({ fullWidth }) =>
-    fullWidth &&
-    `
-        width: 100%;
-    `};
+  ${({ fullWidth }) => (fullWidth ? 'width: 100%;' : '')};
 
   ${({ disabled, theme }) =>
-    disabled &&
-    `
+    disabled
+      ? `
         color: ${theme.colors.dark};
         background: ${theme.colors.veryLightGrey};
         cursor: initial;
@@ -74,13 +70,10 @@ const Button = styled.button`
           background: ${theme.colors.veryLightGrey};
         }
         cursor: not-allowed;
-    `};
+      `
+      : ''};
 
-  ${({ alignSelf }) =>
-    alignSelf &&
-    `
-			align-self: ${alignSelf};
-		`};
+  ${({ alignSelf }) => (alignSelf ? `align-self: ${alignSelf};` : '')};
 `;
 
 export default Button;

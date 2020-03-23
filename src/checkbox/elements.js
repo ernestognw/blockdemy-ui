@@ -20,19 +20,20 @@ const CheckContainer = styled.div`
   ${getSize}
 
 
-  ${({ theme, success }) => success && `border-color: ${theme.colors.success};`};
-  ${({ theme, warning }) => warning && `border-color: ${theme.colors.warning};`};
-  ${({ theme, error }) => error && `border-color: ${theme.colors.danger};`};
-  ${({ checked }) => checked && 'border: none'}
+  ${({ theme, success }) => (success ? `border-color: ${theme.colors.success};` : '')};
+  ${({ theme, warning }) => (warning ? `border-color: ${theme.colors.warning};` : '')};
+  ${({ theme, error }) => (error ? `border-color: ${theme.colors.danger};` : '')};
+  ${({ checked }) => (checked ? 'border: none' : '')}
 
-  ${({ visible }) => !visible && 'svg { visibility: hidden }'}
+  ${({ visible }) => (!visible ? 'svg { visibility: hidden }' : '')}
 
   ${({ theme, disabled }) =>
-    disabled &&
-    `
+    disabled
+      ? `
     background-color: ${theme.colors.light};
     color: ${theme.colors.lightGrey};
-  `}
+  `
+      : ''}
 
   svg {
     padding: 0.1rem;
@@ -49,12 +50,12 @@ const ClickableSection = styled.label`
   }
 
   ${({ disabled }) =>
-    disabled &&
-    `
-    * {
-      cursor: not-allowed;
-    }
-  `}
+    disabled
+      ? `* {
+          cursor: not-allowed;
+        }
+      `
+      : ''}
 `;
 
 export { Container, CheckContainer, ClickableSection };

@@ -13,7 +13,7 @@ const ProfilePictureContainer = styled.div`
   justify-content: center;
 
   ${({ borderWidth, borderColor, theme }) =>
-    `border: ${borderWidth}px solid ${theme.colors[borderColor]}`}
+    `border: ${borderWidth}px solid ${theme.colors[borderColor]};`}
 
   ${space};
 `;

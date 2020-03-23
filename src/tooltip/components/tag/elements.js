@@ -29,7 +29,7 @@ const Text = styled.pre`
   max-width: 200px;
   text-align: ${({ align }) => align};
 
-  ${({ showTag }) => showTag && animationShow};
+  ${({ showTag }) => (showTag ? animationShow : '')};
 
   &:after {
     content: '';

@@ -33,11 +33,11 @@ const TextAreaContent = styled.textarea`
   }
 
   ${({ disabled, theme }) =>
-    disabled &&
-    `
-    background-color: ${theme.colors.light};
-    cursor: not-allowed;
-  `}
+    disabled
+      ? `background-color: ${theme.colors.light};
+        cursor: not-allowed;
+      `
+      : ''}
 
   &:focus {
     transition: 0.3s;

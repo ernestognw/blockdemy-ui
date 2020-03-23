@@ -22,9 +22,9 @@ const Message = styled.div`
   margin-bottom: 10px;
   margin-top: 10px;
 
-  ${({ theme, success }) => success && `color: ${theme.colors.success} !important;`};
-  ${({ theme, warning }) => warning && `color: ${theme.colors.warning} !important;`};
-  ${({ theme, error }) => error && `color: ${theme.colors.danger} !important;`};
+  ${({ theme, success }) => (success ? `color: ${theme.colors.success} !important;` : '')};
+  ${({ theme, warning }) => (warning ? `color: ${theme.colors.warning} !important;` : '')};
+  ${({ theme, error }) => (error ? `color: ${theme.colors.danger} !important;` : '')};
 `;
 
 const CheckContainer = styled.div`
@@ -40,18 +40,19 @@ const CheckContainer = styled.div`
 
   ${getSize}
 
-  ${({ theme, success }) => success && `border-color: ${theme.colors.success};`};
-  ${({ theme, warning }) => warning && `border-color: ${theme.colors.warning};`};
-  ${({ theme, error }) => error && `border-color: ${theme.colors.danger};`};
+  ${({ theme, success }) => (success ? `border-color: ${theme.colors.success};` : '')};
+  ${({ theme, warning }) => (warning ? `border-color: ${theme.colors.warning};` : '')};
+  ${({ theme, error }) => (error ? `border-color: ${theme.colors.danger};` : '')};
 
-  ${({ checked }) => checked && 'border-color: transparent;'}
+  ${({ checked }) => (checked ? 'border-color: transparent;' : '')}
 
   ${({ theme, disabled }) =>
-    disabled &&
-    `
-    background-color: ${theme.colors.light};
-    color: ${theme.colors.lightGrey};
-  `}
+    disabled
+      ? `
+        background-color: ${theme.colors.light};
+        color: ${theme.colors.lightGrey};
+      `
+      : ''}
 `;
 
 const ClickableSection = styled.label`
@@ -64,12 +65,12 @@ const ClickableSection = styled.label`
   }
 
   ${({ disabled }) =>
-    disabled &&
-    `
-    * {
-      cursor: not-allowed;
-    }
-  `}
+    disabled
+      ? `* {
+          cursor: not-allowed;
+        }
+      `
+      : ''}
 `;
 
 const Circle = styled.span`
@@ -77,7 +78,7 @@ const Circle = styled.span`
   height: 30%;
   background-color: currentColor;
   border-radius: 50%;
-  ${({ visible }) => !visible && 'visibility: hidden;'}
+  ${({ visible }) => (!visible ? 'visibility: hidden;' : '')}
 `;
 
 export { Container, CheckContainer, ClickableSection, Circle, Label, Message };

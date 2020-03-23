@@ -107,16 +107,18 @@ const P = styled.p`
   ${capitalize};
 
   ${({ variant, theme }) =>
-    variant === 'muted' &&
-    `
-    color: ${theme.colors.lightGrey};
-  `};
+    variant === 'muted'
+      ? `
+        color: ${theme.colors.lightGrey};
+      `
+      : ''};
 
   ${({ variant, theme }) =>
-    variant &&
-    `
-    font-size: ${theme.fontSize[variant]};
-  `};
+    variant
+      ? `
+        font-size: ${theme.fontSize[variant]};
+      `
+      : ''};
 `;
 
 export { H1, H2, H3, H4, H5, H6, P };
