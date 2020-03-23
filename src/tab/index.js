@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { Children, cloneElement, isValidElement } from 'react';
 import PropTypes from 'prop-types';
+import propTypes from '@styled-system/prop-types';
 import { DefaultTabs, DefaultTab, DefaultTabContent } from './elements';
 
-const Tabs = ({ children, ...props }) => <DefaultTabs {...props}>{children}</DefaultTabs>;
+const Tabs = ({ children, size, ...props }) => {
+  const clones = Children.map(children, child => {
+    if (!isValidElement(child)) return <></>;
+    return cloneElement(child, {
+      ...child.props,
+      size
+    });
+  });
+
+  return <DefaultTabs {...props}>{clones}</DefaultTabs>;
+};
 
 const Tab = ({ children, ...props }) => <DefaultTab {...props}>{children}</DefaultTab>;
 
@@ -11,21 +22,28 @@ const TabContent = ({ children, ...props }) => (
 );
 
 Tabs.defaultProps = {
-  children: null
+  children: null,
+  size: ''
 };
 
 Tabs.propTypes = {
-  children: PropTypes.any
+  children: PropTypes.any,
+  size: PropTypes.string,
+  ...propTypes.typography
 };
 
 Tab.defaultProps = {
   children: null,
-  active: false
+  active: false,
+  color: 'primary',
+  size: ''
 };
 
 Tab.propTypes = {
   children: PropTypes.any,
-  active: PropTypes.bool
+  active: PropTypes.bool,
+  color: PropTypes.string,
+  size: PropTypes.string
 };
 
 TabContent.defaultProps = {

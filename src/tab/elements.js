@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { typography } from 'styled-system';
+import getPadding from './utils';
 
 const DefaultTabs = styled.nav`
   width: 100%;
@@ -8,6 +10,7 @@ const DefaultTabs = styled.nav`
   overflow-x: auto;
   border-bottom: 1px solid ${({ theme }) => theme.colors.veryLightGrey};
   align-items: center;
+  ${typography};
 `;
 
 const DefaultTab = styled.div`
@@ -19,17 +22,19 @@ const DefaultTab = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding: 1.25rem 1rem 1.3125rem;
   margin-right: 10px;
   white-space: nowrap;
+
+  ${getPadding}
 
   &:hover {
     opacity: 1;
   }
-  ${({ active, theme }) =>
+
+  ${({ active, theme, color }) =>
     active
       ? `
-        border-bottom: 2.5px solid ${theme.colors.secondary};
+        border-bottom: 2.5px solid ${theme.colors[color]};
         opacity: 1;
       `
       : ''}
