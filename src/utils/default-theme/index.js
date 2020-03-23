@@ -39,6 +39,7 @@ const theme = {
   shadowHover: '0 0 4rem 0 rgba(136, 152, 170, 0.3)',
   radius: '.3rem',
   maxWidth: '1170px',
+  activeColor: 'primary',
   colors,
   softColors,
   space: [],

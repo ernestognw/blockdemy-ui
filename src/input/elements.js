@@ -95,9 +95,9 @@ const PseudoInput = styled.input`
 
   &:focus {
     outline: none;
-    border: 1px solid ${({ theme }) => theme.colors.secondary};
-    box-shadow: 0 0 0 0.1rem ${({ theme }) => theme.colors.secondary}33;
-  } 
+    border: 1px solid ${({ theme }) => theme.colors[theme.activeColor]};
+    box-shadow: 0 0 0 0.1rem ${({ theme }) => theme.colors[theme.activeColor]}33;
+  }
 
   ${({ theme }) => theme.media.phone`
     width: auto;
@@ -117,7 +117,7 @@ const LeftIconContainer = styled.div`
   ${({ active, theme, success, warning, error }) =>
     active
       ? `svg {
-          color: ${theme.colors.secondary};
+          color: ${theme.colors[theme.activeColor]};
           ${success ? `color: ${theme.colors.success} !important;` : ''};
           ${warning ? `color: ${theme.colors.warning} !important;` : ''};
           ${error ? `color: ${theme.colors.danger} !important;` : ''};
@@ -138,7 +138,7 @@ const RightIconContainer = styled.div`
   ${({ active, theme, success, warning, error }) =>
     active
       ? `svg {
-            color: ${theme.colors.secondary};
+            color: ${theme.colors[theme.activeColor]};
             ${success ? `color: ${theme.colors.success} !important;` : ''};
             ${warning ? `color: ${theme.colors.warning} !important;` : ''};
             ${error ? `color: ${theme.colors.danger} !important;` : ''};
