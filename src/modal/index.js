@@ -131,7 +131,7 @@ Modal.propTypes = {
   secondaryText: PropTypes.string,
   secondaryColor: PropTypes.string,
   loading: PropTypes.bool,
-  size: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'normal', 'large']),
   zIndex: PropTypes.string
 };
 

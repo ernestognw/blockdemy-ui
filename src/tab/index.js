@@ -28,7 +28,7 @@ Tabs.defaultProps = {
 
 Tabs.propTypes = {
   children: PropTypes.any,
-  size: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'normal', 'large']),
   ...propTypes.typography
 };
 
@@ -43,7 +43,7 @@ Tab.propTypes = {
   children: PropTypes.any,
   active: PropTypes.bool,
   color: PropTypes.string,
-  size: PropTypes.string
+  size: PropTypes.oneOf(['small', 'normal', 'large'])
 };
 
 TabContent.defaultProps = {
