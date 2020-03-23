@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { space, color, typography } from 'styled-system';
-import { addSpacing, underline, uppercase, capitalize, fontSize } from './utils';
+import { addSpacing, underline, uppercase, capitalize } from './utils';
 
 const H1 = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.h1};
@@ -8,7 +8,6 @@ const H1 = styled.h1`
   margin: 0;
 
   ${addSpacing};
-  ${fontSize};
   ${space};
   ${color};
   ${typography};
@@ -23,7 +22,6 @@ const H2 = styled.h2`
   margin: 0;
 
   ${addSpacing};
-  ${fontSize};
   ${space};
   ${color};
   ${typography};
@@ -38,7 +36,6 @@ const H3 = styled.h3`
   margin: 0;
 
   ${addSpacing};
-  ${fontSize};
   ${space};
   ${color};
   ${typography};
@@ -53,7 +50,6 @@ const H4 = styled.h4`
   margin: 0;
 
   ${addSpacing};
-  ${fontSize};
   ${space};
   ${color};
   ${typography};
@@ -68,7 +64,6 @@ const H5 = styled.h5`
   margin: 0;
 
   ${addSpacing};
-  ${fontSize};
   ${space};
   ${color};
   ${typography};
@@ -83,7 +78,6 @@ const H6 = styled.h6`
   margin: 0;
 
   ${addSpacing};
-  ${fontSize};
   ${space};
   ${color};
   ${typography};
@@ -98,7 +92,6 @@ const P = styled.p`
   margin: 0;
 
   ${addSpacing};
-  ${fontSize};
   ${space};
   ${color};
   ${typography};
