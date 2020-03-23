@@ -115,7 +115,7 @@ const CloseButton = styled(Button)`
     background-color: initial;
   }
 
-  ${props => (props.noHeader ? 'top: 5px;' : '')}
+  ${({ noHeader }) => (noHeader ? 'top: 5px;' : '')}
 `;
 
 const ModalActions = styled.div`

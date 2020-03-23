@@ -9,8 +9,8 @@ const DefaultTable = styled.table`
 `;
 
 const Head = styled.thead`
-  background-color: ${props => props.theme.colors.veryLightGrey};
-  border-bottom: 1px solid ${props => props.theme.colors.lightGrey};
+  background-color: ${({ theme }) => theme.colors.veryLightGrey};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
   font-weight: 600;
 `;
 
@@ -26,16 +26,16 @@ const Row = styled.tr`
     border-bottom: none;
   }
 
-  ${props => (props.clickable ? 'cursor: pointer;' : '')}
+  ${({ clickable }) => (clickable ? 'cursor: pointer;' : '')}
 `;
 
 const Cell = styled.td`
   display: table-cell;
   padding: 6px 16px;
-  text-align: ${props => props.align || 'left'};
+  text-align: ${({ align }) => align || 'left'};
   vertical-align: inherit;
 
-  ${props => (props.clickable ? 'cursor: pointer;' : '')}
+  ${({ clickable }) => (clickable ? 'cursor: pointer;' : '')}
 `;
 
 const Body = styled.tbody``;

@@ -35,7 +35,7 @@ const Container = styled.nav`
 const Content = styled.div`
   display: flex;
   align-items: center;
-  justify-content: ${props => props.justify};
+  justify-content: ${({ justify }) => justify};
   background-position-y: 0px;
   width: 100%;
   padding: 0 20px;
@@ -44,10 +44,10 @@ const Content = styled.div`
       padding: 0 20px;    
   `};
 
-  ${props =>
-    props.shrink
+  ${({ shrink, theme }) =>
+    shrink
       ? `
-        max-width: ${props.theme.maxWidth};
+        max-width: ${theme.maxWidth};
         margin-left: auto;
         margin-right: auto;
       `

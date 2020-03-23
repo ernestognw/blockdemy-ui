@@ -24,7 +24,7 @@ const Item = styled.div`
 
   ${space}
 
-  ${props => (props.clickable ? 'cursor: pointer;' : '')}
+  ${({ clickable }) => (clickable ? 'cursor: pointer;' : '')}
 `;
 
 const ItemTextContainer = styled.div`

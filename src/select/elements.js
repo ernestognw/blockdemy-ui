@@ -143,7 +143,7 @@ const RightIconContainer = styled.div`
 
 const OptionsButton = styled(MdKeyboardArrowDown)`
   top: ${getOptionsButtonTop};
-  right: ${props => (props.rightIcon ? '37px' : `${props.suffixWidth + 5}px`)};
+  right: ${({ rightIcon, suffixWidth }) => (rightIcon ? '37px' : `${suffixWidth + 5}px`)};
   color: rgba(0, 0, 0, 0.54);
   position: absolute;
   pointer-events: none;
