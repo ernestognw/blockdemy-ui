@@ -5,6 +5,7 @@ module.exports = {
     index: './src/index',
     alert: './src/alert',
     avatar: './src/avatar',
+    badge: './src/badge',
     box: './src/box',
     button: './src/button',
     checkbox: './src/checkbox',
