@@ -9,10 +9,10 @@ const sizes = {
 };
 
 const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = args =>
+  acc[label] = (...args) =>
     css`
       @media (max-width: ${sizes[label] / 16}em) {
-        ${css(args)};
+        ${css(...args)};
       }
     `;
 
