@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@styled-system/prop-types": "^5.1.4",
+    "copy-to-clipboard": "^3.3.1",
     "prop-types": "^15.7.2",
     "react-animate-height": "^2.0.20",
     "react-icons": "^3.9.0",

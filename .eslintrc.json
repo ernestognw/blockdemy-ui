@@ -29,6 +29,7 @@
     "react/jsx-props-no-spreading": "off",
     "semi": [0, "never"],
     "prefer-const": 1,
+    "import/prefer-default-export": 0,
     "react/prefer-es6-class": 0,
     "react/jsx-filename-extension": 0,
     "import/extensions": 0,

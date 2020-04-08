@@ -12,6 +12,7 @@ module.exports = {
     collapse: './src/collapse',
     breadcrumb: './src/breadcrumb',
     card: './src/card',
+    hooks: './src/hooks',
     input: './src/input',
     list: './src/list',
     loader: './src/loader',
