@@ -1,4 +1,5 @@
 import React, { useEffect, useState, createRef } from 'react';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 import PropTypes from 'prop-types';
 import {
   Container,
@@ -100,11 +101,13 @@ const Select = ({
         </PseudoSelect>
         {selectIcon || (
           <OptionsButton
-            suffixWidth={suffixWidth}
+            suffixWidth={suffixWidth || 0}
             rightIcon={rightIcon}
             label={label}
             message={message}
-          />
+          >
+            <MdKeyboardArrowDown />
+          </OptionsButton>
         )}
         {suffix && (
           <Suffix ref={suffixRef} success={success} warning={warning} error={error}>

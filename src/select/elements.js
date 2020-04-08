@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { MdKeyboardArrowDown } from 'react-icons/md';
 import { space } from 'styled-system';
 import getOptionsButtonTop from './utils';
 
@@ -141,16 +140,18 @@ const RightIconContainer = styled.div`
       : ''};
 `;
 
-const OptionsButton = styled(MdKeyboardArrowDown)`
-  top: ${getOptionsButtonTop};
-  right: ${({ rightIcon, suffixWidth }) => (rightIcon ? '37px' : `${suffixWidth + 5}px`)};
-  color: rgba(0, 0, 0, 0.54);
-  position: absolute;
-  pointer-events: none;
-  width: 1em;
-  height: 1em;
-  display: inline-block;
-  font-size: 16px;
+const OptionsButton = styled.div`
+  svg {
+    top: ${getOptionsButtonTop};
+    right: ${({ rightIcon, suffixWidth }) => (rightIcon ? '37px' : `${suffixWidth + 5}px`)};
+    color: rgba(0, 0, 0, 0.54);
+    position: absolute;
+    pointer-events: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 16px;
+  }
 `;
 
 const SelectGroup = styled.div`
