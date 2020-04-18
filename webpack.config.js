@@ -9,6 +9,7 @@ module.exports = {
     box: './src/box',
     button: './src/button',
     checkbox: './src/checkbox',
+    'circular-progress': './src/circular-progress',
     collapse: './src/collapse',
     breadcrumb: './src/breadcrumb',
     card: './src/card',
