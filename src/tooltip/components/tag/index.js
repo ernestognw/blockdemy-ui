@@ -12,45 +12,128 @@ class Tag extends Component {
     super(props);
     this.el = document.createElement('div');
     this.state = {
-      width: null
+      width: null,
+      height: null
     };
   }
 
-  componentDidMount = () => {
-    this.tooltipRoot.appendChild(this.el);
-  };
+  componentDidMount = () => this.tooltipRoot.appendChild(this.el);
 
-  componentWillUnmount = () => {
-    this.tooltipRoot.removeChild(this.el);
-  };
+  componentWillUnmount = () => this.tooltipRoot.removeChild(this.el);
 
-  getWidth = ref => {
-    const { width: oldWidth } = this.state;
+  getDimensions = ref => {
+    const { width: oldWidth, height: oldHeight } = this.state;
     if (ref) {
-      const { width } = ref.getBoundingClientRect();
-      if (oldWidth !== width) {
-        this.setState({ width });
+      const { width, height } = ref.getBoundingClientRect();
+      if (oldWidth !== width || height !== oldHeight) {
+        this.setState({ width, height });
       }
     }
   };
 
-  render() {
-    const { tag, x, y, width, height, showTag, position, align } = this.props;
+  setAtTop = () => {
+    const { top, left, width } = this.props;
+    const { width: thisWidth, height: thisHeight } = this.state;
+    const { pageYOffset } = window;
+
+    const yValue = top + pageYOffset - thisHeight - 10;
+    const xValue = left - thisWidth / 2 + width / 2;
+
+    return {
+      yValue,
+      xValue
+    };
+  };
+
+  setAtBottom = () => {
+    const { top, left, width, height } = this.props;
     const { width: thisWidth } = this.state;
+    const { pageYOffset } = window;
+
+    const yValue = top + pageYOffset + height + 10;
+    const xValue = left - thisWidth / 2 + width / 2;
+
+    return {
+      yValue,
+      xValue
+    };
+  };
+
+  setAtLeft = () => {
+    const { top, left, height } = this.props;
+    const { width: thisWidth, height: thisHeight } = this.state;
+    const { pageXOffset } = window;
+
+    const yValue = top - thisHeight / 2 + height / 2;
+    const xValue = left - pageXOffset - thisWidth;
+
+    return {
+      yValue,
+      xValue
+    };
+  };
+
+  setAtRight = () => {
+    const { top, left, width, height } = this.props;
+    const { height: thisHeight } = this.state;
+    const { pageXOffset } = window;
+
+    const yValue = top - thisHeight / 2 + height / 2;
+    const xValue = left + pageXOffset + width;
+
+    return {
+      yValue,
+      xValue
+    };
+  };
+
+  render() {
+    const { align, tag } = this.props;
+    let { position } = this.props;
+    const { width: thisWidth, height: thisHeight } = this.state;
+    const { innerHeight, innerWidth } = window;
 
     let yValue;
+    let xValue;
 
-    if (position === 'bottom') {
-      yValue = y + height + 10 + window.pageYOffset;
-    } else {
-      yValue = y - height - 10 + window.pageYOffset;
+    switch (position) {
+      case 'top':
+        ({ yValue, xValue } = this.setAtTop());
+        if (yValue < 0) {
+          ({ yValue, xValue } = this.setAtBottom());
+          position = 'bottom';
+        }
+        break;
+      case 'bottom':
+        ({ yValue, xValue } = this.setAtBottom());
+        if (yValue + thisHeight > innerHeight) {
+          ({ yValue, xValue } = this.setAtTop());
+          position = 'top';
+        }
+        break;
+      case 'left':
+        ({ yValue, xValue } = this.setAtLeft());
+        if (xValue < 0) {
+          ({ yValue, xValue } = this.setAtRight());
+          position = 'right';
+        }
+        break;
+      case 'right':
+        ({ yValue, xValue } = this.setAtRight());
+        if (xValue + thisWidth > innerWidth) {
+          ({ yValue, xValue } = this.setAtLeft());
+          position = 'left';
+        }
+        break;
+      default:
+        ({ yValue, xValue } = this.setAtTop());
+        break;
     }
 
     return createPortal(
       <Text
-        showTag={showTag}
-        ref={ref => this.getWidth(ref)}
-        x={x - thisWidth / 2 + width / 2}
+        ref={ref => this.getDimensions(ref)}
+        x={xValue}
         y={yValue}
         align={align}
         position={position}
@@ -63,19 +146,17 @@ class Tag extends Component {
 }
 
 Tag.defaultProps = {
-  showTag: false,
   align: 'left'
 };
 
 Tag.propTypes = {
   tag: PropTypes.string.isRequired,
   align: PropTypes.string,
-  showTag: PropTypes.bool,
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
-  x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired,
-  position: PropTypes.oneOf(['top', 'bottom']).isRequired
+  left: PropTypes.number.isRequired,
+  top: PropTypes.number.isRequired,
+  position: PropTypes.oneOf(['top', 'bottom', 'left', 'right']).isRequired
 };
 
 export default Tag;

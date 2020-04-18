@@ -19,6 +19,16 @@ const Normal = () => (
         Bottom
       </Pill>
     </Tooltip>
+    <Tooltip position="left" tag="Bottom tooltip">
+      <Pill variant="soft" color="default" size="large" mx={10}>
+        Left
+      </Pill>
+    </Tooltip>
+    <Tooltip position="right" tag="Bottom tooltip">
+      <Pill variant="soft" color="default" size="large" mx={10}>
+        Right
+      </Pill>
+    </Tooltip>
   </Box>
 );
 

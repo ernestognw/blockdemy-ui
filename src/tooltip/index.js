@@ -1,71 +1,62 @@
-import React, { Children, cloneElement, Component } from 'react';
+import React, { Children, cloneElement, useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Tag from './components/tag';
 
-class Tooltip extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showTag: false,
-      x: null,
-      y: null,
-      width: null
-    };
-  }
+const Tooltip = ({ children, tag, align, position }) => {
+  const [showTag, setShowTag] = useState(false);
+  const [left, setLeft] = useState(0);
+  const [top, setTop] = useState(0);
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
+  const containerRef = useRef();
 
-  showTag = () => this.setState({ showTag: true });
-
-  hideTag = () => this.setState({ showTag: false });
-
-  getPosition = element => {
-    const { x, y, width } = this.state;
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      if (width !== rect.width || x !== rect.x || y !== rect.y) {
-        this.setState({
-          x: rect.x,
-          y: rect.y,
-          width: rect.width,
-          height: rect.height
-        });
+  useEffect(() => {
+    const { current } = containerRef;
+    if (current) {
+      const { clientWidth, clientHeight, offsetLeft, offsetTop } = current;
+      if (
+        width !== clientWidth ||
+        height !== clientHeight ||
+        left !== offsetLeft ||
+        top !== offsetTop
+      ) {
+        setWidth(clientWidth);
+        setHeight(clientHeight);
+        setLeft(offsetLeft);
+        setTop(offsetTop);
       }
     }
-  };
+  });
 
-  render() {
-    const { tag, children, align, position } = this.props;
-    const { showTag, x, y, width, height } = this.state;
+  const newChildren = Children.map(children, (child, index) => (
+    <div className={child.props.className} ref={containerRef}>
+      {cloneElement(child, {
+        index,
+        onMouseOver: () => setShowTag(true),
+        onFocus: () => setShowTag(true),
+        onMouseLeave: () => setShowTag(false),
+        ...child.props
+      })}
+    </div>
+  ));
 
-    const newChildren = Children.map(children, (child, index) => (
-      <div className={child.props.className} ref={element => this.getPosition(element)}>
-        {cloneElement(child, {
-          index,
-          onMouseOver: this.showTag,
-          onFocus: this.showTag,
-          onMouseLeave: this.hideTag,
-          ...child.props
-        })}
-      </div>
-    ));
-
-    return (
-      <>
-        {showTag && (
-          <Tag
-            align={align}
-            x={x}
-            y={y}
-            height={height}
-            width={width}
-            tag={tag}
-            position={position}
-          />
-        )}
-        {newChildren}
-      </>
-    );
-  }
-}
+  return (
+    <>
+      {showTag && (
+        <Tag
+          align={align}
+          left={left}
+          top={top}
+          height={height}
+          width={width}
+          tag={tag}
+          position={position}
+        />
+      )}
+      {newChildren}
+    </>
+  );
+};
 
 Tooltip.defaultProps = {
   align: 'left',
@@ -76,7 +67,7 @@ Tooltip.propTypes = {
   children: PropTypes.any.isRequired,
   tag: PropTypes.any.isRequired,
   align: PropTypes.string,
-  position: PropTypes.oneOf(['top', 'bottom'])
+  position: PropTypes.oneOf(['top', 'bottom', 'left', 'right'])
 };
 
 export default Tooltip;

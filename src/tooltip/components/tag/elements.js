@@ -22,19 +22,18 @@ const Text = styled.pre`
   font-size: 0.8rem;
   z-index: 4000;
   padding: 10px;
-  transform: translate3d(${({ x }) => x}px, ${({ y }) => y}px, 0px);
-  margin: 0;
+  transform: translate(${({ x }) => x}px, ${({ y }) => y}px);
+  margin: 0px;
   white-space: normal;
   width: max-content;
   max-width: 200px;
   text-align: ${({ align }) => align};
 
-  ${({ showTag }) => (showTag ? animationShow : '')};
+  ${animationShow}
 
   &:after {
     content: '';
     position: absolute;
-    left: calc(50% - 5px);
     width: 0;
     height: 0;
     border-top: solid 5px rgba(0, 0, 0, 0.85);
@@ -44,10 +43,28 @@ const Text = styled.pre`
     ${({ position }) => {
       switch (position) {
         case 'top':
-          return 'top: 100%;';
+          return `
+            bottom: -5px;
+            left: calc(50% - 5px);
+          `;
         case 'bottom':
-          return `bottom: 100%;
-            transform: rotate(180deg);`;
+          return `
+            top: -5px;
+            left: calc(50% - 5px);
+            transform: rotate(180deg);
+          `;
+        case 'left':
+          return `
+            right: -7px;
+            top: calc(50% - 5px);
+            transform: rotate(-90deg);
+          `;
+        case 'right':
+          return `
+            left: -7px;
+            top: calc(50% - 5px);
+            transform: rotate(90deg);
+          `;
         default:
           return 'top: 100%;';
       }
