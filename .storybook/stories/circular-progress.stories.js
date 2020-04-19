@@ -41,6 +41,49 @@ const Normal = () => (
   </Box>
 );
 
+const WithRoundCap = () => (
+  <Box p={50}>
+    <Box display="flex" width={1} justifyContent="space-evenly">
+      {brandColors.map(color => (
+        <CircularProgress
+          size={20}
+          value={66}
+          key={color}
+          my={20}
+          mx={10}
+          lineCap="round"
+          color={color.toLowerCase()}
+        />
+      ))}
+    </Box>
+    <Box display="flex" width={1} justifyContent="space-evenly">
+      {brandColors.map(color => (
+        <CircularProgress
+          lineCap="round"
+          value={66}
+          key={color}
+          my={20}
+          mx={10}
+          color={color.toLowerCase()}
+        />
+      ))}
+    </Box>
+    <Box display="flex" width={1} justifyContent="space-evenly">
+      {brandColors.map(color => (
+        <CircularProgress
+          size={60}
+          value={66}
+          key={color}
+          my={20}
+          lineCap="round"
+          mx={10}
+          color={color.toLowerCase()}
+        />
+      ))}
+    </Box>
+  </Box>
+);
+
 const WithLabel = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
@@ -209,6 +252,7 @@ storiesOf(title, module)
     })
   )
   .add('Normal', Normal)
+  .add('With Round Cap', WithRoundCap)
   .add('With Label', WithLabel)
   .add('With Track Color', WithTrackColor)
   .add('With Stroke Width', WithStrokeWidth)

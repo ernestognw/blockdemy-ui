@@ -39,7 +39,7 @@ const indeterminateSvgAnimation = css`
 `;
 
 const Label = styled(Box)`
-  font-variant-numeric: 'tabular-nums';
+  font-variant-numeric: tabular-nums;
   transform: translate(-50%, -50%);
   line-height: 1;
   position: absolute;
