@@ -31,7 +31,8 @@ const Modal = ({
   secondaryColor,
   loading,
   size,
-  zIndex
+  zIndex,
+  ...props
 }) => {
   useEffect(() => {
     const { body } = document;
@@ -48,7 +49,7 @@ const Modal = ({
       {active && (
         <ModalPortal>
           <ModalContainer zIndex={zIndex}>
-            <ModalBox size={size} animate={active}>
+            <ModalBox {...props} size={size} animate={active}>
               {title ? (
                 <ContentHeader>
                   <ModalTitle>{title}</ModalTitle>

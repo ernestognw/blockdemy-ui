@@ -1,6 +1,7 @@
 import styled, { keyframes, css } from 'styled-components';
 import { color } from 'styled-system';
 import Button from '../button';
+import Box from '../box';
 import getWidth from './utils';
 
 const fadeIn = keyframes`
@@ -46,7 +47,7 @@ const PseudoContainer = styled.div`
   left: 0;
 `;
 
-const ModalBox = styled.div`
+const ModalBox = styled(Box)`
   margin: 48px;
   display: flex;
   background: ${({ theme }) => theme.colors.lighter};
