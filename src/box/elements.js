@@ -10,7 +10,7 @@ const Box = styled.div`
   ${grid}
   ${border}
 
-  cursor: ${({ clickable }) => (clickable ? 'pointer' : 'initial')}
+  cursor: ${({ clickable }) => (clickable ? 'pointer' : 'inherit')}
 `;
 
 export default Box;
