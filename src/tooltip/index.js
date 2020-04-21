@@ -1,8 +1,9 @@
 import React, { Children, cloneElement, useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Tag from './components/tag';
+import Box from '../box';
 
-const Tooltip = ({ children, tag, align, position }) => {
+const Tooltip = ({ children, tag, align, position, ...props }) => {
   const [showTag, setShowTag] = useState(false);
   const [left, setLeft] = useState(0);
   const [top, setTop] = useState(0);
@@ -13,23 +14,29 @@ const Tooltip = ({ children, tag, align, position }) => {
   useEffect(() => {
     const { current } = containerRef;
     if (current) {
-      const { clientWidth, clientHeight, offsetLeft, offsetTop } = current;
+      const {
+        width: currentWidth,
+        height: currentHeight,
+        left: currentLeft,
+        top: currentTop
+        // Thake first child as ref
+      } = current.children[0].getBoundingClientRect();
       if (
-        width !== clientWidth ||
-        height !== clientHeight ||
-        left !== offsetLeft ||
-        top !== offsetTop
+        width !== currentWidth ||
+        height !== currentHeight ||
+        left !== currentLeft ||
+        top !== currentTop
       ) {
-        setWidth(clientWidth);
-        setHeight(clientHeight);
-        setLeft(offsetLeft);
-        setTop(offsetTop);
+        setWidth(currentWidth);
+        setHeight(currentHeight);
+        setLeft(currentLeft);
+        setTop(currentTop);
       }
     }
   });
 
   const newChildren = Children.map(children, (child, index) => (
-    <div className={child.props.className} ref={containerRef}>
+    <Box className={child.props.className} {...props} ref={containerRef}>
       {cloneElement(child, {
         index,
         onMouseOver: () => setShowTag(true),
@@ -37,7 +44,7 @@ const Tooltip = ({ children, tag, align, position }) => {
         onMouseLeave: () => setShowTag(false),
         ...child.props
       })}
-    </div>
+    </Box>
   ));
 
   return (

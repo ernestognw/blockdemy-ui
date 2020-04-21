@@ -19,12 +19,12 @@ const Normal = () => (
         Bottom
       </Pill>
     </Tooltip>
-    <Tooltip position="left" tag="Bottom tooltip">
+    <Tooltip position="left" tag="Left tooltip">
       <Pill variant="soft" color="default" size="large" mx={10}>
         Left
       </Pill>
     </Tooltip>
-    <Tooltip position="right" tag="Bottom tooltip">
+    <Tooltip position="right" tag="Right tooltip">
       <Pill variant="soft" color="default" size="large" mx={10}>
         Right
       </Pill>
