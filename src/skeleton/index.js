@@ -10,8 +10,8 @@ const Skeleton = ({ firstColor, lastColor, loading, fadeInDuration, speed, ...pr
   );
 
 Skeleton.defaultProps = {
-  firstColor: 'veryLightGrey',
-  lastColor: 'lightGrey',
+  firstColor: 'light',
+  lastColor: 'veryLightGrey',
   fadeInDuration: 0.4,
   speed: 0.8
 };

@@ -36,7 +36,6 @@ const SkeletonContainer = styled(Box)`
       skeletonGlow(`${theme.colors[firstColor]}60`, `${theme.colors[lastColor]}60`)};
   pointer-events: none;
   user-select: none;
-  border-radius: ${({ theme }) => theme.radius};
 
   /* Make pseudo-elements (CSS icons) and children invisible */
   &::before,
