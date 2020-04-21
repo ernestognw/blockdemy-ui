@@ -34,10 +34,10 @@ class Tag extends Component {
   setAtTop = () => {
     const { top, left, width } = this.props;
     const { width: thisWidth, height: thisHeight } = this.state;
-    const { pageYOffset } = window;
+    const { pageYOffset, pageXOffset } = window;
 
     const yValue = top + pageYOffset - thisHeight - 10;
-    const xValue = left - thisWidth / 2 + width / 2;
+    const xValue = left + pageXOffset - thisWidth / 2 + width / 2;
 
     return {
       yValue,
@@ -48,10 +48,10 @@ class Tag extends Component {
   setAtBottom = () => {
     const { top, left, width, height } = this.props;
     const { width: thisWidth } = this.state;
-    const { pageYOffset } = window;
+    const { pageYOffset, pageXOffset } = window;
 
     const yValue = top + pageYOffset + height + 10;
-    const xValue = left - thisWidth / 2 + width / 2;
+    const xValue = left + pageXOffset - thisWidth / 2 + width / 2;
 
     return {
       yValue,
@@ -62,10 +62,10 @@ class Tag extends Component {
   setAtLeft = () => {
     const { top, left, height } = this.props;
     const { width: thisWidth, height: thisHeight } = this.state;
-    const { pageXOffset } = window;
+    const { pageYOffset, pageXOffset } = window;
 
-    const yValue = top - thisHeight / 2 + height / 2;
-    const xValue = left - pageXOffset - thisWidth - 10;
+    const yValue = top + pageYOffset - thisHeight / 2 + height / 2;
+    const xValue = left + pageXOffset - thisWidth - 10;
 
     return {
       yValue,
@@ -76,9 +76,9 @@ class Tag extends Component {
   setAtRight = () => {
     const { top, left, width, height } = this.props;
     const { height: thisHeight } = this.state;
-    const { pageXOffset } = window;
+    const { pageYOffset, pageXOffset } = window;
 
-    const yValue = top - thisHeight / 2 + height / 2;
+    const yValue = top + pageYOffset - thisHeight / 2 + height / 2;
     const xValue = left + pageXOffset + width + 10;
 
     return {
