@@ -79,7 +79,7 @@ class Tag extends Component {
     const { pageXOffset } = window;
 
     const yValue = top - thisHeight / 2 + height / 2;
-    const xValue = left + pageXOffset + width + 10  ;
+    const xValue = left + pageXOffset + width + 10;
 
     return {
       yValue,
