@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 import fontFaces from './font-faces';
 
 const GlobalStyle = createGlobalStyle`
-  ${fontFaces}
+  /* Includes font faces for San Francisco font if needed */
+  ${({ theme }) => (theme.font.includes('SF Prop Text') ? fontFaces : '')}
 
   * {
     box-sizing: border-box;
@@ -25,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: 16px;
-    font-family: ${({ theme }) => theme.font}, system-ui, serif;
+    font-family: ${({ theme }) => theme.font};
     line-height: 1.5;
     position: relative;
     height: 100%;

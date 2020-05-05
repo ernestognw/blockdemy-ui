@@ -23,7 +23,7 @@ const TabContent = ({ children, ...props }) => (
 
 Tabs.defaultProps = {
   children: null,
-  size: ''
+  size: 'normal'
 };
 
 Tabs.propTypes = {
@@ -36,7 +36,7 @@ Tab.defaultProps = {
   children: null,
   active: false,
   color: 'primary',
-  size: ''
+  size: 'normal'
 };
 
 Tab.propTypes = {

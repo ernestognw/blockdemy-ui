@@ -114,7 +114,7 @@ Modal.defaultProps = {
   secondaryText: 'Cancel',
   secondaryColor: 'danger',
   loading: false,
-  size: '',
+  size: 'normal',
   zIndex: '3000'
 };
 

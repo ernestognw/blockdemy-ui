@@ -1,100 +1,111 @@
 import { css } from 'styled-components';
-import SFProTextLight from '../fonts/SF-Pro-Text-Light.otf';
-import SFProTextLightItalic from '../fonts/SF-Pro-Text-LightItalic.otf';
-import SFProTextRegular from '../fonts/SF-Pro-Text-Regular.otf';
-import SFProTextRegularItalic from '../fonts/SF-Pro-Text-RegularItalic.otf';
-import SFProTextMedium from '../fonts/SF-Pro-Text-Medium.otf';
-import SFProTextMediumItalic from '../fonts/SF-Pro-Text-MediumItalic.otf';
-import SFProTextSemibold from '../fonts/SF-Pro-Text-Semibold.otf';
-import SFProTextSemiboldItalic from '../fonts/SF-Pro-Text-SemiboldItalic.otf';
-import SFProTextBold from '../fonts/SF-Pro-Text-Bold.otf';
-import SFProTextBoldItalic from '../fonts/SF-Pro-Text-BoldItalic.otf';
-import SFProTextHeavy from '../fonts/SF-Pro-Text-Heavy.otf';
-import SFProTextHeavyItalic from '../fonts/SF-Pro-Text-HeavyItalic.otf';
+
+// Special thanks to https://github.com/AndrewBarba
 
 const fontFaces = css`
+  /** Ultrathin */
   @font-face {
     font-family: 'SF Pro Text';
-    font-style: normal;
-    font-weight: 300;
-    src: url(${SFProTextLight});
+    font-weight: 100;
+    src: url('https://sf.abarba.me/SF-UI-Text-Ultrathin.otf');
   }
 
+  /** Ultrathin Italic */
   @font-face {
     font-family: 'SF Pro Text';
+    font-weight: 100;
     font-style: italic;
-    font-weight: 300;
-    src: url(${SFProTextLightItalic});
+    src: url('https://sf.abarba.me/SF-UI-Text-UltrathinItalic.otf');
   }
 
+  /** Light */
   @font-face {
     font-family: 'SF Pro Text';
-    font-style: normal;
+    font-weight: 200;
+    src: url('https://sf.abarba.me/SF-UI-Text-Light.otf');
+  }
+
+  /** Light Italic */
+  @font-face {
+    font-family: 'SF Pro Text';
+    font-weight: 200;
+    font-style: italic;
+    src: url('https://sf.abarba.me/SF-UI-Text-LightItalic.otf');
+  }
+
+  /** Regular */
+  @font-face {
+    font-family: 'SF Pro Text';
     font-weight: 400;
-    src: url(${SFProTextRegular});
+    src: url('https://sf.abarba.me/SF-UI-Text-Regular.otf');
   }
 
+  /** Regular Italic */
   @font-face {
     font-family: 'SF Pro Text';
-    font-style: italic;
     font-weight: 400;
-    src: url(${SFProTextRegularItalic});
-  }
-
-  @font-face {
-    font-family: 'SF Pro Text';
-    font-style: normal;
-    font-weight: 500;
-    src: url(${SFProTextMedium});
-  }
-
-  @font-face {
-    font-family: 'SF Pro Text';
     font-style: italic;
-    font-weight: 500;
-    src: url(${SFProTextMediumItalic});
+    src: url('https://sf.abarba.me/SF-UI-Text-RegularItalic.otf');
   }
 
+  /** Medium */
   @font-face {
     font-family: 'SF Pro Text';
-    font-style: normal;
     font-weight: 500;
-    src: url(${SFProTextSemibold});
+    src: url('https://sf.abarba.me/SF-UI-Text-Medium.otf');
   }
 
+  /** Medium Italic */
   @font-face {
     font-family: 'SF Pro Text';
+    font-weight: 500;
     font-style: italic;
-    font-weight: 500;
-    src: url(${SFProTextSemiboldItalic});
+    src: url('https://sf.abarba.me/SF-UI-Text-MediumItalic.otf');
   }
 
+  /** Semibold */
   @font-face {
     font-family: 'SF Pro Text';
-    font-style: normal;
+    font-weight: 600;
+    src: url('https://sf.abarba.me/SF-UI-Text-Semibold.otf');
+  }
+
+  /** Semibold Italic */
+  @font-face {
+    font-family: 'SF Pro Text';
+    font-weight: 600;
+    font-style: italic;
+    src: url('https://sf.abarba.me/SF-UI-Text-SemiboldItalic.otf');
+  }
+
+  /** Bold */
+  @font-face {
+    font-family: 'SF Pro Text';
     font-weight: 700;
-    src: url(${SFProTextBold});
+    src: url('https://sf.abarba.me/SF-UI-Text-Bold.otf');
   }
 
+  /** Bold Italic */
   @font-face {
     font-family: 'SF Pro Text';
-    font-style: italic;
     font-weight: 700;
-    src: url(${SFProTextBoldItalic});
-  }
-
-  @font-face {
-    font-family: 'SF Pro Text';
-    font-style: normal;
-    font-weight: 900;
-    src: url(${SFProTextHeavy});
-  }
-
-  @font-face {
-    font-family: 'SF Pro Text';
     font-style: italic;
-    font-weight: 900;
-    src: url(${SFProTextHeavyItalic});
+    src: url('https://sf.abarba.me/SF-UI-Text-BoldItalic.otf');
+  }
+
+  /** Heavy */
+  @font-face {
+    font-family: 'SF Pro Text';
+    font-weight: 800;
+    src: url('https://sf.abarba.me/SF-UI-Text-Heavy.otf');
+  }
+
+  /** Heavy Italic */
+  @font-face {
+    font-family: 'SF Pro Text';
+    font-weight: 800;
+    font-style: italic;
+    src: url('https://sf.abarba.me/SF-UI-Text-HeavyItalic.otf');
   }
 `;
 
