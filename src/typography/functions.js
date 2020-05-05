@@ -25,7 +25,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || 'bold'}
+          fontWeight={fontWeight || 600}
           {...props}
         >
           {children}
@@ -41,7 +41,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || 'bold'}
+          fontWeight={fontWeight || 600}
           {...props}
         >
           {children}
@@ -57,7 +57,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || 'bold'}
+          fontWeight={fontWeight || 600}
           {...props}
         >
           {children}
@@ -73,7 +73,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || 'bold'}
+          fontWeight={fontWeight || 600}
           {...props}
         >
           {children}
@@ -89,7 +89,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || 'bold'}
+          fontWeight={fontWeight || 600}
           {...props}
         >
           {children}
@@ -105,7 +105,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || 'bold'}
+          fontWeight={fontWeight || 600}
           {...props}
         >
           {children}
@@ -185,11 +185,11 @@ const setTag = (
         <P
           className={className}
           underline={underline}
-          uppercase={typeof uppercase === 'undefined' ? true : uppercase}
+          uppercase={uppercase}
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || 'bold'}
+          fontWeight={fontWeight || 600}
           variant={variant}
           {...props}
         >
@@ -206,7 +206,7 @@ const setTag = (
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}
-          fontWeight={fontWeight || 'bold'}
+          fontWeight={fontWeight || 600}
           variant={variant}
           {...props}
         >
@@ -219,7 +219,7 @@ const setTag = (
         <P
           className={className}
           underline={underline}
-          uppercase={typeof uppercase === 'undefined' ? true : uppercase}
+          uppercase={uppercase}
           capitalize={capitalize}
           color={color}
           fontSize={fontSize}

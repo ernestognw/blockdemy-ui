@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
+import fontFaces from './font-faces';
 
 const GlobalStyle = createGlobalStyle`
+  ${fontFaces}
+
   * {
     box-sizing: border-box;
   }
@@ -22,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: 16px;
-    font-family: ${({ theme }) => theme.font};
+    font-family: ${({ theme }) => theme.font}, system-ui, serif;
     line-height: 1.5;
     position: relative;
     height: 100%;

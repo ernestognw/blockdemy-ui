@@ -30,7 +30,7 @@ const CardHeaderContainer = styled.div`
 
 const HeaderTitle = styled.h5`
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   margin: 10px 0 0 0;
   color: ${({ theme }) => theme.colors.default};
 `;
@@ -39,7 +39,7 @@ const HeaderSubtitle = styled.h6`
   font-size: 0.625rem;
   text-transform: uppercase;
   margin: 4px 0;
-  font-weight: 500;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.lightDark};
 `;
 

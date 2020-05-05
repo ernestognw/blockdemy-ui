@@ -16,11 +16,11 @@ const Label = styled.label`
 
 const Message = styled.div`
   font-size: 0.75rem;
-  font-weight: 'light';
   color: ${({ theme }) => theme.colors.default};
   text-align: left;
   margin-bottom: 10px;
   margin-top: 10px;
+  font-size: 10px;
 
   ${({ theme, success }) => (success ? `color: ${theme.colors.success} !important;` : '')};
   ${({ theme, warning }) => (warning ? `color: ${theme.colors.warning} !important;` : '')};

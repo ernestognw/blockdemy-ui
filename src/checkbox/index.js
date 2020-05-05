@@ -55,7 +55,7 @@ const Checkbox = ({
 };
 
 Checkbox.defaultProps = {
-  color: 'secondary',
+  color: 'primary',
   size: 'normal',
   id: null,
   success: false,

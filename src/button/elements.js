@@ -6,7 +6,7 @@ const Button = styled.button`
   position: relative;
   border-radius: ${({ theme }) => theme.radius};
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   border: none;
   display: flex;
   align-items: center;

@@ -62,7 +62,7 @@ const ModalTitleContainer = styled.div`
 const ModalTitle = styled.h6`
   color: ${({ theme }) => theme.colors.default};
   font-size: 1.75rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.6;
   margin-bottom: 0;
   padding-bottom: 1rem;

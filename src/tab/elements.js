@@ -16,7 +16,7 @@ const DefaultTabs = styled.nav`
 const DefaultTab = styled.div`
   color: ${({ theme }) => theme.colors.default};
   opacity: 0.7;
-  font-weight: 500;
+  font-weight: 600;
   height: 100%;
   display: flex;
   align-items: center;

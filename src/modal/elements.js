@@ -92,7 +92,7 @@ const ContentFooter = styled.div`
 const ModalTitle = styled.h6`
   color: ${({ theme }) => theme.colors.default};
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.6;
 `;
 

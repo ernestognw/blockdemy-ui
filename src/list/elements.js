@@ -35,7 +35,7 @@ const ItemTextContainer = styled.div`
 
 const PrimaryText = styled.span`
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.default};
 `;
 

@@ -19,11 +19,11 @@ const Label = styled.label`
 
 const Message = styled.div`
   font-size: 0.75rem;
-  font-weight: light;
   color: ${({ theme }) => theme.colors.default};
   text-align: left;
   margin-bottom: 10px;
   margin-top: 10px;
+  font-size: 10px;
 
   ${({ theme, success }) => (success ? `color: ${theme.colors.success} !important;` : '')};
   ${({ theme, warning }) => (warning ? `color: ${theme.colors.warning} !important;` : '')};
@@ -152,7 +152,6 @@ const InputGroup = styled.div`
 
 const Prefix = styled.span`
   background-color: ${({ theme }) => theme.colors.veryLightGrey};
-  font-weight: light;
   font-size: 0.875rem;
   border-top-left-radius: 5px;
   color: ${({ theme }) => theme.colors.lightGrey};
@@ -165,7 +164,6 @@ const Prefix = styled.span`
 
 const Suffix = styled.span`
   background-color: ${({ theme }) => theme.colors.veryLightGrey};
-  font-weight: light;
   font-size: 0.875rem;
   border-top-right-radius: 5px;
   color: ${({ theme }) => theme.colors.lightGrey};
