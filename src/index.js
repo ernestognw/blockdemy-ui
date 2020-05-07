@@ -23,4 +23,5 @@ class BlockdemyUI {
   );
 }
 
+export { defaultTheme };
 export default BlockdemyUI;
