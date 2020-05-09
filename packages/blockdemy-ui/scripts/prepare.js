@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { join } = require('path');
-const { entry: entries } = require('../webkpac.config');
+const { entry: entries } = require('../webpack.config');
 
 Object.keys(entries).forEach(entry => {
   if (entry === 'index') {
