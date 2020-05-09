@@ -22,10 +22,10 @@ const fadeIn = keyframes`
 `;
 
 const SkeletonContainer = styled(Box)`
-  border-color: ${({ firstColor, theme }) => theme.colors[firstColor]}60;
+  border-color: ${({ firstColor, theme }) => theme.colors[firstColor]};
   box-shadow: none;
   opacity: 0.7;
-  background: ${({ firstColor, theme }) => theme.colors[firstColor]}60;
+  background: ${({ firstColor, theme }) => theme.colors[firstColor]};
   background-clip: padding-box;
   cursor: default;
 
@@ -33,7 +33,7 @@ const SkeletonContainer = styled(Box)`
   color: transparent;
   animation: ${({ speed }) => speed}s linear infinite alternate
     ${({ firstColor, lastColor, theme }) =>
-      skeletonGlow(`${theme.colors[firstColor]}60`, `${theme.colors[lastColor]}60`)};
+      skeletonGlow(`${theme.colors[firstColor]}`, `${theme.colors[lastColor]}`)};
   pointer-events: none;
   user-select: none;
 

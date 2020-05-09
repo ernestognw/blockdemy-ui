@@ -16,23 +16,34 @@ const getStyle = ({ variant, theme, color }) => {
 const getPadding = size => {
   switch (size) {
     case 'small':
-      return '3.5px 5.5px';
+      return '2px 5px';
     case 'large':
-      return '12px 16px';
+      return '4px 12px';
     default:
-      return '8px 10px';
+      return '3px 8px';
   }
 };
 
 const getFontSize = size => {
   switch (size) {
     case 'small':
-      return '0.7rem';
+      return '0.5rem';
     case 'large':
-      return '1rem';
+      return '0.8rem';
     default:
-      return '0.85rem';
+      return '0.7rem';
   }
 };
 
-export { getStyle, getPadding, getFontSize };
+const getBorderRadius = size => {
+  switch (size) {
+    case 'small':
+      return '2px';
+    case 'large':
+      return '3px';
+    default:
+      return '3px';
+  }
+};
+
+export { getStyle, getPadding, getFontSize, getBorderRadius };

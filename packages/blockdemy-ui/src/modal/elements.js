@@ -32,7 +32,6 @@ const ModalContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  -webkit-tap-highlight-color: transparent;
 
   ${color}
 `;
@@ -94,6 +93,7 @@ const ModalTitle = styled.h6`
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.6;
+  text-align: center;
 `;
 
 const CloseButton = styled(Button)`

@@ -38,8 +38,6 @@ const PseudoInput = styled.input`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.colors.veryLightGrey};
   padding: 0.625rem 0.75rem;
-  -webkit-appearance: initial;
-  -moz-appearance: initial;
   appearance: initial;
   transition: all .45s ease;
 
