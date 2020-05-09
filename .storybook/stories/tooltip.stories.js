@@ -3,9 +3,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Box from '../../src/box';
-import Tooltip from '../../src/tooltip';
-import Pill from '../../src/pill';
+import Box from 'blockdemy-ui/box';
+import Tooltip from 'blockdemy-ui/tooltip';
+import Pill from 'blockdemy-ui/pill';
 
 const Normal = () => (
   <Box display="flex" pt={100} width={1} justifyContent="space-evenly">

@@ -3,8 +3,8 @@ import React from 'react';
 import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 
-import Box from '../../src/box';
-import Breadcrumb from '../../src/breadcrumb';
+import Box from 'blockdemy-ui/box';
+import Breadcrumb from 'blockdemy-ui/breadcrumb';
 import { brandColors, grayscaleColors } from '../utils';
 
 const LastColor = () => (

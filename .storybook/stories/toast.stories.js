@@ -3,8 +3,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Box from '../../src/box';
-import Button from '../../src/button';
+import Box from 'blockdemy-ui/box';
+import Button from 'blockdemy-ui/button';
 import { brandColors } from '../utils';
 import { toast } from '../config';
 

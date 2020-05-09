@@ -3,8 +3,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Typography from '../../src/typography';
-import Box from '../../src/box';
+import Typography from 'blockdemy-ui/typography';
+import Box from 'blockdemy-ui/box';
 import { brandColors } from '../utils';
 
 const Headings = () => (

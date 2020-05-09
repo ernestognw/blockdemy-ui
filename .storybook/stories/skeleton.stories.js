@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Button from '../../src/button';
-import Skeleton from '../../src/skeleton';
-import Typography from '../../src/typography';
-import Box from '../../src/box';
+import Button from 'blockdemy-ui/button';
+import Skeleton from 'blockdemy-ui/skeleton';
+import Typography from 'blockdemy-ui/typography';
+import Box from 'blockdemy-ui/box';
 import { brandColors } from '../utils';
 
 const Normal = () => {

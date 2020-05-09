@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Box from '../../src/box';
-import Button from '../../src/button';
-import SideModal from '../../src/side-modal';
-import Typography from '../../src/typography';
+import Box from 'blockdemy-ui/box';
+import Button from 'blockdemy-ui/button';
+import SideModal from 'blockdemy-ui/side-modal';
+import Typography from 'blockdemy-ui/typography';
 
 const Simple = () => {
   const [active, toggleSideModal] = useState(false);

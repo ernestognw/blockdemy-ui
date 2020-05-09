@@ -3,8 +3,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Box from '../../src/box';
-import Pill from '../../src/pill';
+import Box from 'blockdemy-ui/box';
+import Pill from 'blockdemy-ui/pill';
 import { brandColors } from '../utils';
 
 const Normal = () => (

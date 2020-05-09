@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Box from '../../src/box';
-import Button from '../../src/button';
-import Collapse from '../../src/collapse';
+import Box from 'blockdemy-ui/box';
+import Button from 'blockdemy-ui/button';
+import Collapse from 'blockdemy-ui/collapse';
 
 const Normal = () => {
   const [show, setShow] = useState(false);

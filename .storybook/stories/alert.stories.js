@@ -3,9 +3,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Alert from '../../src/alert';
-import Button from '../../src/button';
-import Box from '../../src/box';
+import Alert from 'blockdemy-ui/alert';
+import Button from 'blockdemy-ui/button';
+import Box from 'blockdemy-ui/box';
 import { brandColors } from '../utils';
 
 const Normal = () => (

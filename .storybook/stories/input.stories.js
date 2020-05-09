@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
 import { MdInfo } from 'react-icons/md';
-import Box from '../../src/box';
-import Input from '../../src/input';
-import { Card, CardBody, CardHeader } from '../../src/card';
+import Box from 'blockdemy-ui/box';
+import Input from 'blockdemy-ui/input';
+import { Card, CardBody, CardHeader } from 'blockdemy-ui/card';
 
 const Simple = () => {
   const [value1, setValue1] = useState('');

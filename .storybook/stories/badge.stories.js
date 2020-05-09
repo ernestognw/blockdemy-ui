@@ -4,12 +4,12 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { MdNotifications } from 'react-icons/md';
 
-import Typography from '../../src/typography';
-import { Card, CardBody, CardHeader } from '../../src/card';
-import Box from '../../src/box';
-import Avatar from '../../src/avatar';
-import Button from '../../src/button';
-import Badge from '../../src/badge';
+import Typography from 'blockdemy-ui/typography';
+import { Card, CardBody, CardHeader } from 'blockdemy-ui/card';
+import Box from 'blockdemy-ui/box';
+import Avatar from 'blockdemy-ui/avatar';
+import Button from 'blockdemy-ui/button';
+import Badge from 'blockdemy-ui/badge';
 import { brandColors } from '../utils';
 
 const Normal = () => (

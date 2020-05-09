@@ -3,8 +3,8 @@ import React from 'react';
 import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 
-import Box from '../../src/box';
-import CircularProgress, { CircularProgressLabel } from '../../src/circular-progress';
+import Box from 'blockdemy-ui/box';
+import CircularProgress, { CircularProgressLabel } from 'blockdemy-ui/circular-progress';
 import { brandColors } from '../utils';
 
 const Normal = () => (

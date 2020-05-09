@@ -2,12 +2,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Button from '../../src/button';
-import Box from '../../src/box';
-import Avatar from '../../src/avatar';
-import Typography from '../../src/typography';
+import Button from 'blockdemy-ui/button';
+import Box from 'blockdemy-ui/box';
+import Avatar from 'blockdemy-ui/avatar';
+import Typography from 'blockdemy-ui/typography';
+import { List, ListItem, ListItemText } from 'blockdemy-ui/list';
 import Logo from '../images/brand/blockdemy-black.svg';
-import { List, ListItem, ListItemText } from '../../src/list';
 
 const toBlockdemyUI = () => (
   <Box p={30}>

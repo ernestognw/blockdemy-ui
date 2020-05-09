@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Box from '../../src/box';
-import { RadioGroup, Radio } from '../../src/radio';
+import Box from 'blockdemy-ui/box';
+import { RadioGroup, Radio } from 'blockdemy-ui/radio';
 import { brandColors } from '../utils';
 
 const Normal = () => {

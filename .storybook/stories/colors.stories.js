@@ -2,9 +2,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import Box from 'blockdemy-ui/box';
+import Typography from 'blockdemy-ui/typography';
 import { getTheme } from '../config.js';
-import Box from '../../src/box';
-import Typography from '../../src/typography';
 import { brandColors, grayscaleColors } from '../utils';
 
 const theme = getTheme();

@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Box from '../../src/box';
-import Typography from '../../src/typography';
-import { Tabs, Tab, TabContent } from '../../src/tab';
-import { Card, CardBody, CardHeader } from '../../src/card';
+import Box from 'blockdemy-ui/box';
+import Typography from 'blockdemy-ui/typography';
+import { Tabs, Tab, TabContent } from 'blockdemy-ui/tab';
+import { Card, CardBody, CardHeader } from 'blockdemy-ui/card';
 
 const Normal = () => {
   const [tabSmall, setTabSmall] = useState(1);

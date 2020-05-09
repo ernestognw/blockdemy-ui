@@ -3,10 +3,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import { Card, CardFooter, CardBody, CardHeader } from '../../src/card';
-import Box from '../../src/box';
-import Button from '../../src/button';
-import Typography from '../../src/typography';
+import { Card, CardFooter, CardBody, CardHeader } from 'blockdemy-ui/card';
+import Box from 'blockdemy-ui/box';
+import Button from 'blockdemy-ui/button';
+import Typography from 'blockdemy-ui/typography';
 
 const Simple = () => (
   <Box p={30} display="flex" width={1} alignItems="center" flexDirection="column">

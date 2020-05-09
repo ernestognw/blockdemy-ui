@@ -3,11 +3,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Box from '../../src/box';
-import Avatar from '../../src/avatar';
-import Pill from '../../src/pill';
-import { List, ListItem, ListItemText } from '../../src/list';
-import { Card, CardBody, CardHeader } from '../../src/card';
+import Box from 'blockdemy-ui/box';
+import Avatar from 'blockdemy-ui/avatar';
+import Pill from 'blockdemy-ui/pill';
+import { List, ListItem, ListItemText } from 'blockdemy-ui/list';
+import { Card, CardBody, CardHeader } from 'blockdemy-ui/card';
 import { brandColors } from '../utils';
 
 const Normal = () => (

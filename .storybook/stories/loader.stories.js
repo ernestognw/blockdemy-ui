@@ -3,8 +3,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Box from '../../src/box';
-import Loader, { LoaderContainer } from '../../src/loader';
+import Box from 'blockdemy-ui/box';
+import Loader, { LoaderContainer } from 'blockdemy-ui/loader';
 import { brandColors } from '../utils';
 
 const Simple = () => (

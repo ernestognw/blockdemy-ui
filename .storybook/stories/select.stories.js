@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
 import { MdInfo } from 'react-icons/md';
-import Box from '../../src/box';
-import Select from '../../src/select';
-import { Card, CardBody, CardHeader } from '../../src/card';
+import Box from 'blockdemy-ui/box';
+import Select from 'blockdemy-ui/select';
+import { Card, CardBody, CardHeader } from 'blockdemy-ui/card';
 
 const options = ['Option 1', 'Option 2', 'Option 3'];
 

@@ -3,9 +3,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 
-import Avatar from '../../src/avatar';
-import Tooltip from '../../src/tooltip';
-import Box from '../../src/box';
+import Avatar from 'blockdemy-ui/avatar';
+import Tooltip from 'blockdemy-ui/tooltip';
+import Box from 'blockdemy-ui/box';
 import { brandColors } from '../utils';
 
 const maxSize = 62;
