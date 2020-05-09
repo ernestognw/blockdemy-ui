@@ -2,17 +2,12 @@
   "name": "blockdemy-ui",
   "version": "0.3.13",
   "description": "Blockdemy design system used across the blockdemy platforms ecosystem",
-  "main": "lib/index.js",
-  "homepage": "http://ui.blockdemy.com/",
+  "homepage": "https://ui.blockdemy.com/",
   "scripts": {
     "prepublish": "yarn build",
-    "prepare": "babel-node scripts/prepare.js",
-    "postpublish": "scripts/post-publish.js",
-    "build": "yarn clean && webpack --mode production",
-    "dev": "yarn clean && webpack --mode production --watch",
-    "clean": "rimraf lib",
-    "lint": "eslint",
-    "prettier": "prettier --write \"**/*.{js,graphql,json,css}\""
+    "prepare": "node scripts/prepare.js",
+    "postpublish": "node scripts/postpublish.js",
+    "build": "rimraf lib && webpack --mode production"
   },
   "keywords": [
     "design",
@@ -26,7 +21,7 @@
   "peerDependencies": {
     "react": ">=16.10.2",
     "react-dom": ">=16.10.2",
-    "styled-components": ">=4.4.0"
+    "styled-components": ">=3.2.6"
   },
   "dependencies": {
     "@styled-system/prop-types": "^5.1.4",
@@ -35,11 +30,5 @@
     "react-animate-height": "^2.0.20",
     "react-icons": "^3.9.0",
     "styled-system": "^5.1.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn lint .",
-      "pre-commit": "yarn prettier ."
-    }
   }
 }

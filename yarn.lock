@@ -3625,16 +3625,6 @@ bindings@^1.5.0:
   dependencies:
     file-uri-to-path "1.0.0"
 
-"blockdemy-ui@file:packages/blockdemy-ui":
-  version "0.3.13"
-  dependencies:
-    "@styled-system/prop-types" "^5.1.4"
-    copy-to-clipboard "^3.3.1"
-    prop-types "^15.7.2"
-    react-animate-height "^2.0.20"
-    react-icons "^3.9.0"
-    styled-system "^5.1.2"
-
 bluebird@^3.3.5, bluebird@^3.5.1, bluebird@^3.5.3, bluebird@^3.5.5:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"

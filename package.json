@@ -7,7 +7,9 @@
   "scripts": {
     "build": "rm -rf .site && build-storybook -c .storybook -o .site",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "eslint",
+    "prettier": "prettier --write \"**/*.{js,graphql,json,css}\""
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
@@ -38,7 +40,10 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.9"
   },
-  "dependencies": {
-    "blockdemy-ui": "file:packages/blockdemy-ui"
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint .",
+      "pre-commit": "yarn prettier ."
+    }
   }
 }
