@@ -45,3 +45,5 @@ CardFooter.propTypes = {
 };
 
 export { Card, CardFooter, CardBody, CardHeader };
+
+export default { Card, CardFooter, CardBody, CardHeader };

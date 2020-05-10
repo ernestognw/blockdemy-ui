@@ -40,3 +40,5 @@ ListItemText.propTypes = {
 };
 
 export { List, ListItem, ListItemText };
+
+export default { List, ListItem, ListItemText };

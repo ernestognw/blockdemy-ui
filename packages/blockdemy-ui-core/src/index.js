@@ -1,27 +1,34 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import defaultTheme from './utils/default-theme';
-import GlobalStyle from './utils/default-theme/css';
+// General
+import BlockdemyUI from './class';
 
-class BlockdemyUI {
-  constructor(theme) {
-    this.theme = { ...defaultTheme, ...theme };
-  }
+export { default as defaultTheme } from './utils/default-theme';
 
-  getTheme = () => this.theme;
+// Components
+export { default as Alert } from './alert';
+export { default as Avatar } from './avatar';
+export { default as Badge } from './badge';
+export { default as Box } from './box';
+export { default as Breadcrumb } from './breadcrumb';
+export { default as Button } from './button';
+export { default as Card } from './card';
+export { default as Checkbox } from './checkbox';
+export { default as CircularProgress } from './circular-progress';
+export { default as Collapse } from './collapse';
+export { default as Hooks } from './hooks';
+export { default as Input } from './input';
+export { default as List } from './list';
+export { default as Loader } from './loader';
+export { default as Modal } from './modal';
+export { default as Navbar } from './navbar';
+export { default as Pill } from './pill';
+export { default as Radio } from './radio';
+export { default as Select } from './select';
+export { default as SideModal } from './side-modal';
+export { default as Skeleton } from './skeleton';
+export { default as Tab } from './tab';
+export { default as TextArea } from './textarea';
+export { default as Toast } from './toast';
+export { default as Tooltip } from './tooltip';
+export { default as Typography } from './typography';
 
-  BlockdemyUIProvider = props => (
-    <ThemeProvider theme={this.theme} {...props}>
-      <>
-        <GlobalStyle />
-        <div id="toast" />
-        <div id="tooltips" />
-        <div id="modal" />
-        {props.children}
-      </>
-    </ThemeProvider>
-  );
-}
-
-export { defaultTheme };
 export default BlockdemyUI;

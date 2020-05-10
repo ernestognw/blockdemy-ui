@@ -55,3 +55,5 @@ TabContent.propTypes = {
 };
 
 export { Tabs, Tab, TabContent };
+
+export default { Tabs, Tab, TabContent };

@@ -24,5 +24,3 @@ Object.keys(entries).forEach(entry => {
     recursiveDelete(join(__dirname, path));
   }
 });
-
-fs.rmdirSync(join(__dirname, '../lib'));

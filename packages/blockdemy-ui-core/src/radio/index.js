@@ -163,3 +163,5 @@ Radio.propTypes = {
 };
 
 export { RadioGroup, Radio };
+
+export default { RadioGroup, Radio };
