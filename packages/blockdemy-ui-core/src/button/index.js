@@ -31,7 +31,8 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'normal', 'large']),
   ...propTypes.space,
-  ...propTypes.typography
+  ...propTypes.typography,
+  ...propTypes.position
 };
 
 export default Button;
