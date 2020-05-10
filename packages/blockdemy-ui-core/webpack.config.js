@@ -13,6 +13,7 @@ module.exports = {
     collapse: './src/collapse',
     breadcrumb: './src/breadcrumb',
     card: './src/card',
+    divider: './src/divider',
     hooks: './src/hooks',
     input: './src/input',
     list: './src/list',

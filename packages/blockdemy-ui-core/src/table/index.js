@@ -51,3 +51,10 @@ TableBody.propTypes = {
 };
 
 export { Table, TableHead, TableRow, TableCell, TableBody };
+
+Table.TableHead = TableHead;
+Table.TableRow = TableRow;
+Table.TableCell = TableCell;
+Table.TableBody = TableBody;
+
+export default Table;

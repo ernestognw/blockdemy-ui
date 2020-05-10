@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { space } from 'styled-system';
+import { space, position } from 'styled-system';
 
 const ProfilePictureContainer = styled.div`
   width: ${({ size }) => size}px;
@@ -16,6 +16,7 @@ const ProfilePictureContainer = styled.div`
     `border: ${borderWidth}px solid ${theme.colors[borderColor]};`}
 
   ${space};
+  ${position};
 `;
 
 const ProfilePictureImage = styled.img`

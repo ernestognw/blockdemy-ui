@@ -116,4 +116,5 @@ CircularProgress.propTypes = {
 
 export { CircularProgressLabel };
 
+CircularProgress.CircularProgressLabel = CircularProgressLabel;
 export default CircularProgress;

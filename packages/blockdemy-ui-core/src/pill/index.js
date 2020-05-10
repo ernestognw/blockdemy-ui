@@ -36,7 +36,8 @@ Pill.propTypes = {
     'inherit'
   ]),
   ...propTypes.space,
-  ...propTypes.typography
+  ...propTypes.typography,
+  ...propTypes.position
 };
 
 export default Pill;

@@ -40,4 +40,5 @@ Loader.propTypes = {
 
 export { LoaderContainer };
 
+Loader.LoaderContainer = LoaderContainer;
 export default Loader;

@@ -29,7 +29,8 @@ Avatar.propTypes = {
   className: PropTypes.string,
   borderColor: PropTypes.string,
   borderWidth: PropTypes.string,
-  ...propTypes.space
+  ...propTypes.space,
+  ...propTypes.position,
 };
 
 export default Avatar;

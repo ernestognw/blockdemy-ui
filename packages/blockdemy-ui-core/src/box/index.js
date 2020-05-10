@@ -19,6 +19,7 @@ Box.propTypes = {
   ...propTypes.flexbox,
   ...propTypes.grid,
   ...propTypes.background,
+  ...propTypes.position,
   clickable: PropTypes.bool
 };
 

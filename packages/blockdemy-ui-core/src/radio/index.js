@@ -164,4 +164,5 @@ Radio.propTypes = {
 
 export { RadioGroup, Radio };
 
-export default { RadioGroup, Radio };
+Radio.RadioGroup = RadioGroup;
+export default Radio;

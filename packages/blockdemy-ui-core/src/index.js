@@ -14,6 +14,7 @@ export { default as Card } from './card';
 export { default as Checkbox } from './checkbox';
 export { default as CircularProgress } from './circular-progress';
 export { default as Collapse } from './collapse';
+export { default as Divider } from './divider';
 export { default as Hooks } from './hooks';
 export { default as Input } from './input';
 export { default as List } from './list';

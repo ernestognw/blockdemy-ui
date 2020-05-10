@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { space, typography } from 'styled-system';
+import { space, typography, position } from 'styled-system';
 import { getStyle, getPadding, getFontSize, getBorderRadius } from './utils';
 
 const PillContainer = styled.div`
@@ -17,6 +17,7 @@ const PillContainer = styled.div`
   ${typography}
   ${getStyle};
   ${space};
+  ${position};
 `;
 
 export default PillContainer;

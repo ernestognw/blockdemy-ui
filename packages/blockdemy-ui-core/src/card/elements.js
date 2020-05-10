@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, space } from 'styled-system';
+import { color, space, layout } from 'styled-system';
 
 const DefaultCard = styled.div`
   position: relative;
@@ -13,6 +13,7 @@ const DefaultCard = styled.div`
 
   ${color}
   ${space}
+  ${layout}
 
   &:hover {
     box-shadow: ${({ noHover, theme }) => (noHover ? theme.shadow : theme.shadowHover)};
