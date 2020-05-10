@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "now-build": "lerna build",
+    "now-build": "lerna run build",
     "start": "next start"
   },
   "peerDependencies": {
