@@ -28,7 +28,7 @@
       "error",
       {
         "components": ["Link"],
-        "specialLink": ["route"]
+        "specialLink": ["href"]
       }
     ]
   },

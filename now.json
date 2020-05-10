@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "packages/blockdemy-ui-docs/package.json",
+      "use": "@now/next@canary"
+    }
+  ],
+  "name": "blockdemy-ui",
+  "alias": "ui.blockdemy.com",
+  "routes": [
+    {
+      "src": "^(.*)$",
+      "dest": "packages/blockdemy-ui-docs$1"
+    },
+    {
+      "src": "www.ui.blockdemy.com/*",
+      "status": 301,
+      "headers": { "Location": "https://ui.blockdemy.com/$1" }
+    }
+  ],
+  "scope": "blockdemy-ui"
+}
