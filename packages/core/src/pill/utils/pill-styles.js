@@ -5,7 +5,7 @@ const outlined = (theme, color) => `
 `;
 
 const soft = (theme, color) => `
-  background: ${theme.softColors[color]};
+  background: ${theme.colors.soft[color][200]};
   color: ${theme.colors[color]};
 `;
 

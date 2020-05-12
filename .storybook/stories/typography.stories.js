@@ -121,9 +121,9 @@ const Paragraphs = () => (
           <Typography variant="muted" uppercase fontWeight="bold">
             text
           </Typography>
-          <Typography variant="muted">{color.toLowerCase()}</Typography>
+          <Typography variant="muted">{color}</Typography>
         </Box>
-        <Typography color={color.toLowerCase()}>
+        <Typography color={color}>
           I will be the leader of a company that ends up being worth billions of dollars, because I
           got the answers. I understand culture. I am the nucleus. I think that’s a responsibility
           that I have, to push possibilities, to show people, this is the level that things could be

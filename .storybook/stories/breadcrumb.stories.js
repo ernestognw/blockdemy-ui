@@ -11,7 +11,7 @@ const LastColor = () => (
   <>
     {brandColors.map(color => (
       <Box key={color} mb={20}>
-        <Breadcrumb lastColor={color.toLowerCase()}>
+        <Breadcrumb lastColor={color}>
           <a href="/">Path</a>
           <a href="/">To</a>
           <a href="/">My</a>
@@ -26,7 +26,7 @@ const PrevColor = () => (
   <>
     {brandColors.map(color => (
       <Box key={color} mb={20}>
-        <Breadcrumb prevColor={color.toLowerCase()} lastColor="default">
+        <Breadcrumb prevColor={color} lastColor="default">
           <a href="/">Path</a>
           <a href="/">To</a>
           <a href="/">My</a>

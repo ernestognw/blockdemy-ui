@@ -54,7 +54,7 @@ const Route = styled.div`
 
 const RouteTitle = styled(Route)`
   color: ${props => props.theme.colors.lightGrey};
-  
+
   &:hover {
     color: ${props => props.theme.colors.lightGrey};
   }

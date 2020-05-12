@@ -21,7 +21,7 @@ const Colors = () => (
   <Box p={30} display="flex" width={1} justifyContent="center">
     {brandColors.map((color, index) => (
       <LoaderContainer key={color}>
-        <Loader mx={20} color={color.toLowerCase()} size={(index * 5 + 15).toString()} />
+        <Loader mx={20} color={color} size={(index * 5 + 15).toString()} />
       </LoaderContainer>
     ))}
   </Box>

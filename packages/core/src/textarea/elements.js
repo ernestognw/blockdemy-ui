@@ -42,8 +42,8 @@ const TextAreaContent = styled.textarea`
   &:focus {
     transition: 0.3s;
     outline: none;
-    border: 1px solid ${({ theme }) => theme.colors[theme.activeColor]};
-    box-shadow: 0 0 0 0.1rem ${({ theme }) => theme.colors[theme.activeColor]}33;
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+    box-shadow: 0 0 0 0.1rem ${({ theme }) => theme.colors.soft.primary[200]};
   }
 `;
 

@@ -27,7 +27,7 @@ const Normal = () => {
               largeChecksToSet[idx] = value;
               setLargeChecks(largeChecksToSet);
             }}
-            color={color.toLowerCase()}
+            color={color}
           >
             {color}
           </Checkbox>
@@ -45,7 +45,7 @@ const Normal = () => {
               checksToSet[idx] = value;
               setChecks(checksToSet);
             }}
-            color={color.toLowerCase()}
+            color={color}
           >
             {color}
           </Checkbox>
@@ -64,7 +64,7 @@ const Normal = () => {
               smallChecksToSet[idx] = value;
               setSmallChecks(smallChecksToSet);
             }}
-            color={color.toLowerCase()}
+            color={color}
           >
             {color}
           </Checkbox>
@@ -95,7 +95,7 @@ const WithState = () => {
               largeChecksToSet[idx] = value;
               setLargeChecks(largeChecksToSet);
             }}
-            color={color.toLowerCase()}
+            color={color}
           >
             {color}
           </Checkbox>
@@ -114,7 +114,7 @@ const WithState = () => {
               checksToSet[idx] = value;
               setChecks(checksToSet);
             }}
-            color={color.toLowerCase()}
+            color={color}
           >
             {color}
           </Checkbox>
@@ -134,7 +134,7 @@ const WithState = () => {
               smallChecksToSet[idx] = value;
               setSmallChecks(smallChecksToSet);
             }}
-            color={color.toLowerCase()}
+            color={color}
           >
             {color}
           </Checkbox>

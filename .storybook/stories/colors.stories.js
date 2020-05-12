@@ -9,70 +9,75 @@ import { brandColors, grayscaleColors } from '../utils';
 
 const theme = getTheme();
 
-const Brand = () => (
-  <Box display="grid" width={1} p={20} gridGap={10} gridTemplateColumns="1fr 1fr 1fr 1fr">
+const Circle = ({ color, hex }) => (
+  <Box mx={25} width={80}>
+    <Box borderRadius="50%" height={30} width={30} flexDirection="column" bg={color} />
+    <Typography fontSize="0.6rem" mb={0} mt={10}>
+      {color}
+    </Typography>
+    <Typography fontSize="0.7rem" fontWeight={200}>
+      {hex}
+    </Typography>
+  </Box>
+);
+
+const Default = () => (
+  <Box width={1} p={20}>
+    <Box my={20} mb={50} width="100%" display="flex">
+      {brandColors.map(color => (
+        <Circle key={color} color={color} hex={theme.colors[color]} />
+      ))}
+    </Box>
+  </Box>
+);
+
+const Tone = () => (
+  <Box width={1} p={20}>
     {brandColors.map(color => (
-      <Box
-        key={color}
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        height={200}
-        color="lighter"
-        flexDirection="column"
-        bg={color.toLowerCase()}
-      >
-        <Typography variant="heading">{color}</Typography>
-        {theme.colors[color.toLowerCase()]}
+      <Box my={20} key={color} width="100%" display="flex">
+        {new Array(8).fill().map((_, index) => (
+          <Circle
+            key={index}
+            color={`tone.${color}.${(index + 1) * 100}`}
+            hex={theme.colors.tone[color][(index + 1) * 100]}
+          />
+        ))}
       </Box>
     ))}
   </Box>
 );
 
 const Soft = () => (
-  <Box display="grid" width={1} p={20} gridGap={10} gridTemplateColumns="1fr 1fr 1fr 1fr">
+  <Box width={1} p={20}>
     {brandColors.map(color => (
-      <Box
-        key={color}
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        height={200}
-        color={color.toLowerCase()}
-        flexDirection="column"
-        bg={theme.softColors[color.toLowerCase()]}
-      >
-        <Typography variant="heading">{color}</Typography>
-        {theme.softColors[color.toLowerCase()]}
+      <Box my={20} key={color} width="100%" display="flex">
+        {new Array(8).fill().map((_, index) => (
+          <Circle
+            key={index}
+            color={`soft.${color}.${(index + 1) * 100}`}
+            hex={theme.colors.soft[color][(index + 1) * 100]}
+          />
+        ))}
       </Box>
     ))}
   </Box>
 );
 
 const Grayscale = () => (
-  <Box display="grid" width={1} p={20} gridGap={10} gridTemplateColumns="1fr 1fr 1fr 1fr">
-    {grayscaleColors.map((color, index) => (
-      <Box
-        key={color}
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        height={200}
-        color={index > grayscaleColors.length / 2 ? 'darker' : 'lighter'}
-        flexDirection="column"
-        bg={color}
-      >
-        <Typography variant="heading">{color}</Typography>
-        {theme.colors[color]}
-      </Box>
-    ))}
+  <Box width={1} p={20}>
+    <Box my={20} mb={50} width="100%" display="flex">
+      {grayscaleColors.map(color => (
+        <Circle key={color} color={color} hex={theme.colors[color]} />
+      ))}
+    </Box>
   </Box>
 );
 
 const title = 'Colors';
 
 storiesOf(title, module)
-  .add('Brand', Brand)
+  .add('Default', Default)
+  .add('Tone', Tone)
   .add('Soft', Soft)
   .add('Grayscale', Grayscale);
 

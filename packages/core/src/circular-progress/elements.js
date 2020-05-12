@@ -56,7 +56,7 @@ const IndicatorCircle = styled.circle`
 `;
 
 const TrackCircle = styled.circle`
-  color: ${({ theme, color }) => theme.colors[color]}60;
+  color: ${({ theme, color }) => theme.colors.soft[color][400]};
   ${getCircleProps};
   stroke-dashoffset: 0;
 `;

@@ -32,14 +32,14 @@ const WithBorder = () => (
       <Tooltip
         key={color}
         align="center"
-        tag={`${maxSize - index * 6}px avatar with ${color.toLowerCase()} border`}
+        tag={`${maxSize - index * 6}px avatar with ${color} border`}
       >
         <Box display="flex" justifyContent="center">
           <Avatar
             src={`https://i.pravatar.cc/100?img${Math.round(Math.random() * 70)}`}
             mx={20}
             borderWidth="2"
-            borderColor={color.toLowerCase()}
+            borderColor={color}
             size={maxSize - index * 6}
           />
         </Box>

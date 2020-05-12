@@ -16,7 +16,7 @@ const Normal = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Badge key={color} color={color.toLowerCase()}>
+        <Badge key={color} color={color}>
           <Button color="veryLightGrey" size="small" py={20} px={10}>
             <Typography fontSize="inherit" color="default">
               {color}
@@ -27,14 +27,14 @@ const Normal = () => (
     </Box>
     <Box mt={60} display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Badge key={color} color={color.toLowerCase()}>
+        <Badge key={color} color={color}>
           <Avatar src={`https://i.pravatar.cc/100?img${Math.round(Math.random() * 70)}`} />
         </Badge>
       ))}
     </Box>
     <Box mt={60} display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Badge key={color} color={color.toLowerCase()}>
+        <Badge key={color} color={color}>
           <Box as={MdNotifications} />
         </Badge>
       ))}
@@ -46,7 +46,7 @@ const WithNumber = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Badge number={Math.round(Math.random() * 10)} key={color} color={color.toLowerCase()}>
+        <Badge number={Math.round(Math.random() * 10)} key={color} color={color}>
           <Button color="veryLightGrey" size="small" py={20} px={10}>
             <Typography fontSize="inherit" color="default">
               {color}
@@ -57,14 +57,14 @@ const WithNumber = () => (
     </Box>
     <Box mt={60} display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Badge number={Math.round(Math.random() * 10)} key={color} color={color.toLowerCase()}>
+        <Badge number={Math.round(Math.random() * 10)} key={color} color={color}>
           <Avatar src={`https://i.pravatar.cc/100?img${Math.round(Math.random() * 70)}`} />
         </Badge>
       ))}
     </Box>
     <Box mt={60} display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Badge number={Math.round(Math.random() * 10)} key={color} color={color.toLowerCase()}>
+        <Badge number={Math.round(Math.random() * 10)} key={color} color={color}>
           <Box as={MdNotifications} />
         </Badge>
       ))}

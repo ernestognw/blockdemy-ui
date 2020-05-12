@@ -14,11 +14,11 @@ const Normal = () => (
       <Alert
         key={color}
         m={10}
-        type={color.toLowerCase()}
+        type={color}
         primary={`${color} alert`}
-        secondary={`This is an example of a ${color.toLowerCase()} type of an alert`}
+        secondary={`This is an example of a ${color} type of an alert`}
       >
-        <Button mt={10} size="small" color={color.toLowerCase()}>
+        <Button mt={10} size="small" color={color}>
           Some Call To Action
         </Button>
       </Alert>
@@ -35,11 +35,11 @@ const Dark = () => (
             key={color}
             bg="default"
             m={10}
-            type={color.toLowerCase()}
+            type={color}
             primary={`${color} alert`}
-            secondary={`This is an example of a ${color.toLowerCase()} type of an alert`}
+            secondary={`This is an example of a ${color} type of an alert`}
           >
-            <Button variant="soft" mt={10} size="small" color={color.toLowerCase()}>
+            <Button variant="soft" mt={10} size="small" color={color}>
               Some Call To Action
             </Button>
           </Alert>

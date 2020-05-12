@@ -11,21 +11,21 @@ const Normal = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill size="large" key={color} my={20} mx={10} color={color.toLowerCase()}>
+        <Pill size="large" key={color} my={20} mx={10} color={color}>
           {color}
         </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill key={color} my={20} mx={10} color={color.toLowerCase()}>
+        <Pill key={color} my={20} mx={10} color={color}>
           {color}
         </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill size="small" key={color} my={20} mx={10} color={color.toLowerCase()}>
+        <Pill size="small" key={color} my={20} mx={10} color={color}>
           {color}
         </Pill>
       ))}
@@ -37,21 +37,21 @@ const Soft = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill size="large" key={color} my={20} mx={10} variant="soft" color={color.toLowerCase()}>
+        <Pill size="large" key={color} my={20} mx={10} variant="soft" color={color}>
           {color}
         </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill key={color} my={20} mx={10} variant="soft" color={color.toLowerCase()}>
+        <Pill key={color} my={20} mx={10} variant="soft" color={color}>
           {color}
         </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill size="small" key={color} my={20} mx={10} variant="soft" color={color.toLowerCase()}>
+        <Pill size="small" key={color} my={20} mx={10} variant="soft" color={color}>
           {color}
         </Pill>
       ))}
@@ -63,35 +63,21 @@ const Outlined = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill
-          size="large"
-          key={color}
-          my={20}
-          mx={10}
-          variant="outlined"
-          color={color.toLowerCase()}
-        >
+        <Pill size="large" key={color} my={20} mx={10} variant="outlined" color={color}>
           {color}
         </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill key={color} my={20} mx={10} variant="outlined" color={color.toLowerCase()}>
+        <Pill key={color} my={20} mx={10} variant="outlined" color={color}>
           {color}
         </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill
-          size="small"
-          key={color}
-          my={20}
-          mx={10}
-          variant="outlined"
-          color={color.toLowerCase()}
-        >
+        <Pill size="small" key={color} my={20} mx={10} variant="outlined" color={color}>
           {color}
         </Pill>
       ))}
@@ -103,21 +89,21 @@ const Link = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill size="large" key={color} my={20} variant="link" color={color.toLowerCase()}>
+        <Pill size="large" key={color} my={20} variant="link" color={color}>
           {color}
         </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill key={color} my={20} variant="link" color={color.toLowerCase()}>
+        <Pill key={color} my={20} variant="link" color={color}>
           {color}
         </Pill>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Pill size="small" key={color} my={20} variant="link" color={color.toLowerCase()}>
+        <Pill size="small" key={color} my={20} variant="link" color={color}>
           {color}
         </Pill>
       ))}

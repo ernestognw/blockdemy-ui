@@ -11,31 +11,17 @@ const Normal = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress
-          size={20}
-          value={66}
-          key={color}
-          my={20}
-          mx={10}
-          color={color.toLowerCase()}
-        />
+        <CircularProgress size={20} value={66} key={color} my={20} mx={10} color={color} />
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress value={66} key={color} my={20} mx={10} color={color.toLowerCase()} />
+        <CircularProgress value={66} key={color} my={20} mx={10} color={color} />
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress
-          size={60}
-          value={66}
-          key={color}
-          my={20}
-          mx={10}
-          color={color.toLowerCase()}
-        />
+        <CircularProgress size={60} value={66} key={color} my={20} mx={10} color={color} />
       ))}
     </Box>
   </Box>
@@ -52,20 +38,13 @@ const WithRoundCap = () => (
           my={20}
           mx={10}
           lineCap="round"
-          color={color.toLowerCase()}
+          color={color}
         />
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress
-          lineCap="round"
-          value={66}
-          key={color}
-          my={20}
-          mx={10}
-          color={color.toLowerCase()}
-        />
+        <CircularProgress lineCap="round" value={66} key={color} my={20} mx={10} color={color} />
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
@@ -77,7 +56,7 @@ const WithRoundCap = () => (
           my={20}
           lineCap="round"
           mx={10}
-          color={color.toLowerCase()}
+          color={color}
         />
       ))}
     </Box>
@@ -88,35 +67,21 @@ const WithLabel = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress
-          size={20}
-          value={66}
-          key={color}
-          my={20}
-          mx={10}
-          color={color.toLowerCase()}
-        >
+        <CircularProgress size={20} value={66} key={color} my={20} mx={10} color={color}>
           <CircularProgressLabel fontSize="0.25rem">66%</CircularProgressLabel>
         </CircularProgress>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress value={66} key={color} my={20} mx={10} color={color.toLowerCase()}>
+        <CircularProgress value={66} key={color} my={20} mx={10} color={color}>
           <CircularProgressLabel>66%</CircularProgressLabel>
         </CircularProgress>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress
-          size={60}
-          value={66}
-          key={color}
-          my={20}
-          mx={10}
-          color={color.toLowerCase()}
-        >
+        <CircularProgress size={60} value={66} key={color} my={20} mx={10} color={color}>
           <CircularProgressLabel fontSize="0.65rem">66%</CircularProgressLabel>
         </CircularProgress>
       ))}
@@ -134,7 +99,7 @@ const WithTrackColor = () => (
           key={color}
           my={20}
           mx={10}
-          trackColor={color.toLowerCase()}
+          trackColor={color}
           color="veryLightGrey"
         />
       ))}
@@ -146,7 +111,7 @@ const WithTrackColor = () => (
           key={color}
           my={20}
           mx={10}
-          trackColor={color.toLowerCase()}
+          trackColor={color}
           color="veryLightGrey"
         />
       ))}
@@ -159,7 +124,7 @@ const WithTrackColor = () => (
           key={color}
           my={20}
           mx={10}
-          trackColor={color.toLowerCase()}
+          trackColor={color}
           color="veryLightGrey"
         />
       ))}
@@ -171,26 +136,12 @@ const WithStrokeWidth = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress
-          size={20}
-          value={66}
-          key={color}
-          my={20}
-          mx={10}
-          color={color.toLowerCase()}
-        />
+        <CircularProgress size={20} value={66} key={color} my={20} mx={10} color={color} />
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress
-          value={66}
-          key={color}
-          my={20}
-          mx={10}
-          color={color.toLowerCase()}
-          strokeWidth={0.2}
-        />
+        <CircularProgress value={66} key={color} my={20} mx={10} color={color} strokeWidth={0.2} />
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
@@ -201,7 +152,7 @@ const WithStrokeWidth = () => (
           key={color}
           my={20}
           mx={10}
-          color={color.toLowerCase()}
+          color={color}
           strokeWidth={0.3}
         />
       ))}
@@ -213,31 +164,17 @@ const Indeterminate = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress
-          size={20}
-          indeterminate
-          key={color}
-          my={20}
-          mx={10}
-          color={color.toLowerCase()}
-        />
+        <CircularProgress size={20} indeterminate key={color} my={20} mx={10} color={color} />
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress indeterminate key={color} my={20} mx={10} color={color.toLowerCase()} s />
+        <CircularProgress indeterminate key={color} my={20} mx={10} color={color} s />
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <CircularProgress
-          size={60}
-          indeterminate
-          key={color}
-          my={20}
-          mx={10}
-          color={color.toLowerCase()}
-        />
+        <CircularProgress size={60} indeterminate key={color} my={20} mx={10} color={color} />
       ))}
     </Box>
   </Box>

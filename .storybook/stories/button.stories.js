@@ -11,21 +11,21 @@ const Normal = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button size="large" key={color} my={20} mx={10} color={color.toLowerCase()}>
+        <Button size="large" key={color} my={20} mx={10} color={color}>
           {color}
         </Button>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button key={color} my={20} mx={10} color={color.toLowerCase()}>
+        <Button key={color} my={20} mx={10} color={color}>
           {color}
         </Button>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button size="small" key={color} my={20} mx={10} color={color.toLowerCase()}>
+        <Button size="small" key={color} my={20} mx={10} color={color}>
           {color}
         </Button>
       ))}
@@ -37,21 +37,21 @@ const Soft = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button size="large" key={color} my={20} mx={10} variant="soft" color={color.toLowerCase()}>
+        <Button size="large" key={color} my={20} mx={10} variant="soft" color={color}>
           {color}
         </Button>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button key={color} my={20} mx={10} variant="soft" color={color.toLowerCase()}>
+        <Button key={color} my={20} mx={10} variant="soft" color={color}>
           {color}
         </Button>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button size="small" key={color} my={20} mx={10} variant="soft" color={color.toLowerCase()}>
+        <Button size="small" key={color} my={20} mx={10} variant="soft" color={color}>
           {color}
         </Button>
       ))}
@@ -63,35 +63,21 @@ const Outlined = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
-          size="large"
-          key={color}
-          my={20}
-          mx={10}
-          variant="outlined"
-          color={color.toLowerCase()}
-        >
+        <Button size="large" key={color} my={20} mx={10} variant="outlined" color={color}>
           {color}
         </Button>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button key={color} my={20} mx={10} variant="outlined" color={color.toLowerCase()}>
+        <Button key={color} my={20} mx={10} variant="outlined" color={color}>
           {color}
         </Button>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button
-          size="small"
-          key={color}
-          my={20}
-          mx={10}
-          variant="outlined"
-          color={color.toLowerCase()}
-        >
+        <Button size="small" key={color} my={20} mx={10} variant="outlined" color={color}>
           {color}
         </Button>
       ))}
@@ -103,21 +89,21 @@ const Link = () => (
   <Box p={50}>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button size="large" key={color} my={20} variant="link" color={color.toLowerCase()}>
+        <Button size="large" key={color} my={20} variant="link" color={color}>
           {color}
         </Button>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button key={color} my={20} variant="link" color={color.toLowerCase()}>
+        <Button key={color} my={20} variant="link" color={color}>
           {color}
         </Button>
       ))}
     </Box>
     <Box display="flex" width={1} justifyContent="space-evenly">
       {brandColors.map(color => (
-        <Button size="small" key={color} my={20} variant="link" color={color.toLowerCase()}>
+        <Button size="small" key={color} my={20} variant="link" color={color}>
           {color}
         </Button>
       ))}

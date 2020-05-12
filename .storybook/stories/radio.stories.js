@@ -18,7 +18,7 @@ const Normal = () => {
             key={color}
             label="Select one"
             message="This is a message"
-            color={color.toLowerCase()}
+            color={color}
             name="group"
             onChange={({ target: { value } }) => {
               const valuesToSet = [...values];
@@ -52,7 +52,7 @@ const NormalInLine = () => {
             inline
             label="Select one"
             message="This is a message"
-            color={color.toLowerCase()}
+            color={color}
             name="group"
             onChange={({ target: { value } }) => {
               const valuesToSet = [...values];
@@ -89,7 +89,7 @@ const WithState = () => {
             error={idx > (brandColors.length / 3) * 2}
             label="Select one"
             message="This is a message"
-            color={color.toLowerCase()}
+            color={color}
             name="group"
             onChange={({ target: { value } }) => {
               const valuesToSet = [...values];

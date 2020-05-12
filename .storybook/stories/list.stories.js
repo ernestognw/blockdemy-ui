@@ -63,7 +63,7 @@ const Composed = () => (
             <ListItem key={color}>
               <Avatar
                 src={`https://i.pravatar.cc/100?img${Math.round(Math.random() * 70)}`}
-                borderColor={color.toLowerCase()}
+                borderColor={color}
                 borderWidth="2"
                 size="40"
               />
@@ -71,7 +71,7 @@ const Composed = () => (
                 primary={`Composed tem ${index + 1}`}
                 secondary="Composed item with Avatar and Pill indicator"
               />
-              <Pill color={color.toLowerCase()} variant="soft" size="small">
+              <Pill color={color} variant="soft" size="small">
                 Pill indicator
               </Pill>
             </ListItem>

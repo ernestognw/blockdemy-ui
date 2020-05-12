@@ -38,10 +38,10 @@ const Normal = () => {
         <Button
           size="large"
           key={color}
-          onClick={() => getToast(color.toLowerCase())}
+          onClick={() => getToast(color)}
           my={20}
           mx={10}
-          color={color.toLowerCase()}
+          color={color}
         >
           see {color}
         </Button>

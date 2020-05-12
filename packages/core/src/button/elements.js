@@ -14,7 +14,6 @@ const Button = styled.button`
   font-size: 12px;
   width: ${({ width }) => width || 'max-content'};
   text-transform: ${({ uppercase }) => (uppercase ? 'uppercase' : 'initial')};
-  letter-spacing: 1px;
 
   ${space}
   ${getSize};

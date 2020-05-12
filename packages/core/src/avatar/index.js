@@ -30,7 +30,7 @@ Avatar.propTypes = {
   borderColor: PropTypes.string,
   borderWidth: PropTypes.string,
   ...propTypes.space,
-  ...propTypes.position,
+  ...propTypes.position
 };
 
 export default Avatar;

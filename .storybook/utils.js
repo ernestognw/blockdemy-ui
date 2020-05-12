@@ -1,4 +1,4 @@
-const brandColors = ['Primary', 'Secondary', 'Info', 'Default', 'Success', 'Warning', 'Danger'];
+const brandColors = ['primary', 'secondary', 'info', 'default', 'success', 'warning', 'danger'];
 
 const grayscaleColors = [
   'darker',
@@ -8,6 +8,7 @@ const grayscaleColors = [
   'lightGrey',
   'veryLightGrey',
   'light',
+  'veryLight',
   'lighter'
 ];
 
