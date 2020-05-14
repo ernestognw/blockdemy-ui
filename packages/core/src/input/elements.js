@@ -94,7 +94,7 @@ const PseudoInput = styled.input`
   &:focus {
     outline: none;
     border: 1px solid ${({ theme }) => theme.colors.primary};
-    box-shadow: 0 0 0 0.1rem ${({ theme }) => theme.colors.soft.primary[200]};
+    box-shadow: 0 0 0 0.1rem ${({ theme }) => theme.colors.primarySoft200};
   }
 
   ${({ theme }) => theme.media.phone`

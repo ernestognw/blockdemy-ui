@@ -35,11 +35,11 @@ const Tone = () => (
   <Box width={1} p={20}>
     {brandColors.map(color => (
       <Box my={20} key={color} width="100%" display="flex">
-        {new Array(8).fill().map((_, index) => (
+        {new Array(9).fill().map((_, index) => (
           <Circle
             key={index}
-            color={`tone.${color}.${(index + 1) * 100}`}
-            hex={theme.colors.tone[color][(index + 1) * 100]}
+            color={`${color}${(index + 1) * 100}`}
+            hex={theme.colors[`${color}${(index + 1) * 100}`]}
           />
         ))}
       </Box>
@@ -51,11 +51,11 @@ const Soft = () => (
   <Box width={1} p={20}>
     {brandColors.map(color => (
       <Box my={20} key={color} width="100%" display="flex">
-        {new Array(8).fill().map((_, index) => (
+        {new Array(9).fill().map((_, index) => (
           <Circle
             key={index}
-            color={`soft.${color}.${(index + 1) * 100}`}
-            hex={theme.colors.soft[color][(index + 1) * 100]}
+            color={`${color}Soft${(index + 1) * 100}`}
+            hex={theme.colors[`${color}Soft${(index + 1) * 100}`]}
           />
         ))}
       </Box>
