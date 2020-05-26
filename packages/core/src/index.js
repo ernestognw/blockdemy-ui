@@ -26,6 +26,7 @@ export { default as Radio } from './radio';
 export { default as Select } from './select';
 export { default as SideModal } from './side-modal';
 export { default as Skeleton } from './skeleton';
+export { default as Switch } from './switch';
 export { default as Tab } from './tab';
 export { default as TextArea } from './textarea';
 export { default as Toast } from './toast';
