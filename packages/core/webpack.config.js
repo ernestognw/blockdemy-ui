@@ -25,6 +25,7 @@ module.exports = {
     select: './src/select',
     skeleton: './src/skeleton',
     radio: './src/radio',
+    switch: './src/switch',
     table: './src/table',
     tab: './src/tab',
     textarea: './src/textarea',
