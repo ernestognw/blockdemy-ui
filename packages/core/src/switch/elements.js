@@ -23,7 +23,9 @@ const ControlBox = styled(Box)`
 
   &:focus-within,
   &:active {
-    box-shadow: 0 0 0 0.1rem ${({ theme, activeColor }) => theme.colors[`${activeColor}Soft300`]};
+    box-shadow: 0 0 0 0.1rem
+      ${({ theme, activeColor }) =>
+        theme.colors[`${activeColor}Soft300`] || theme.colors.defaultSoft200};
   }
 
   ${({ disabled }) => (disabled ? 'opacity: 0.4; cursor: not-allowed' : '')}
