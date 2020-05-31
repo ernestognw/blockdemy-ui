@@ -23,6 +23,7 @@ const TextAreaContent = styled.textarea`
   resize: vertical;
   border-radius: ${({ theme }) => theme.radius};
   border: 1px solid ${({ theme }) => theme.colors.veryLightGrey};
+  font-family: ${({ theme }) => theme.font};
 
   ::placeholder {
     color: ${({ theme }) => theme.colors.lightGrey};

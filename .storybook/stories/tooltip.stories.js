@@ -8,7 +8,7 @@ import Tooltip from 'blockdemy-ui/tooltip';
 import Pill from 'blockdemy-ui/pill';
 
 const Normal = () => (
-  <Box display="flex" pt={100} width={1} justifyContent="space-evenly">
+  <Box display="flex" pt={200} width={1} justifyContent="space-evenly">
     <Tooltip tag="Top tooltip">
       <Pill variant="soft" color="default" size="large" mx={10}>
         Top
