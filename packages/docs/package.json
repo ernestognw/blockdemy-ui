@@ -1,6 +1,6 @@
 {
   "name": "blockdemy-ui-docs",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -15,7 +15,7 @@
     "@mdx-js/loader": "^1.6.1",
     "@mdx-js/react": "^1.6.1",
     "@next/mdx": "^9.3.6",
-    "blockdemy-ui": "^0.4.5",
+    "blockdemy-ui": "^0.4.6",
     "formik": "^2.1.4",
     "next": "9.2.1",
     "next-seo": "^4.4.0",
