@@ -99,7 +99,7 @@ const WithTrackColor = () => (
           key={color}
           my={20}
           mx={10}
-          trackColor={color}
+          trackColor={`${color}Soft400`}
           color="veryLightGrey"
         />
       ))}
@@ -111,7 +111,7 @@ const WithTrackColor = () => (
           key={color}
           my={20}
           mx={10}
-          trackColor={color}
+          trackColor={`${color}Soft400`}
           color="veryLightGrey"
         />
       ))}
@@ -124,7 +124,7 @@ const WithTrackColor = () => (
           key={color}
           my={20}
           mx={10}
-          trackColor={color}
+          trackColor={`${color}Soft400`}
           color="veryLightGrey"
         />
       ))}
