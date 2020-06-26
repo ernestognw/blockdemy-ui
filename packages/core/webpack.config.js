@@ -23,6 +23,7 @@ module.exports = {
     pill: './src/pill',
     'side-modal': './src/side-modal',
     select: './src/select',
+    slider: './src/slider',
     skeleton: './src/skeleton',
     switch: './src/switch',
     radio: './src/radio',
