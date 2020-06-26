@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import styled, { css } from 'styled-components';
-import Box from 'blockdemy-ui/box';
+import Box from '../box';
 import { getThumbSize, getTrackHeight } from './utils/style';
 
 const centeredProps = css`
