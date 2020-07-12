@@ -55,7 +55,7 @@ const colors = {
 
 const theme = {
   media,
-  font: 'SF Pro Text, system-ui, serif',
+  font: 'SF Pro Text, Helvetica, sans-serif',
   shadow: '0 0 2rem 0 rgba(136, 152, 170, 0.15)',
   shadowHover: '0 0 4rem 0 rgba(136, 152, 170, 0.3)',
   radius: '.3rem',
