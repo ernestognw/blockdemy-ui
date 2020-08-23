@@ -9,6 +9,7 @@ const Progress = ({
   max,
   value,
   height,
+  width,
   stripe,
   animate,
   indeterminate,
@@ -19,7 +20,13 @@ const Progress = ({
   const percent = valueToPercent(value, min, max);
 
   return (
-    <ProgressTrack height={height} bg="veryLight" trackRadius={trackRadius} {...props}>
+    <ProgressTrack
+      width={width}
+      height={height}
+      bg="veryLight"
+      trackRadius={trackRadius}
+      {...props}
+    >
       <ProgressIndicator
         radius={radius}
         min={min}
@@ -52,6 +59,7 @@ Progress.defaultProps = {
   max: 100,
   value: 0,
   height: '0.5rem',
+  width: '100%',
   stripe: false,
   animate: false,
   indeterminate: false,
@@ -65,6 +73,7 @@ Progress.propTypes = {
   max: PropTypes.number,
   value: PropTypes.number,
   height: PropTypes.any,
+  width: PropTypes.any,
   stripe: PropTypes.bool,
   animate: PropTypes.bool,
   indeterminate: PropTypes.bool,
