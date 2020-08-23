@@ -1,9 +1,5 @@
 import { useMemo } from 'react';
 
-const valueToPercent = (value, min, max) => {
-  return ((value - min) * 100) / (max - min);
-};
-
 const percentToValue = (percent, min, max) => {
   return (max - min) * percent + min;
 };
@@ -46,4 +42,4 @@ const useForkRef = (refA, refB) => {
   }, [refA, refB]);
 };
 
-export { valueToPercent, percentToValue, roundValueToStep, clampValue, useForkRef };
+export { percentToValue, roundValueToStep, clampValue, useForkRef };

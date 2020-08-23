@@ -1,13 +1,8 @@
 import React, { forwardRef, useRef, useState, useCallback, createContext, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ThumbBox, TrackBox, FilledTrackBox, SliderBox } from './elements';
-import {
-  valueToPercent,
-  percentToValue,
-  roundValueToStep,
-  clampValue,
-  useForkRef
-} from './utils/functions';
+import { valueToPercent } from '../utils/helpers';
+import { percentToValue, roundValueToStep, clampValue, useForkRef } from './utils/functions';
 
 const Thumb = forwardRef((props, ref) => {
   const {
