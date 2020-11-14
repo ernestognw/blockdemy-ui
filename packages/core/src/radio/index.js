@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, isValidElement } from 'react';
+import React, { Children, cloneElement, isValidElement, forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import VisuallyHidden from '../utils/visually-hidden';
 import Box from '../box';
@@ -63,44 +63,50 @@ const RadioGroup = ({
   );
 };
 
-const Radio = ({
-  color,
-  size,
-  checked,
-  onChange,
-  disabled,
-  children,
-  success,
-  warning,
-  error,
-  value,
-  ...props
-}) => (
-  <Container {...props}>
-    <ClickableSection disabled={disabled}>
-      <VisuallyHidden
-        as="input"
-        type="radio"
-        onChange={onChange}
-        checked={checked}
-        value={value}
-        disabled={disabled}
-        {...props}
-      />
-      <CheckContainer
-        success={success}
-        warning={warning}
-        error={error}
-        size={size}
-        color={color}
-        checked={checked}
-        disabled={disabled}
-      >
-        <Circle visible={checked} />
-      </CheckContainer>
-      {children && <Box ml={5}>{children}</Box>}
-    </ClickableSection>
-  </Container>
+const Radio = forwardRef(
+  (
+    {
+      color,
+      size,
+      checked,
+      onChange,
+      disabled,
+      children,
+      success,
+      warning,
+      error,
+      value,
+      ...props
+    },
+    ref
+  ) => (
+    <Container {...props}>
+      <ClickableSection disabled={disabled}>
+        <VisuallyHidden
+          as="input"
+          type="radio"
+          onChange={onChange}
+          checked={checked}
+          value={value}
+          disabled={disabled}
+          ref={ref}
+          {...props}
+        />
+        <CheckContainer
+          success={success}
+          warning={warning}
+          error={error}
+          size={size}
+          color={color}
+          checked={checked}
+          disabled={disabled}
+        >
+          <Circle visible={checked} />
+        </CheckContainer>
+        {children && <Box ml={5}>{children}</Box>}
+      </ClickableSection>
+    </Container>
+  )
 );
 
 RadioGroup.defaultProps = {

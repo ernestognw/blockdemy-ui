@@ -1,53 +1,48 @@
-import React, { createRef } from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { TextAreaContainer, Label, TextAreaContent } from './elements';
 
-const TextArea = ({
-  id,
-  onChange,
-  autofocus,
-  value,
-  required,
-  placeholder,
-  label,
-  name,
-  rows,
-  className,
-  ...props
-}) => {
-  const box = createRef();
-
-  const handleKeyUp = () => {
-    const height = box.current.offsetHeight;
-    if (height < box.current.scrollHeight) {
-      box.current.style.height = `${box.current.scrollHeight}px`;
-    }
-  };
-
-  return (
-    <TextAreaContainer className={className} {...props}>
-      {label && (
-        <Label weight="light" htmlFor={id}>
-          {label}
-          {required && '*'}
-        </Label>
-      )}
-      <TextAreaContent
-        autoFocus={autofocus}
-        label={label}
-        value={value}
-        name={name}
-        required={required}
-        placeholder={placeholder}
-        id={id}
-        ref={box}
-        onKeyUp={handleKeyUp}
-        onChange={onChange}
-        rows={rows}
-      />
-    </TextAreaContainer>
-  );
-};
+const TextArea = forwardRef(
+  (
+    {
+      id,
+      onChange,
+      autofocus,
+      value,
+      required,
+      placeholder,
+      label,
+      name,
+      rows,
+      className,
+      ...props
+    },
+    ref
+  ) => {
+    return (
+      <TextAreaContainer className={className} {...props}>
+        {label && (
+          <Label weight="light" htmlFor={id}>
+            {label}
+            {required && '*'}
+          </Label>
+        )}
+        <TextAreaContent
+          autoFocus={autofocus}
+          label={label}
+          value={value}
+          name={name}
+          required={required}
+          placeholder={placeholder}
+          id={id}
+          ref={ref}
+          onChange={onChange}
+          rows={rows}
+        />
+      </TextAreaContainer>
+    );
+  }
+);
 
 TextArea.defaultProps = {
   onChange: () => {},

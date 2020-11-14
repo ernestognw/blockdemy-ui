@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createRef } from 'react';
+import React, { useEffect, useState, createRef, forwardRef } from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import PropTypes from 'prop-types';
 import {
@@ -14,115 +14,121 @@ import {
   Suffix
 } from './elements';
 
-const Select = ({
-  label,
-  leftIcon,
-  rightIcon,
-  id,
-  success,
-  warning,
-  error,
-  message,
-  value,
-  onChange,
-  children,
-  prefix,
-  suffix,
-  selectIcon,
-  className,
-  align,
-  disabled,
-  required,
-  ...props
-}) => {
-  const [active, setActive] = useState(false);
-  const [suffixWidth, setSuffixWidth] = useState(0);
-  const suffixRef = createRef();
+const Select = forwardRef(
+  (
+    {
+      label,
+      leftIcon,
+      rightIcon,
+      id,
+      success,
+      warning,
+      error,
+      message,
+      value,
+      onChange,
+      children,
+      prefix,
+      suffix,
+      selectIcon,
+      className,
+      align,
+      disabled,
+      required,
+      ...props
+    },
+    ref
+  ) => {
+    const [active, setActive] = useState(false);
+    const [suffixWidth, setSuffixWidth] = useState(0);
+    const suffixRef = createRef();
 
-  useEffect(() => {
-    if (suffixRef && suffixRef.current) setSuffixWidth(suffixRef.current.offsetWidth);
-  }, [suffixRef]);
+    useEffect(() => {
+      if (suffixRef && suffixRef.current) setSuffixWidth(suffixRef.current.offsetWidth);
+    }, [suffixRef]);
 
-  const toggleActive = () => setActive(!active);
+    const toggleActive = () => setActive(!active);
 
-  return (
-    <Container className={className} onFocus={toggleActive} onBlur={toggleActive} {...props}>
-      {label && (
-        <Label weight="light" htmlFor={id}>
-          {label}
-          {required && '*'}
-        </Label>
-      )}
-      {leftIcon && (
-        <LeftIconContainer
-          success={success}
-          warning={warning}
-          error={error}
-          message={message}
-          active={active}
-        >
-          {leftIcon}
-        </LeftIconContainer>
-      )}
-      {rightIcon && (
-        <RightIconContainer
-          success={success}
-          warning={warning}
-          error={error}
-          message={message}
-          active={active}
-        >
-          {rightIcon}
-        </RightIconContainer>
-      )}
-      <SelectGroup>
-        {prefix && (
-          <Prefix success={success} warning={warning} error={error}>
-            {prefix}
-          </Prefix>
+    return (
+      <Container className={className} onFocus={toggleActive} onBlur={toggleActive} {...props}>
+        {label && (
+          <Label weight="light" htmlFor={id}>
+            {label}
+            {required && '*'}
+          </Label>
         )}
-        <PseudoSelect
-          id={id}
-          label={label}
-          value={value}
-          onChange={onChange}
-          success={success}
-          warning={warning}
-          error={error}
-          leftIcon={leftIcon}
-          rightIcon={rightIcon}
-          prefix={prefix}
-          suffix={suffix}
-          disabled={disabled}
-          required={required}
-          {...props}
-        >
-          {children}
-        </PseudoSelect>
-        {selectIcon || (
-          <OptionsButton
-            suffixWidth={suffixWidth || 0}
-            rightIcon={rightIcon}
-            label={label}
+        {leftIcon && (
+          <LeftIconContainer
+            success={success}
+            warning={warning}
+            error={error}
             message={message}
+            active={active}
           >
-            <MdKeyboardArrowDown />
-          </OptionsButton>
+            {leftIcon}
+          </LeftIconContainer>
         )}
-        {suffix && (
-          <Suffix ref={suffixRef} success={success} warning={warning} error={error}>
-            {suffix}
-          </Suffix>
+        {rightIcon && (
+          <RightIconContainer
+            success={success}
+            warning={warning}
+            error={error}
+            message={message}
+            active={active}
+          >
+            {rightIcon}
+          </RightIconContainer>
         )}
-      </SelectGroup>
-      {message && (
-        <Message success={success} warning={warning} error={error}>
-          {message}
-        </Message>
-      )}
-    </Container>
-  );
-};
+        <SelectGroup>
+          {prefix && (
+            <Prefix success={success} warning={warning} error={error}>
+              {prefix}
+            </Prefix>
+          )}
+          <PseudoSelect
+            id={id}
+            label={label}
+            value={value}
+            onChange={onChange}
+            success={success}
+            warning={warning}
+            error={error}
+            leftIcon={leftIcon}
+            rightIcon={rightIcon}
+            prefix={prefix}
+            suffix={suffix}
+            disabled={disabled}
+            required={required}
+            ref={ref}
+            {...props}
+          >
+            {children}
+          </PseudoSelect>
+          {selectIcon || (
+            <OptionsButton
+              suffixWidth={suffixWidth || 0}
+              rightIcon={rightIcon}
+              label={label}
+              message={message}
+            >
+              <MdKeyboardArrowDown />
+            </OptionsButton>
+          )}
+          {suffix && (
+            <Suffix ref={suffixRef} success={success} warning={warning} error={error}>
+              {suffix}
+            </Suffix>
+          )}
+        </SelectGroup>
+        {message && (
+          <Message success={success} warning={warning} error={error}>
+            {message}
+          </Message>
+        )}
+      </Container>
+    );
+  }
+);
 
 Select.defaultProps = {
   label: undefined,
