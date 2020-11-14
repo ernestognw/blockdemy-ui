@@ -56,7 +56,7 @@ const PseudoInput = styled.input`
   ${({ align }) =>
     align
       ? `
-    text-align: ${align}
+    text-align: ${align};
   `
       : ''}
 
