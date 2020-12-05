@@ -1,29 +1,36 @@
+import { forwardRef } from 'react';
 import setTag from './functions';
 
-const Typography = ({
-  color,
-  variant,
-  fontWeight,
-  children,
-  fontSize,
-  className,
-  underline,
-  uppercase,
-  capitalize,
-  ...props
-}) => {
-  return setTag(
-    color,
-    variant,
-    fontWeight,
-    children,
-    fontSize,
-    className,
-    underline,
-    uppercase,
-    capitalize,
-    { ...props }
-  );
-};
+const Typography = forwardRef(
+  (
+    {
+      color,
+      variant,
+      fontWeight,
+      children,
+      fontSize,
+      className,
+      underline,
+      uppercase,
+      capitalize,
+      ...props
+    },
+    ref
+  ) => {
+    return setTag(
+      color,
+      variant,
+      fontWeight,
+      children,
+      fontSize,
+      className,
+      underline,
+      uppercase,
+      capitalize,
+      ref,
+      { ref, ...props }
+    );
+  }
+);
 
 export default Typography;

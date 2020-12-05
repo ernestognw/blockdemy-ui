@@ -35,7 +35,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body a {
-    display: contents;
     text-decoration: none;
     color: inherit;
     cursor: pointer;
