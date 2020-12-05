@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import propTypes from '@styled-system/prop-types';
 import {
@@ -10,18 +10,30 @@ import {
   HeaderSubtitle
 } from './elements';
 
-const Card = ({ children, ...props }) => <DefaultCard {...props}>{children}</DefaultCard>;
+const Card = forwardRef(({ children, ...props }, ref) => (
+  <DefaultCard ref={ref} {...props}>
+    {children}
+  </DefaultCard>
+));
 
-const CardHeader = ({ title, subtitle, ...props }) => (
-  <CardHeaderContainer {...props}>
+const CardHeader = forwardRef(({ title, subtitle, ...props }, ref) => (
+  <CardHeaderContainer ref={ref} {...props}>
     {title && <HeaderTitle>{title}</HeaderTitle>}
     {subtitle && <HeaderSubtitle>{subtitle}</HeaderSubtitle>}
   </CardHeaderContainer>
-);
+));
 
-const CardBody = ({ children, ...props }) => <Body {...props}>{children}</Body>;
+const CardBody = forwardRef(({ children, ...props }, ref) => (
+  <Body ref={ref} {...props}>
+    {children}
+  </Body>
+));
 
-const CardFooter = ({ children, ...props }) => <Footer {...props}>{children}</Footer>;
+const CardFooter = forwardRef(({ children, ...props }, ref) => (
+  <Footer ref={ref} {...props}>
+    {children}
+  </Footer>
+));
 
 Card.propTypes = {
   children: PropTypes.any.isRequired,

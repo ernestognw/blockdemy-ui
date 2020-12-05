@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import propTypes from '@styled-system/prop-types';
 import { ProfilePictureContainer, ProfilePictureImage } from './elements';
 
-const Avatar = ({ src, size, alt, borderColor, borderWidth, ...props }) => (
+const Avatar = forwardRef(({ src, size, alt, borderColor, borderWidth, ...props }, ref) => (
   <ProfilePictureContainer
     borderColor={borderColor}
     borderWidth={borderWidth}
     size={size}
+    ref={ref}
     {...props}
   >
     <ProfilePictureImage src={src} alt={alt} />
   </ProfilePictureContainer>
-);
+));
 
 Avatar.defaultProps = {
   size: 32,

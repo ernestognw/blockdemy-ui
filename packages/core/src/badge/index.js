@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import Typography from '../typography';
 import { Container, Circle } from './elements';
 
-const Badge = ({ number, children, size, fontSize, color, position, distance, numberColor }) => (
-  <Container>
-    <Circle position={position} size={size} color={color} distance={distance}>
-      <Typography fontSize={fontSize} color={numberColor}>
-        {number}
-      </Typography>
-    </Circle>
-    {children}
-  </Container>
+const Badge = forwardRef(
+  ({ number, children, size, fontSize, color, position, distance, numberColor }, ref) => (
+    <Container ref={ref}>
+      <Circle position={position} size={size} color={color} distance={distance}>
+        <Typography fontSize={fontSize} color={numberColor}>
+          {number}
+        </Typography>
+      </Circle>
+      {children}
+    </Container>
+  )
 );
 
 Badge.defaultProps = {

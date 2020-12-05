@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import propTypes from '@styled-system/prop-types';
 import DefaultButton from './elements';
 
-const Button = ({ children, color, uppercase, fullWidth, disabled, ...props }) => (
+const Button = forwardRef(({ children, color, uppercase, fullWidth, disabled, ...props }, ref) => (
   <DefaultButton
     color={color}
     uppercase={uppercase}
     fullWidth={fullWidth}
     disabled={disabled}
+    ref={ref}
     {...props}
   >
     {children}
   </DefaultButton>
-);
+));
 
 Button.defaultProps = {
   uppercase: true,

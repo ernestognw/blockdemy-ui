@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { DefaultList, Item, ItemTextContainer, PrimaryText, SecondaryText } from './elements';
 
-const List = ({ children, ...props }) => <DefaultList {...props}>{children}</DefaultList>;
+const List = forwardRef(({ children, ...props }, ref) => (
+  <DefaultList ref={ref} {...props}>
+    {children}
+  </DefaultList>
+));
 
-const ListItemText = ({ primary, secondary, ...props }) => (
-  <ItemTextContainer {...props}>
+const ListItemText = forwardRef(({ primary, secondary, ...props }, ref) => (
+  <ItemTextContainer ref={ref} {...props}>
     <PrimaryText>{primary}</PrimaryText>
     {secondary && <SecondaryText>{secondary}</SecondaryText>}
   </ItemTextContainer>
-);
+));
 
-const ListItem = ({ children, clickable, ...props }) => (
-  <Item clickable={clickable} {...props}>
+const ListItem = forwardRef(({ children, clickable, ...props }, ref) => (
+  <Item ref={ref} clickable={clickable} {...props}>
     {children}
   </Item>
-);
+));
 
 List.propTypes = {
   children: PropTypes.any.isRequired

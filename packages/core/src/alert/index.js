@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { MdThumbUp, MdCheckCircle, MdInfo, MdCancel, MdWarning } from 'react-icons/md';
 import propTypes from '@styled-system/prop-types';
@@ -24,8 +24,8 @@ const getIcon = type => {
   }
 };
 
-const Alert = ({ type, children, primary, secondary, ...props }) => (
-  <Container type={type} {...props}>
+const Alert = forwardRef(({ type, children, primary, secondary, ...props }, ref) => (
+  <Container ref={ref} type={type} {...props}>
     <Body type={type}>
       <IconContainer>{getIcon(type)}</IconContainer>
       <Text>
@@ -41,7 +41,7 @@ const Alert = ({ type, children, primary, secondary, ...props }) => (
       </Text>
     </Body>
   </Container>
-);
+));
 
 Alert.defaultProps = {
   type: 'primary',
