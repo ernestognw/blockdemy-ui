@@ -27,7 +27,6 @@ const Typography = forwardRef(
       underline,
       uppercase,
       capitalize,
-      ref,
       { ref, ...props }
     );
   }
