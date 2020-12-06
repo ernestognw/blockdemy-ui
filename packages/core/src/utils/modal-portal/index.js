@@ -1,30 +1,19 @@
-import { Component } from 'react';
+import { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 
-class ModalPortal extends Component {
-  // Inside of component because if we put this out, ssr would crash,
-  // due to inexistence of document at server
-  modalsRoot = document.getElementById('modal');
+const ModalPortal = ({ children }) => {
+  const modalsRoot = useMemo(() => document.getElementById('modal'), []);
+  const modal = useMemo(() => document.createElement('div'), []);
 
-  constructor(props) {
-    super(props);
-    this.modal = document.createElement('div');
-  }
+  useEffect(() => {
+    modalsRoot.appendChild(modal);
 
-  componentDidMount = () => {
-    this.modalsRoot.appendChild(this.modal);
-  };
+    return () => modalsRoot.removeChild(modal);
+  }, []);
 
-  componentWillUnmount = () => {
-    this.modalsRoot.removeChild(this.modal);
-  };
-
-  render() {
-    const { children } = this.props;
-    return createPortal(children, this.modal);
-  }
-}
+  return createPortal(children, modal);
+};
 
 ModalPortal.propTypes = {
   children: PropTypes.element.isRequired

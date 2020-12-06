@@ -1,39 +1,34 @@
-import React, { Component } from 'react';
+import React, { useMemo, useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import Text from './elements';
 
-class Tag extends Component {
-  // Inside of component because if we put this out, ssr would crash,
-  // due to inexistence of document at server
-  tooltipRoot = document.getElementById('tooltips');
+const Tag = ({ tag, align, width, height, left, top, position }) => {
+  const tooltipRoot = useMemo(() => document.getElementById('tooltips'), []);
+  const element = useMemo(() => document.createElement('div'), []);
 
-  constructor(props) {
-    super(props);
-    this.el = document.createElement('div');
-    this.state = {
-      width: null,
-      height: null
-    };
-  }
+  const [dimensions, setDimensions] = useState({ width: null, height: null });
 
-  componentDidMount = () => this.tooltipRoot.appendChild(this.el);
+  const ref = useRef();
 
-  componentWillUnmount = () => this.tooltipRoot.removeChild(this.el);
+  useEffect(() => {
+    tooltipRoot.appendChild(element);
 
-  getDimensions = ref => {
-    const { width: oldWidth, height: oldHeight } = this.state;
-    if (ref) {
-      const { width, height } = ref.getBoundingClientRect();
-      if (oldWidth !== width || height !== oldHeight) {
-        this.setState({ width, height });
+    return () => tooltipRoot.removeChild(element);
+  }, []);
+
+  useEffect(() => {
+    const { width: oldWidth, height: oldHeight } = dimensions;
+    if (ref.current) {
+      const { width: elementWidth, height: elementHeight } = ref.current.getBoundingClientRect();
+      if (oldWidth !== elementWidth || elementHeight !== oldHeight) {
+        setDimensions({ width: elementWidth, height: elementHeight });
       }
     }
-  };
+  }, [ref]);
 
-  setAtTop = () => {
-    const { top, left, width } = this.props;
-    const { width: thisWidth, height: thisHeight } = this.state;
+  const setAtTop = () => {
+    const { width: thisWidth, height: thisHeight } = dimensions;
     const { pageYOffset, pageXOffset } = window;
 
     const yValue = top + pageYOffset - thisHeight - 10;
@@ -45,9 +40,8 @@ class Tag extends Component {
     };
   };
 
-  setAtBottom = () => {
-    const { top, left, width, height } = this.props;
-    const { width: thisWidth } = this.state;
+  const setAtBottom = () => {
+    const { width: thisWidth } = dimensions;
     const { pageYOffset, pageXOffset } = window;
 
     const yValue = top + pageYOffset + height + 10;
@@ -59,9 +53,8 @@ class Tag extends Component {
     };
   };
 
-  setAtLeft = () => {
-    const { top, left, height } = this.props;
-    const { width: thisWidth, height: thisHeight } = this.state;
+  const setAtLeft = () => {
+    const { width: thisWidth, height: thisHeight } = dimensions;
     const { pageYOffset, pageXOffset } = window;
 
     const yValue = top + pageYOffset - thisHeight / 2 + height / 2;
@@ -73,9 +66,8 @@ class Tag extends Component {
     };
   };
 
-  setAtRight = () => {
-    const { top, left, width, height } = this.props;
-    const { height: thisHeight } = this.state;
+  const setAtRight = () => {
+    const { height: thisHeight } = dimensions;
     const { pageYOffset, pageXOffset } = window;
 
     const yValue = top + pageYOffset - thisHeight / 2 + height / 2;
@@ -87,63 +79,54 @@ class Tag extends Component {
     };
   };
 
-  render() {
-    const { align, tag } = this.props;
-    let { position } = this.props;
-    const { width: thisWidth, height: thisHeight } = this.state;
-    const { innerHeight, innerWidth } = window;
+  let manipulatedPosition = position;
+  const { width: thisWidth, height: thisHeight } = dimensions;
+  const { innerHeight, innerWidth } = window;
 
-    let yValue;
-    let xValue;
+  let yValue;
+  let xValue;
 
-    switch (position) {
-      case 'top':
-        ({ yValue, xValue } = this.setAtTop());
-        if (yValue < 0) {
-          ({ yValue, xValue } = this.setAtBottom());
-          position = 'bottom';
-        }
-        break;
-      case 'bottom':
-        ({ yValue, xValue } = this.setAtBottom());
-        if (yValue + thisHeight > innerHeight) {
-          ({ yValue, xValue } = this.setAtTop());
-          position = 'top';
-        }
-        break;
-      case 'left':
-        ({ yValue, xValue } = this.setAtLeft());
-        if (xValue < 0) {
-          ({ yValue, xValue } = this.setAtRight());
-          position = 'right';
-        }
-        break;
-      case 'right':
-        ({ yValue, xValue } = this.setAtRight());
-        if (xValue + thisWidth > innerWidth) {
-          ({ yValue, xValue } = this.setAtLeft());
-          position = 'left';
-        }
-        break;
-      default:
-        ({ yValue, xValue } = this.setAtTop());
-        break;
-    }
-
-    return createPortal(
-      <Text
-        ref={ref => this.getDimensions(ref)}
-        x={xValue}
-        y={yValue}
-        align={align}
-        position={position}
-      >
-        {tag}
-      </Text>,
-      this.el
-    );
+  switch (position) {
+    case 'top':
+      ({ yValue, xValue } = setAtTop());
+      if (yValue < 0) {
+        ({ yValue, xValue } = setAtBottom());
+        manipulatedPosition = 'bottom';
+      }
+      break;
+    case 'bottom':
+      ({ yValue, xValue } = setAtBottom());
+      if (yValue + thisHeight > innerHeight) {
+        ({ yValue, xValue } = setAtTop());
+        manipulatedPosition = 'top';
+      }
+      break;
+    case 'left':
+      ({ yValue, xValue } = setAtLeft());
+      if (xValue < 0) {
+        ({ yValue, xValue } = setAtRight());
+        manipulatedPosition = 'right';
+      }
+      break;
+    case 'right':
+      ({ yValue, xValue } = setAtRight());
+      if (xValue + thisWidth > innerWidth) {
+        ({ yValue, xValue } = setAtLeft());
+        manipulatedPosition = 'left';
+      }
+      break;
+    default:
+      ({ yValue, xValue } = setAtTop());
+      break;
   }
-}
+
+  return createPortal(
+    <Text ref={ref} x={xValue} y={yValue} align={align} position={manipulatedPosition}>
+      {tag}
+    </Text>,
+    element
+  );
+};
 
 Tag.defaultProps = {
   align: 'left'
