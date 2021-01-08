@@ -1,5 +1,5 @@
 import { lighten, darken, transparentize } from 'polished';
-import media from './media';
+import media, { screenSizes } from './media';
 
 const brand = {
   primary: '#5B97F2',
@@ -55,6 +55,7 @@ const colors = {
 
 const theme = {
   media,
+  screenSizes,
   font: 'SF Pro Text, Helvetica, sans-serif',
   shadow: '0 0 2rem 0 rgba(136, 152, 170, 0.15)',
   shadowHover: '0 0 4rem 0 rgba(136, 152, 170, 0.3)',
