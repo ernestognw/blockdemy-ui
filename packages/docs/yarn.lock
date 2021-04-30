@@ -1824,10 +1824,10 @@ bindings@^1.5.0:
   dependencies:
     file-uri-to-path "1.0.0"
 
-blockdemy-ui@^0.4.9:
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/blockdemy-ui/-/blockdemy-ui-0.4.9.tgz#61b2170b55e9567964d0b58630815f0d48e92cfb"
-  integrity sha512-YoDIFNm2bmZheCsy0GpAloM6YzeMFcjl6/n/jEpJ+Cq2cLFR3PB9GKw05HyOr/EpAbgzKOKPVuFMMh6smcFnPw==
+blockdemy-ui@^0.4.19:
+  version "0.4.19"
+  resolved "https://registry.yarnpkg.com/blockdemy-ui/-/blockdemy-ui-0.4.19.tgz#ec7688d005fa13d3353e86d75d8e250fff945e08"
+  integrity sha512-eR+r+0bP/N1F1GOJWZkZ7Xq4g86CLm4QVzEpYWnrWpagVCM7PS6pT55R97DOnJ9wxSM2LRy7eG/A3nG43icxZg==
   dependencies:
     "@styled-system/prop-types" "^5.1.4"
     copy-to-clipboard "^3.3.1"
@@ -6465,9 +6465,9 @@ sprintf-js@~1.0.2:
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
 ssri@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
-  integrity sha512-3Wge10hNcT1Kur4PDFwEieXSCMCJs/7WvSACcrMYrNp+b8kDL1/0wJch5Ni2WrtwEa2IO8OsVfeKIciKCDx/QA==
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.2.tgz#157939134f20464e7301ddba3e90ffa8f7728ac5"
+  integrity sha512-cepbSq/neFK7xB6A50KHN0xHDotYzq58wWCa5LeWqnPrHG8GzfEjO/4O8kpmcGW+oaxkvhEJCWgbgNk4/ZV93Q==
   dependencies:
     figgy-pudding "^3.5.1"
 
