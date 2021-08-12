@@ -1824,10 +1824,10 @@ bindings@^1.5.0:
   dependencies:
     file-uri-to-path "1.0.0"
 
-blockdemy-ui@^0.4.9:
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/blockdemy-ui/-/blockdemy-ui-0.4.9.tgz#61b2170b55e9567964d0b58630815f0d48e92cfb"
-  integrity sha512-YoDIFNm2bmZheCsy0GpAloM6YzeMFcjl6/n/jEpJ+Cq2cLFR3PB9GKw05HyOr/EpAbgzKOKPVuFMMh6smcFnPw==
+blockdemy-ui@^0.4.19:
+  version "0.4.19"
+  resolved "https://registry.yarnpkg.com/blockdemy-ui/-/blockdemy-ui-0.4.19.tgz#ec7688d005fa13d3353e86d75d8e250fff945e08"
+  integrity sha512-eR+r+0bP/N1F1GOJWZkZ7Xq4g86CLm4QVzEpYWnrWpagVCM7PS6pT55R97DOnJ9wxSM2LRy7eG/A3nG43icxZg==
   dependencies:
     "@styled-system/prop-types" "^5.1.4"
     copy-to-clipboard "^3.3.1"
@@ -5077,9 +5077,9 @@ path-is-inside@^1.0.1:
   integrity sha1-NlQX3t5EQw0cEa9hAn+s8HS9/FM=
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
-  integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@6.1.0:
   version "6.1.0"
