@@ -1824,10 +1824,10 @@ bindings@^1.5.0:
   dependencies:
     file-uri-to-path "1.0.0"
 
-blockdemy-ui@^0.4.9:
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/blockdemy-ui/-/blockdemy-ui-0.4.9.tgz#61b2170b55e9567964d0b58630815f0d48e92cfb"
-  integrity sha512-YoDIFNm2bmZheCsy0GpAloM6YzeMFcjl6/n/jEpJ+Cq2cLFR3PB9GKw05HyOr/EpAbgzKOKPVuFMMh6smcFnPw==
+blockdemy-ui@^0.4.19:
+  version "0.4.19"
+  resolved "https://registry.yarnpkg.com/blockdemy-ui/-/blockdemy-ui-0.4.19.tgz#ec7688d005fa13d3353e86d75d8e250fff945e08"
+  integrity sha512-eR+r+0bP/N1F1GOJWZkZ7Xq4g86CLm4QVzEpYWnrWpagVCM7PS6pT55R97DOnJ9wxSM2LRy7eG/A3nG43icxZg==
   dependencies:
     "@styled-system/prop-types" "^5.1.4"
     copy-to-clipboard "^3.3.1"
@@ -6326,9 +6326,9 @@ shallow-clone@^3.0.0:
     kind-of "^6.0.2"
 
 shell-quote@^1.6.1:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.7.2.tgz#67a7d02c76c9da24f99d20808fcaded0e0e04be2"
-  integrity sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.7.3.tgz#aa40edac170445b9a431e17bb62c0b881b9c4123"
+  integrity sha512-Vpfqwm4EnqGdlsBFNmHhxhElJYrdfcxPThu+ryKS5J8L/fhAwLazFZtq+S+TWZ9ANj2piSQLGj6NQg+lKPmxrw==
 
 signal-exit@^3.0.2:
   version "3.0.3"
